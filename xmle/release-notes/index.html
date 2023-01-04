@@ -1,0 +1,1334 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../download-patch/">
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.2">
+    
+    
+      
+        <title>Notas de Versão - Facile Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f56500e0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#notas-de-versao" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Facile Docs" class="md-header__button md-logo" aria-label="Facile Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Facile Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Notas de Versão
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_3" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Mudar para automático"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Mudar para automático" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
+        Facile XML-e
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cifa/" class="md-tabs__link">
+        CIFA
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Facile Docs" class="md-nav__button md-logo" aria-label="Facile Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Facile Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Facile XML-e</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Facile XML-e" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Facile XML-e
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Notas de Versão
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Notas de Versão
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335010" class="md-nav__link">
+    Versão 4.33.5010
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335009" class="md-nav__link">
+    Versão 4.33.5009
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335008" class="md-nav__link">
+    Versão 4.33.5008
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335007" class="md-nav__link">
+    Versão 4.33.5007
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335006" class="md-nav__link">
+    Versão 4.33.5006
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335005" class="md-nav__link">
+    Versão 4.33.5005
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335004" class="md-nav__link">
+    Versão 4.33.5004
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335003" class="md-nav__link">
+    Versão 4.33.5003
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335002" class="md-nav__link">
+    Versão 4.33.5002
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335001" class="md-nav__link">
+    Versão 4.33.5001
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335000" class="md-nav__link">
+    Versão 4.33.5000
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331042" class="md-nav__link">
+    Versão 4.33.1042
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331041" class="md-nav__link">
+    Versão 4.33.1041
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331040" class="md-nav__link">
+    Versão 4.33.1040
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331039" class="md-nav__link">
+    Versão 4.33.1039
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331038" class="md-nav__link">
+    Versão 4.33.1038
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331037" class="md-nav__link">
+    Versão 4.33.1037
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331036" class="md-nav__link">
+    Versão 4.33.1036
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331035" class="md-nav__link">
+    Versão 4.33.1035
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331034" class="md-nav__link">
+    Versão 4.33.1034
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331033" class="md-nav__link">
+    Versão 4.33.1033
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331032" class="md-nav__link">
+    Versão 4.33.1032
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331031" class="md-nav__link">
+    Versão 4.33.1031
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331030" class="md-nav__link">
+    Versão 4.33.1030
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331029" class="md-nav__link">
+    Versão 4.33.1029
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331028" class="md-nav__link">
+    Versão 4.33.1028
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331027" class="md-nav__link">
+    Versão 4.33.1027
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331026" class="md-nav__link">
+    Versão 4.33.1026
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331025" class="md-nav__link">
+    Versão 4.33.1025
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331024" class="md-nav__link">
+    Versão 4.33.1024
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download-patch/" class="md-nav__link">
+        Download do Patch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dicionario-dados/" class="md-nav__link">
+        Dicionário de Dados
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          Instalação
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Instalação" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Instalação
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacao/aplicar-patch/" class="md-nav__link">
+        Passo 01 - Aplicando o Patch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacao/compatibilizador/" class="md-nav__link">
+        Passo 02 - Compatibilizador
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacao/ponto-entrada-padrao/" class="md-nav__link">
+        Passo 03 - Pontos de Entrada
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacao/menus/" class="md-nav__link">
+        Passo 04 - Criando os Menus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacao/configura-jobs/" class="md-nav__link">
+        Passo 05 - Configurar os Jobs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../cifa/">CIFA</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="CIFA" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          CIFA
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335010" class="md-nav__link">
+    Versão 4.33.5010
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335009" class="md-nav__link">
+    Versão 4.33.5009
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335008" class="md-nav__link">
+    Versão 4.33.5008
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335007" class="md-nav__link">
+    Versão 4.33.5007
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335006" class="md-nav__link">
+    Versão 4.33.5006
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335005" class="md-nav__link">
+    Versão 4.33.5005
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335004" class="md-nav__link">
+    Versão 4.33.5004
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335003" class="md-nav__link">
+    Versão 4.33.5003
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335002" class="md-nav__link">
+    Versão 4.33.5002
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335001" class="md-nav__link">
+    Versão 4.33.5001
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4335000" class="md-nav__link">
+    Versão 4.33.5000
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331042" class="md-nav__link">
+    Versão 4.33.1042
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331041" class="md-nav__link">
+    Versão 4.33.1041
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331040" class="md-nav__link">
+    Versão 4.33.1040
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331039" class="md-nav__link">
+    Versão 4.33.1039
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331038" class="md-nav__link">
+    Versão 4.33.1038
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331037" class="md-nav__link">
+    Versão 4.33.1037
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331036" class="md-nav__link">
+    Versão 4.33.1036
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331035" class="md-nav__link">
+    Versão 4.33.1035
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331034" class="md-nav__link">
+    Versão 4.33.1034
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331033" class="md-nav__link">
+    Versão 4.33.1033
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331032" class="md-nav__link">
+    Versão 4.33.1032
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331031" class="md-nav__link">
+    Versão 4.33.1031
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331030" class="md-nav__link">
+    Versão 4.33.1030
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331029" class="md-nav__link">
+    Versão 4.33.1029
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331028" class="md-nav__link">
+    Versão 4.33.1028
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331027" class="md-nav__link">
+    Versão 4.33.1027
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331026" class="md-nav__link">
+    Versão 4.33.1026
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331025" class="md-nav__link">
+    Versão 4.33.1025
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versao-4331024" class="md-nav__link">
+    Versão 4.33.1024
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="notas-de-versao">📝Notas de Versão</h1>
+<p>Detalhes das atualizações liberadas da ferramenta.</p>
+<h3 id="versao-4335010">Versão 4.33.5010</h3>
+<p>04/01/2022</p>
+<ul>
+<li>
+<p>NOVIDADE: Criado novo compatibilizador único para dicionário na System (U_UPDXSYS)</p>
+</li>
+<li>
+<p>BUG: Incluído novas validações ao importar NFS-e via PDF</p>
+</li>
+</ul>
+<h3 id="versao-4335009">Versão 4.33.5009</h3>
+<p>22/12/2022</p>
+<ul>
+<li>
+<p>NOVIDADE: Incluído nova tabela para registrar todos os NSUs</p>
+</li>
+<li>
+<p>NOVIDADE: Desenvolvido para salvar os NSUs das NF-e</p>
+</li>
+<li>
+<p>NOVIDADE: Denvolvido classe e JOB para buscar no sefaz os NSUs faltantes</p>
+</li>
+<li>
+<p>NOVIDADE: Criado tela para demonstrar a carta de correção</p>
+</li>
+</ul>
+<h3 id="versao-4335008">Versão 4.33.5008</h3>
+<p>22/12/2022</p>
+<ul>
+<li>
+<p>NOVIDADE: Incluído a informação do armazém do pedido na tela principal de entrada de doc.</p>
+</li>
+<li>
+<p>NOVIDADE: Incluído opção de visualizar, alterar e excluir pré-nota</p>
+</li>
+<li>
+<p>NOVIDADE: Incluído opção de visualizar e excluir documento de entrada</p>
+</li>
+<li>
+<p>BUG: Removido os documentos bloqueados dos relatórios</p>
+</li>
+</ul>
+<h3 id="versao-4335007">Versão 4.33.5007</h3>
+<p>22/12/2022</p>
+<ul>
+<li>NOVIDADE: Criado ponto de entrada P011ITEM para manipular os itens da SD1 no CTE de venda</li>
+</ul>
+<h3 id="versao-4335006">Versão 4.33.5006</h3>
+<p>21/12/2022</p>
+<ul>
+<li>NOVIDADE: Incluído campo Tipo de Produto no filtro de regras por processo</li>
+</ul>
+<h3 id="versao-4335005">Versão 4.33.5005</h3>
+<p>19/12/2022</p>
+<ul>
+<li>NOVIDADE: Finalizado a primeira versão da importação automática do CTE de venda</li>
+</ul>
+<h3 id="versao-4335004">Versão 4.33.5004</h3>
+<p>16/12/2022</p>
+<ul>
+<li>
+<p>BUG: Correção na descrição do produto na tela de entrada</p>
+</li>
+<li>
+<p>BUG: Tratativa para não permitir XML sem filial</p>
+</li>
+</ul>
+<h3 id="versao-4335003">Versão 4.33.5003</h3>
+<p>08/12/2022</p>
+<ul>
+<li>
+<p>NOVIDADE: Cria parametro para permitir grupos de usuários a bloquear entrada de documento</p>
+</li>
+<li>
+<p>NOVIDADE: Incluído informação da unidade de pedido do XML, produto e pedido de compras na tela de entrada</p>
+</li>
+</ul>
+<h3 id="versao-4335002">Versão 4.33.5002</h3>
+<p>01/12/2022</p>
+<ul>
+<li>BUG: Correção na geração da devolução de venda</li>
+</ul>
+<h3 id="versao-4335001">Versão 4.33.5001</h3>
+<p>01/12/2022</p>
+<ul>
+<li>NOVIDADE: Implantado melhoria de importação de NFS-e</li>
+</ul>
+<h3 id="versao-4335000">Versão 4.33.5000</h3>
+<p>22/11/2022</p>
+<ul>
+<li>
+<p>NOVIDADE:  Entrada de beneficiamento</p>
+</li>
+<li>
+<p>NOVIDADE:  Bloqueio de entrada</p>
+</li>
+<li>
+<p>NOVIDADE:  Nova legenda</p>
+</li>
+</ul>
+<h3 id="versao-4331042">Versão 4.33.1042</h3>
+<p>10/11/2022</p>
+<ul>
+<li>Ajuste no PTX008 para o ponto de entrada de numero de documento</li>
+</ul>
+<h3 id="versao-4331041">Versão 4.33.1041</h3>
+<p>09/11/2022</p>
+<ul>
+<li>Correção no execauto do CTE (MATA116) após atualização da Totvs</li>
+</ul>
+<h3 id="versao-4331040">Versão 4.33.1040</h3>
+<p>08/11/2022</p>
+<ul>
+<li>
+<p>Correção no busca quando a empresa utiliza CPF no sigamat</p>
+</li>
+<li>
+<p>Correção no PTX0008 para utilizar a nova rotina de numero de documento</p>
+</li>
+</ul>
+<h3 id="versao-4331039">Versão 4.33.1039</h3>
+<p>03/11/2022</p>
+<ul>
+<li>Criado ponto de entrada P007CTE</li>
+</ul>
+<h3 id="versao-4331038">Versão 4.33.1038</h3>
+<p>01/11/2022</p>
+<ul>
+<li>Ajuste na ordenação da SD1 quando possui conversão de unidade de medida</li>
+</ul>
+<h3 id="versao-4331037">Versão 4.33.1037</h3>
+<p>28/10/2022</p>
+<ul>
+<li>Removido validação de cnpj raiz nos jobs</li>
+</ul>
+<h3 id="versao-4331036">Versão 4.33.1036</h3>
+<p>26/10/2022</p>
+<ul>
+<li>Criado parametro ZZ_ORDEDIC para indicar se deve ordenar o array de itens de acordo com a SD1</li>
+</ul>
+<h3 id="versao-4331035">Versão 4.33.1035</h3>
+<p>24/10/2022</p>
+<ul>
+<li>
+<p>Correção no update das legendas</p>
+</li>
+<li>
+<p>Correção na criação de arquivos de logs</p>
+</li>
+</ul>
+<h3 id="versao-4331034">Versão 4.33.1034</h3>
+<p>20/10/2022</p>
+<ul>
+<li>Criação de ponto de entrada XCarregDados para alterar a filial de destino do XML</li>
+</ul>
+<h3 id="versao-4331033">Versão 4.33.1033</h3>
+<p>14/10/2022</p>
+<ul>
+<li>Correção na função de validação de impostos</li>
+</ul>
+<h3 id="versao-4331032">Versão 4.33.1032</h3>
+<p>13/10/2022</p>
+<ul>
+<li>Melhoria para gravar na ZZW a descrição do produto que vem no XML</li>
+</ul>
+<h3 id="versao-4331031">Versão 4.33.1031</h3>
+<p>11/10/2022</p>
+<ul>
+<li>
+<p>Correção na impressão do CTE na tag CEP</p>
+</li>
+<li>
+<p>Melhoria para preencher o campo D1_DFABRIC através da tag dFab</p>
+</li>
+</ul>
+<h3 id="versao-4331030">Versão 4.33.1030</h3>
+<p>05/10/2022</p>
+<ul>
+<li>Ajuste no checkdoc automático e workflow</li>
+</ul>
+<h3 id="versao-4331029">Versão 4.33.1029</h3>
+<p>30/09/2022</p>
+<ul>
+<li>
+<p>Melhoria no checkdoc para incluir filial e cnpj no assunto do workflow</p>
+</li>
+<li>
+<p>Considerar pedido de compras faltando zeros a esquerda no xPED</p>
+</li>
+<li>
+<p>Melhorado processo dos JOBS para controle de semaforo e logs</p>
+</li>
+</ul>
+<h3 id="versao-4331028">Versão 4.33.1028</h3>
+<p>26/09/2022</p>
+<ul>
+<li>Correção na query de exportação de XML para banco de dados Oracle</li>
+</ul>
+<h3 id="versao-4331027">Versão 4.33.1027</h3>
+<p>14/09/2022</p>
+<ul>
+<li>Corrigido erro após incluir novas colunas no grid de pedido de compras</li>
+</ul>
+<h3 id="versao-4331026">Versão 4.33.1026</h3>
+<p>11/09/2022</p>
+<ul>
+<li>Melhoria incluindo valores do pedido de compra</li>
+</ul>
+<h3 id="versao-4331025">Versão 4.33.1025</h3>
+<p>06/09/2022</p>
+<ul>
+<li>Incluído tratamento de serie 3 digitos para CTE</li>
+</ul>
+<h3 id="versao-4331024">Versão 4.33.1024</h3>
+<p>01/09/2022</p>
+<ul>
+<li>Alterado para não exportar XML de documento cancelado</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Voltar para o topo
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2010 - 2022 Facile Sistemas
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://www.facebook.com/facilesistemass" target="_blank" rel="noopener" title="Facile no Facebook" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.instagram.com/facilesistemas/" target="_blank" rel="noopener" title="Siga nosso instagram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+    </a>
+  
+    
+    
+    <a href="https://www.linkedin.com/company/facile-solu-es-em-sistemas/" target="_blank" rel="noopener" title="LinkedIN" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de Transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de Transfer\u00eancia", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Perdido", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+      
+    
+  </body>
+</html>
