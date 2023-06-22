@@ -43,9 +43,17 @@ nparms=2
 Parm1=01
 Parm2=0101
 
+;;Job responsável por realizar o download do XML da NFS-e
+[PTXJ008]
+MAIN=U_PTXJ008
+ENVIRONMENT=FACILE
+nparms=2
+Parm1=01
+Parm2=0101
+
 ;;Tag responsável por inicializar e controlar os jobs
 [ONSTART]
-JOBS=PTXJ001,PTXJ003
+JOBS=PTXJ001,PTXJ003,PTXJ008
 REFRESHRATE=4000
 ```
 
