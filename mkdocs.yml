@@ -57,9 +57,10 @@ nav:
       - Passo 05 - Configurar os Jobs: 'xmle/instalacao/configura-jobs.md'
     - Manuais:
       - 03 - Manual do Usuário: 'xmle/manuais/manual-usuario.md'
-      - 04 - Importação de XML direto do PC: 'xmle/manuais/importacao-manual.md'
+      - 04 - Importação de XML manual: 'xmle/manuais/importacao-manual.md'
       - 05 - Processo de fracionar itens: 'xmle/manuais/fracionar-itens.md'
       - 06 - Funcionalidades para o Pedido de Compra: 'xmle/manuais/pc-completo.md'
+      - 07 - Filtro de XML sem nota de entrada: 'xmle/manuais/xml-sem-entrada.md'
       - 09 - CheckDoc: 'xmle/manuais/checkdoc.md'
       - 14 - Configuração do Webservice Checkdoc: 'xmle/manuais/webservice.md'
   - CIFA:

@@ -29,3 +29,4 @@ A partir desse momento a entrada é feita de forma normal
 <center>![Figura 5: Menu principal](../../assets/importacao-manual/entrada-final.png "Menu principal")
 <br>*Figura 5: Menu principal*<br></center>
 
+<div style="text-align: center; font-weight: bold;">-FIM-</div>
