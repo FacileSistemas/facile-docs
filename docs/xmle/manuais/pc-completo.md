@@ -1,5 +1,5 @@
 <style>
-    span{
+    #format{
         font-style: italic; 
         font-size: 12px;
     }
@@ -24,7 +24,7 @@ Com o registro já selecionado clique em: **Gerar Entrada** > **Outras Ações >
 ![Figura 01: Buscar Pedido de Compra](../../assets/pc-completo/00-start-busca-pc.png "Buscar Pedido de Compra")
 
 ## Marcar todos os itens de um Pedido
-<span>Ajustar o Pedido de compras para marcar todos os itens do pedido ao invés de apenas um.</span>
+<span id="format">Ajustar o Pedido de compras para marcar todos os itens do pedido ao invés de apenas um.</span>
 <br><br>
 Após fazer o passo anterior você verá uma nova tela com os pedidos de compra feitos para o fornecedor selecionado. Com isso você poderá selecionar/vincular os itens de forma mais conveniente e intuitiva veja:
 
@@ -45,7 +45,7 @@ Siga a sequência:
 1.4. Os itens selecionados na **simulação da pré-nota** mudarão a cor do status para verde.  Para desfazer, clique no botão **Limpar Alterações Realizadas** ou clicar no botão **confirmar** para finalizar a ação. 
 
 ## Entrada com item único
-<span>Deixar entrar com um só item no pedido de compra.</span>
+<span id="format">Deixar entrar com um só item no pedido de compra.</span>
 <br><br>
 Com o registro já selecionado clique em: **Gerar Entrada > Outras Ações > Buscar Pedido Compra**. Como na imagem abaixo:
 
@@ -64,7 +64,7 @@ Clicando em SIM, os itens na seção **Simulação da Pré-Nota.** Ficarão com 
 Depois basta clicar no botão **confirmar** para finalizar a ação ou no botão **Limpar Alterações Realizadas** para cancelar.
 
 ## Item único do XML quebrado em mais itens
-<span>Receber um item apenas no xml que entra no pedido de compra quebrado em mais itens.</span>
+<span id="format">Receber um item apenas no xml que entra no pedido de compra quebrado em mais itens.</span>
 <br><br>
 Com o registro já selecionado clique em: **Gerar Entrada > Outras Ações > Buscar Pedido Compra**. Como na imagem abaixo:
 

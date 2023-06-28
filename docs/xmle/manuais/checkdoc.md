@@ -2,7 +2,7 @@
     p{
         text-align: justify;
     }
-    span{
+    #format{
         font-style: italic; 
         font-size: 15px;
     }
@@ -36,36 +36,36 @@ Para que um documento seja analisado pelo **CheckDoc**, basta selecioná-lo na t
 Caminho: **Central XML-e/Outras Ações/CheckDoc**
 
 <center>![Figura 1: Checkdoc no "Outras ações](../../assets/checkdoc/checkdoc_oa.png "Checkdoc no 'Outras ações'")
-<br><span>Figura 1: Checkdoc no "Outras ações</span><br></center>
+<br><span id="format">Figura 1: Checkdoc no "Outras ações</span><br></center>
 
 Será apresentado a imagem abaixo com as opções “Visualizar análise atual”, “Realizar nova análise” e “Fechar”.
 
 <center>![Figura 2: Realiza a análise do Documento Fiscal](../../assets/checkdoc/rel_docfiscal.png "Realiza a análise do Documento Fiscal")
-<br><span>Figura 2: Realiza a análise do Documento Fiscal</span><br></center>
+<br><span id="format">Figura 2: Realiza a análise do Documento Fiscal</span><br></center>
 
 A opção **“Visualizar análise atual”** irá demonstrar o resultado da última análise do CheckDoc nesse documento e a opção **“Realizar nova análise”** irá executar todas as verificações novamente e gerar um novo resultado.
 
 Ao selecionar a opção de realizar nova análise, basta aguardar o processamento terminar e você já poderá visualizar o resultado da análise.
 
 <center>![Figura 3: Visualizar resultado da análise](../../assets/checkdoc/visualizar_res.png "Visualizar resultado da análise")
-<br><span>Figura 3: Visualizar resultado da análise</span><br></center>
+<br><span id="format">Figura 3: Visualizar resultado da análise</span><br></center>
 
 Clicando em “SIM”, será solicitado a pasta onde o relatório em HTML será salvo e em seguida já o abrirá automaticamente.
 
 <center>![Figura 4: Salvar relatório](../../assets/checkdoc/salvar_rel.png "Salvar relatório")
-<br><span>Figura 4: Salvar relatório</span><br></center>
+<br><span id="format">Figura 4: Salvar relatório</span><br></center>
 
 O cabeçalho do relatório demonstra os principais dados do documento, como número, série, valor, natureza da operação etc.
 
 <center>![Figura 5: Cabeçalho relatório](../../assets/checkdoc/cabecalho_rel.png "Cabeçalho relatório")
-<br><span>Figura 5: Cabeçalho relatório</span><br></center>
+<br><span id="format">Figura 5: Cabeçalho relatório</span><br></center>
 
 ## Fornecedor
 
 No setor “**Fornecedor**” será realizado a análise das informações do fornecedor que está no Protheus e as informações que estão no XML.
 
 <center>![Figura 6: Comparação dos dados do Fornecedor](../../assets/checkdoc/forn_protxml.png "Fornecedor Protheus x XML")
-<br><span>Figura 6: Comparação dos dados do Fornecedor</span><br></center>
+<br><span id="format">Figura 6: Comparação dos dados do Fornecedor</span><br></center>
 
 São geradas duas linhas, sendo a primeira com os dados do XML e a segunda com os dados encontrados no Protheus (isso se o fornecedor estiver cadastrado no Protheus).
 
@@ -104,7 +104,7 @@ O número no final do parâmetro ZZ\_FORNC**1** corresponde a posição da colun
 No setor “**Produtos**” será realizado a análise das informações do produto e pedido de compra que está no Protheus e as informações que estão no XML.
 
 <center>![Figura 7: Comparação dos dados dos Produtos](../../assets/checkdoc/prod_protxml.png "Produtos Protheus x XML")
-<br><span>Figura 7: Comparação dos dados dos Produtos</span><br></center>
+<br><span id="format">Figura 7: Comparação dos dados dos Produtos</span><br></center>
 
 São geradas duas linhas para cada item do XML, sendo a primeira com os dados do XML e a segunda com os dados encontrados no Protheus (isso se o fornecedor enviar os dados do pedido de compra nas tags corretas ou pelo menos já existir a amarração Produto x Fornecedor).
 

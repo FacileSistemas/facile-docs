@@ -887,7 +887,7 @@
     p{
         text-align: justify;
     }
-    span{
+    #format{
         font-style: italic; 
         font-size: 15px;
     }
@@ -915,24 +915,24 @@
 <p>Para que um documento seja analisado pelo <strong>CheckDoc</strong>, basta selecioná-lo na tela principal da Central XML-e e chamar a ferramenta conforme demonstrado na imagem abaixo:</p>
 <p>Caminho: <strong>Central XML-e/Outras Ações/CheckDoc</strong></p>
 <p><center><img alt="Figura 1: Checkdoc no &quot;Outras ações" src="../../../assets/checkdoc/checkdoc_oa.png" title="Checkdoc no 'Outras ações'" />
-<br><span>Figura 1: Checkdoc no "Outras ações</span><br></center></p>
+<br><span id="format">Figura 1: Checkdoc no "Outras ações</span><br></center></p>
 <p>Será apresentado a imagem abaixo com as opções “Visualizar análise atual”, “Realizar nova análise” e “Fechar”.</p>
 <p><center><img alt="Figura 2: Realiza a análise do Documento Fiscal" src="../../../assets/checkdoc/rel_docfiscal.png" title="Realiza a análise do Documento Fiscal" />
-<br><span>Figura 2: Realiza a análise do Documento Fiscal</span><br></center></p>
+<br><span id="format">Figura 2: Realiza a análise do Documento Fiscal</span><br></center></p>
 <p>A opção <strong>“Visualizar análise atual”</strong> irá demonstrar o resultado da última análise do CheckDoc nesse documento e a opção <strong>“Realizar nova análise”</strong> irá executar todas as verificações novamente e gerar um novo resultado.</p>
 <p>Ao selecionar a opção de realizar nova análise, basta aguardar o processamento terminar e você já poderá visualizar o resultado da análise.</p>
 <p><center><img alt="Figura 3: Visualizar resultado da análise" src="../../../assets/checkdoc/visualizar_res.png" title="Visualizar resultado da análise" />
-<br><span>Figura 3: Visualizar resultado da análise</span><br></center></p>
+<br><span id="format">Figura 3: Visualizar resultado da análise</span><br></center></p>
 <p>Clicando em “SIM”, será solicitado a pasta onde o relatório em HTML será salvo e em seguida já o abrirá automaticamente.</p>
 <p><center><img alt="Figura 4: Salvar relatório" src="../../../assets/checkdoc/salvar_rel.png" title="Salvar relatório" />
-<br><span>Figura 4: Salvar relatório</span><br></center></p>
+<br><span id="format">Figura 4: Salvar relatório</span><br></center></p>
 <p>O cabeçalho do relatório demonstra os principais dados do documento, como número, série, valor, natureza da operação etc.</p>
 <p><center><img alt="Figura 5: Cabeçalho relatório" src="../../../assets/checkdoc/cabecalho_rel.png" title="Cabeçalho relatório" />
-<br><span>Figura 5: Cabeçalho relatório</span><br></center></p>
+<br><span id="format">Figura 5: Cabeçalho relatório</span><br></center></p>
 <h2 id="fornecedor">Fornecedor</h2>
 <p>No setor “<strong>Fornecedor</strong>” será realizado a análise das informações do fornecedor que está no Protheus e as informações que estão no XML.</p>
 <p><center><img alt="Figura 6: Comparação dos dados do Fornecedor" src="../../../assets/checkdoc/forn_protxml.png" title="Fornecedor Protheus x XML" />
-<br><span>Figura 6: Comparação dos dados do Fornecedor</span><br></center></p>
+<br><span id="format">Figura 6: Comparação dos dados do Fornecedor</span><br></center></p>
 <p>São geradas duas linhas, sendo a primeira com os dados do XML e a segunda com os dados encontrados no Protheus (isso se o fornecedor estiver cadastrado no Protheus).</p>
 <p>As colunas com inconsistência nas informações são destacadas em vermelho para melhor identificação.</p>
 <p>É possível configurar quais colunas que deseja auditar conforme abaixo:</p>
@@ -974,7 +974,7 @@
 <h2 id="produtos">Produtos</h2>
 <p>No setor “<strong>Produtos</strong>” será realizado a análise das informações do produto e pedido de compra que está no Protheus e as informações que estão no XML.</p>
 <p><center><img alt="Figura 7: Comparação dos dados dos Produtos" src="../../../assets/checkdoc/prod_protxml.png" title="Produtos Protheus x XML" />
-<br><span>Figura 7: Comparação dos dados dos Produtos</span><br></center></p>
+<br><span id="format">Figura 7: Comparação dos dados dos Produtos</span><br></center></p>
 <p>São geradas duas linhas para cada item do XML, sendo a primeira com os dados do XML e a segunda com os dados encontrados no Protheus (isso se o fornecedor enviar os dados do pedido de compra nas tags corretas ou pelo menos já existir a amarração Produto x Fornecedor).</p>
 <p>As colunas com inconsistência nas informações são destacadas em vermelho para melhor identificação.</p>
 <p>É possível configurar quais colunas que deseja auditar conforme abaixo:</p>
