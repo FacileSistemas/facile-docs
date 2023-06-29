@@ -1,3 +1,9 @@
+<style>
+    p{
+        text-align: justify;
+    }
+</style>
+
 # Importação de XML manual
 
 ## Procedimento para Importação de XML direto do PC

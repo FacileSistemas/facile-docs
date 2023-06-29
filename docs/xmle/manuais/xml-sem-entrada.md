@@ -1,3 +1,9 @@
+<style>
+    p{
+        text-align: justify;
+    }
+</style>
+
 # Filtro de XML sem nota de entrada
 
 ## Criar filtro de XML sem nota de entrada
