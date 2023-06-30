@@ -21,12 +21,14 @@ Será verificado:
 Para que seja realizado a devolução da venda, basta selecionar o documento desejado na tela principal da Central XML-e e chamar a ferramenta conforme demonstrado na imagem abaixo:
 
 <center>![Figura 01: Opção 'Devolução Venda'](../../assets/devol-venda/opcdevolvenda.png "Opção 'Devolução Venda'")
-<br><span id="format">Figura 01: Opção 'Devolução Venda'</span><br></center>
+<br>*Figura 01: Opção 'Devolução Venda'*<br></center>
+<br>
 
 Será apresentado uma nova tela conforme a imagem abaixo:
 
 <center>![Figura 02: Filtrar notas de saída](../../assets/devol-venda/filtro-notas.png "Filtrar notas de saída")
-<br><span id="format">Figura 02: Filtrar notas de saída</span><br></center>
+<br>*Figura 02: Filtrar notas de saída*<br></center>
+<br>
 
 No formulário **“Documentos de Saída”** irá demonstrar todas as notas fiscais de vendas para o cliente em questão que ainda possuem saldo a serem devolvidos. Esse formulário possui um filtro inteligente para que a busca pelo documento/item devolvido seja mais rápida e fácil.
 
@@ -37,7 +39,8 @@ Para vincular o item da venda com o item devolvido, basta dar 2 cliques no item 
 Após realizar a amarração de todos os itens com seus respectivos documento de saída, basta clicar no botão confirmar para iniciar o processo de geração do documento de saída.
 
 <center>![Figura 03: Opção 'Confirmar'](../../assets/devol-venda/opcconfirmar.png "Opção 'Confirmar'")
-<br><span id="format">Figura 03: Opção 'Confirmar'</span><br></center>
+<br>*Figura 03: Opção 'Confirmar'*<br></center>
+<br>
 
 A partir desse momento a rotina seguirá o fluxo normal do processo de entrada de documentos da Central XML-e.
 Basta conferir os dados gerados e concluir a entrada do documento fiscal.
