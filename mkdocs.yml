@@ -63,6 +63,7 @@ nav:
       - 07 - Filtro de XML sem nota de entrada: 'xmle/manuais/xml-sem-entrada.md'
       - 08 - Manifestação em lote: 'xmle/manuais/manifestacao-lote.md'
       - 09 - CheckDoc: 'xmle/manuais/checkdoc.md'
+      - 10 - Devolução de Venda: 'xmle/manuais/devol-venda.md'
       - 14 - Configuração do Webservice Checkdoc: 'xmle/manuais/webservice.md'
   - CIFA:
     - Introdução: 'cifa/index.md'
