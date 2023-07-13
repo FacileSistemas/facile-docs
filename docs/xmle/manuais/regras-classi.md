@@ -21,74 +21,168 @@
 
 ## Introdução
 
-Rotina “Regras de Classificação” é o cadastro de regras da ferramenta Athos XML-e que vai ser utilizada para retornar de maneira inteligente qual será a informação mais apropriada a ser utilizada em cada tipo de documento (ZZV_TIPDOC). 
-
+Rotina “Regras por Processo” é o cadastro de regras da ferramenta Facile XML-e que serão utilizadas para retornar de maneira inteligente qual será a informação mais apropriada a ser utilizada em cada tipo de documento e processo.
 
 ## Como usar?
 
-Deverá ser cadastrado, por filial, todas as regras de filtros inteligentes para o retorno das informações necessárias para classificação do documento fiscal (TES, condição de pagamento, centro de custo e natureza).
+Deverá ser cadastrado todas as regras de filtros inteligentes para o retorno das informações necessárias para classificação do documento fiscal (TES, condição de pagamento, centro de custo, natureza e produto).
+
+Implementar o novo JOB responsável por executar as importações automáticas através das regras por processo.
+
+Programa: **U_PTXJ007**
+
+
+**Exemplo via appserver.ini:**
+```
+[PTXJ007]
+MAIN=U_PTXJ007
+ENVIRONMENT=ENVIRONMENT
+nparms=2
+Parm1=01
+Parm2=01
+
+[ONSTART]
+JOBS=PTXJ007
+```
+
+## Processos implementados / liberados até o momento
+
+- CTEV – CTE de Venda
+    - Ativado através do parâmetro: ZZ_CTEVAUT = .T. (deverá ser criado com tipo lógico)
+
+## Tabela de Regras por Processo
 
 Segue abaixo os campos e detalhes sobre o preenchimento:
 
-### Regras de preenchimento da Tabela ZZV
-
-| Campo      | Descrição           | <center>Observação</center> |
-| ---------- | ------------------- | --------------------------- |
-| ZZV_FILIAL | Filial              | As regras são exclusivas por filial |
-| ZZV_TIPDOC | Tipo Doc            | 1 = CTE Venda; 2 = NF-e Compras; 3 = CTE Compras; 4 = Devolução Venda |
-| ZZV_PROCE  | Processo            | 1 = Cond. Pgto; 2 = TES; 3 = C Custo; 4 = Natureza; |
-| ZZV_CODPRO | Cod. Produto        | Informar o código do produto |
-| ZZV_GRPPRO | Grupo Prod.         | Informar o grupo do produto |
-| ZZV_CLIFOR | Cod. Clifor         | Informar o código do fornecedor ou cliente quando for devolução de venda |
-| ZZV_LOJA   | Loja Cli. - Fornec. | Informar a loja do fornecedor ou cliente quando for devolução de venda |
-| ZZV_CSICMS | CST ICMS            | CST a ser considerada. Deve ser um número de 00 a 99 |
-| ZZV_DIAINI | Dia início emissão  | Número entre 1 e 31, período inicial da emissão do documento fiscal |
-| ZZV_DIAFIM | Dia fim emissão     | Número entre 1 e 31, período final da emissão do documento fiscal |
-| ZZV_TAG    | Tag XML             | Tag do XML a ser analisada. Deve iniciar obrigatoriamente com OXML:<br>**Exemplo:**<br> OXML:_CTEPROC:_CTE:_INFCTE:_INFCTENORM:_INFCARGA:_PROPRED |
-| ZZV_VLRTAG | Valor Tag           | Valor a ser encontrado na TAG informada acima. <br>**Exemplo:** <br>LEITE CRU PRE BENEFICIADO PADRONIZADO |
-| ZZV_RESULT | Resultado           | Resultado que será retornado pelo filtro no JOB (código da TES ou natureza ou centro de custo ou condição de pagamento) |
+| Campo      | Descrição        | <center>Observação</center> |
+| ---------- | ---------------- | --------------------------- |
+| <span style="color: blue">X001EMP</span>    | <span style="color: blue">Empresa</span>          | <span style="color: blue">Código da empresa caso a regra seja exclusiva de determinada empresa</span> |
+| <span style="color: blue">X001FILIAL</span> | <span style="color: blue">Filial</span>           | <span style="color: blue">Código da filial caso a regra seja exclusiva de determinada filial</span> |
+| <span style="color: red">X001TIPDOC</span> | <span style="color: red">Tipo Docto.</span>      | <span style="color: red">São os tipos de documentos possíveis de automatização: CTE Venda, NF-e de Compras, CTE de Compras, Devolução de Venda e NFS-e</span> |
+| <span style="color: red">X001PROCES</span> | <span style="color: red">Processo</span>         | <span style="color: red">São os atributos que serão encontrados de forma automática para cada processo de acordo com as regras: Condição de pagamento, TES, Centro de custo, Natureza e Produto.</span> |
+| <span style="color: blue">X001PRODUT</span> | <span style="color: blue">Cod. Produto</span>    | <span style="color: blue">Regra deve seja exclusiva para determinado produto (B1_COD)</span> |
+| <span style="color: blue">X001GRPPRO</span> | <span style="color: blue">Grupo Produto</span>    | <span style="color: blue">Regra deve seja exclusiva para determinado grupo de produto (B1_GRUPO</span>) |
+| <span style="color: blue">X001TRBPRO</span> | <span style="color: blue">Grp. Tr. Prod</span>.   | <span style="color: blue">Regra deve seja exclusiva para determinado grupo de tributação do produto (B1_GRTRIB</span>) |
+| <span style="color: blue">X001CLIFOR</span> | <span style="color: blue">Clien. / Fornec</span>. | <span style="color: blue">Regra deve seja exclusiva para determinado cliente/fornecedor (A1_COD/A2_COD</span>) |
+| <span style="color: blue">X001LOJA</span>   | <span style="color: blue">Loja</span>  | <span style="color: blue">Regra deve seja exclusiva para determinada loja do cliente/fornecedor (A1_LOJA/A2_LOJA</span>) |
+| <span style="color: blue">X001TRCLFO</span> | <span style="color: blue">Gr. T. Cli. / For</span>. | <span style="color: blue">Regra deve seja exclusiva para determinado grupo de tributação de cliente/fornecedor (A2_GRPTRIB/A1_GRPTRIB</span>) |
+| <span style="color: blue">X001TPCLFO</span> | <span style="color: blue">Tipo Cli. / For</span>. | <span style="color: blue">Regra deve seja exclusiva para determinado tipo de cliente/fornecedor (F7_TIPOCLI</span>) |
+| <span style="color: blue">X001UF</span>     | <span style="color: blue">UF Clie. For</span>.    | <span style="color: blue">Regra deve seja exclusiva para determinado estado do cliente/fornecedor (A1_EST/A2_EST</span>) |
+| <span style="color: blue">X001CSTICM</span> | <span style="color: blue">CST ICMS</span>         | <span style="color: blue">Regra deve seja exclusiva para determinada CST do ICMS</span> |
+| <span style="color: blue">X001ICMS</span>   | <span style="color: blue">Tem ICMS</span>? | <span style="color: blue">Regra deve seja exclusiva caso exista ICMS no produto/documento</span> |
+| <span style="color: blue">X001CFO</span>    | <span style="color: blue">CFOP</span> | <span style="color: blue">Regra deve seja exclusiva para determinado CFOP</span> |
+| <span style="color: green">**ZZV_RESULT**</span> | <span style="color: green">**Resultado**</span> | <span style="color: green">**Resultado que será retornado pelo filtro (código da TES ou natureza ou centro de custo ou condição de pagamento ou produto)**</span> |
 
 ### Regras Gerais
 
-- Os campos destacados em <div id="red">vermelho</div> são de preenchimento obrigatórios e indicam a filial, tipo de documento e o tipo de informação que será retornado.
+- Os campos destacados em <div id="red">vermelho</div> são de preenchimento obrigatórios e indicam o tipo de documento e o tipo de informação (atributo) que será retornado.
 - Os campos destacados em <div id="blue">azul</div> são utilizados para compor o filtro inteligente em busca da informação a ser retornada. 
-- Caso não deseje que filtre alguns desses campos, basta deixá-los em vazios.
-- Os campos “Dia início emissão” e “Dia fim emissão” se completam, portanto será pesquisado o dia de emissão do documento fiscal que está entre esses dois campos, caso eles estejam preenchidos.
-- Os campos “Tag Xml” e “Valor Tag” se completam, portanto sempre que informar o campo “Tag Xml” deve ser informado no campo “Valor Tag” o que se deseja encontrar na tag do XML informada. Caso não deseje realizar filtro pela tag, basta deixar os dois campos vazios.
-- Os campos destacados em <div id="green">verde</div> contém o valor a ser utilizado quando os filtros corresponderem ao processo (TES, condição de pagamento, natureza ou centro de custo).
+- Caso não deseje que filtre alguns desses campos, basta deixá-los em branco.
+- Os campos com “* - Todos” indicam que eles não serão considerados no filtro.
+- O campo “CFOP” poderá ser utilizado os 3 dígitos finais do CFOP para filtro, exemplo: CFOP = 101 -> Será considerado para os CFOPS 1101 e 2101.
+- Os campos destacados em <div id="green">verde</div> contém o valor a ser utilizado quando os filtros corresponderem ao processo (TES, condição de pagamento, natureza, centro de custo ou produto).
 - O critério de seleção do registro a ser retornado será aquele que atender ao maior número de semelhanças com os campos de filtros.
 - Em caso de empate entre duas ou mais regras, será utilizado a registro mais antigo.
 
 
 ### A Tela de Cadastro
 
-A tela de cadastro das regras de classificação poderá ser acessada no menu do Facile XML-e.
+A tela de cadastro das Regras por Processo poderá ser acessada no menu do Facile XML-e.
 
-<center>![Figura 1: Menu com a opção 'Regras Classificação'](../../assets/regras-classi/menu-c-regras.png "Menu com a opção 'Regras Classificação'")
-<br>*Figura 1: Menu com a opção 'Regras Classificação'*<br></center>
+<center>![Figura 1: Menu com a opção 'Regras por Processo'](../../assets/regras-classi/menu-c-regras.png "Menu com a opção 'Regras por Processo'")
+<br>*Figura 1: Menu com a opção 'Regras por Processo'*<br></center>
+
+**Nome da função de usuário:** PTX0052
 <br>
 
-<center>![Figura 2: Tela de Cadastro de Regras de Classificação](../../assets/regras-classi/cad-regras.png "Tela de Cadastro de Regras de Classificação")
-<br>*Figura 2: Tela de Cadastro de Regras de Classificação*<br></center>
+<center>![Figura 2: Tela de Cadastro de Regras](../../assets/regras-classi/cad-regras.png "Tela de Cadastro de Regras")
+<br>*Figura 2: Tela de Cadastro de Regras*<br></center>
 <br>
 
 <center>![Figura 3: Tela de Cadastro](../../assets/regras-classi/tela-cad.png "Tela de Cadastro")
 <br>*Figura 3: Tela de Cadastro*<br></center>
 <br>
 
-**Campos obrigatórios:** Tipo Doc., Processo e Resultado
+### Sequências utilizadas para obtenção de cada atributo
 
-### Campos e validações
+#### NFSE: Nota Fiscal de Serviço Eletrônica
 
-O Campo “Tag Xml” requer que seja configurado o caminho completo do nodo até a TAG, e deve iniciar com “OXML:” <br>***Exemplo:*** <br>OXML:_NFEPROC:_NFE:_INFNFE:_EMIT:_ENDEREMIT:_UF
+**Natureza (SED)**<br>
+1 – Busca na regra de processos automáticos<br>
+2 – Busca no cadastro do cliente/fornecedor (A1/A2_NATUREZ)
 
-E se faz o obrigatório informar o filtro **“Valor da Tag”**.
-**Importante:** Nas regras cadastradas, os campos em branco, significam que servem para todos, por exemplo: 
+**Condição de Pagamento (SE4)**<br>
+1 – Busca do pedido de compra (C7_COND)<br>
+2 – Busca na regra de processos automáticos
 
-*- “Cód. de Produto” em branco, a regra cadastrada, serve para todos os produtos.*
+**Produto (SB1)**<br>
+1 – Busca da amarração produto x fornecedor Facile (ZZW)<br>
+2 – Busca na regra de processos automáticos
 
-**- A pesquisa do resultado vai verificar a maior quantidade de campos coincidentes com as regras e vai retornar um só resultado.**
+**TES (SF4)**<br>
+1 – Busca na regra de processos automáticos<br>
+2 – Busca da TES inteligente (tipo de operação do parâmetro ZZ_OPERNFS)<br>
+3 – Busca do Pedido de Compra (C7_TES)<br>
+4 – Busca do produto (B1_TE)
 
-**- Dependendo dos conteúdos dos campos, pode não ter nenhum resultado.**
+**Centro de Custo (CTT)**<br>
+1 – Busca do pedido de compra (C7_CC)<br>
+2 – Busca na regra de processos automáticos<br>
+3 – Busca do produto (B1_CC)
+
+<br>
+#### CTEV: CT-e de Venda
+
+**Natureza (SED)**<br>
+1 – Busca na regra de processos automáticos<br>
+2 – Busca no cadastro do cliente/fornecedor (A1/A2_NATUREZ)
+
+**Condição de Pagamento (SE4)**<br>
+1 – Busca do pedido de compra (C7_COND)<br>
+2 – Busca na regra de processos automáticos<br>
+3 – Busca no cadastro do cliente/fornecedor (A1/A2_COND)
+
+**Produto (SB1)**<br>
+1 – Busca do parâmetro ZZ_PRODCTE<br>
+2 – Busca na regra de processos automáticos
+
+**TES (SF4)**<br>
+1 – Busca do parâmetro ZZ_TESCTE<br>
+2 – Busca na regra de processos automáticos<br>
+3 – Busca da TES inteligente (tipo de operação do parâmetro ZZ_OPECTEV)<br>
+4 – Busca do Pedido de Compra (C7_TES)<br>
+5 – Busca do produto (B1_TE)
+
+**Centro de Custo (CTT)**<br>
+1 – Busca do pedido de compra (C7_CC)<br>
+2 – Busca na regra de processos automáticos<br>
+3	– Busca do produto (B1_CC)
+
+<br>
+#### CTEC: CT-e de Compra
+
+**Natureza (SED)**<br>
+1 – Busca na regra de processos automáticos<br>
+2 – Busca da Nota Fiscal de Entrada referenciada (primeira NF do CTE)<br>
+3 – Busca no cadastro do cliente/fornecedor (A1/A2_NATUREZ)
+
+**Condição de Pagamento (SE4)**<br>
+1 – Busca do pedido de compra (C7_COND)<br>
+2 – Busca na regra de processos automáticos<br>
+3 – Busca no cadastro do cliente/fornecedor (A1/A2_COND)
+
+**Produto (SB1)**<br>
+- De acordo com a NF referenciada
+
+**TES (SF4)**<br>
+1 – Busca do parâmetro ZZ_TESCTEC<br>
+2 – Busca na regra de processos automáticos<br>
+3 – Busca da TES inteligente (tipo de operação do parâmetro ZZ_OPECTEV)<br>
+4 – Busca do Pedido de Compra (C7_TES)<br>
+5 – Busca do produto (B1_TE)
+
+**Centro de Custo (CTT)**<br>
+- De acordo com a NF referenciada
+
 
 <div style="text-align: center; font-weight: bold;">-FIM-</div>
