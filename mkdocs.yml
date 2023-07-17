@@ -64,6 +64,7 @@ nav:
       - 08 - Manifestação em lote: 'xmle/manuais/manifestacao-lote.md'
       - 09 - CheckDoc: 'xmle/manuais/checkdoc.md'
       - 10 - Devolução de Venda: 'xmle/manuais/devol-venda.md'
+      - 12 - Atualização de Certificado digital: 'xmle/manuais/att-cd.md'
       - 14 - Configuração do Webservice Checkdoc: 'xmle/manuais/webservice.md'
       - 17 - Regras de Classificação: 'xmle/manuais/regras-classi.md'
   - CIFA:
