@@ -67,6 +67,7 @@ nav:
       - 12 - Atualização de Certificado digital: 'xmle/manuais/att-cd.md'
       - 13 - Entrada em Lote: 'xmle/manuais/entrada-lote.md'
       - 14 - Configuração do Webservice Checkdoc: 'xmle/manuais/webservice.md'
+      - 15 - Gerar Pré-Nota de Entrada com o Checkdoc: 'xmle/manuais/prenota-checkdoc.md'
       - 17 - Regras de Classificação: 'xmle/manuais/regras-classi.md'
   - CIFA:
     - Introdução: 'cifa/index.md'

@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../manual-usuario/">
+        <link rel="prev" href="../webservice/">
       
       
-        <link rel="next" href="../fracionar-itens/">
+        <link rel="next" href="../regras-classi/">
       
       <link rel="icon" href="../../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.0">
     
     
       
-        <title>04 - Importação de XML manual - Facile Docs</title>
+        <title>15 - Gerar Pré-Nota de Entrada com o Checkdoc - Facile Docs</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#importacao-de-xml-manual" class="md-skip">
+        <a href="#checkdoc-gerar-pre-nota-de-entrada" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              04 - Importação de XML manual
+              15 - Gerar Pré-Nota de Entrada com o Checkdoc
             
           </span>
         </div>
@@ -574,52 +574,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          04 - Importação de XML manual
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../importacao-manual/" class="md-nav__link">
         04 - Importação de XML manual
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#procedimento-para-importacao-de-xml-direto-do-pc" class="md-nav__link">
-    Procedimento para Importação de XML direto do PC
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -755,11 +714,73 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../prenota-checkdoc/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          15 - Gerar Pré-Nota de Entrada com o Checkdoc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         15 - Gerar Pré-Nota de Entrada com o Checkdoc
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-dos-servicos-resultado-esperado" class="md-nav__link">
+    Resumo dos serviços / Resultado esperado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detalhamento-dos-servicos-observacoes" class="md-nav__link">
+    Detalhamento dos Serviços / Observações
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacoes-tecnicas-relevantes" class="md-nav__link">
+    Informações técnicas / Relevantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-a-passo" class="md-nav__link">
+    Passo a passo
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -864,8 +885,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#procedimento-para-importacao-de-xml-direto-do-pc" class="md-nav__link">
-    Procedimento para Importação de XML direto do PC
+  <a href="#resumo-dos-servicos-resultado-esperado" class="md-nav__link">
+    Resumo dos serviços / Resultado esperado
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detalhamento-dos-servicos-observacoes" class="md-nav__link">
+    Detalhamento dos Serviços / Observações
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#informacoes-tecnicas-relevantes" class="md-nav__link">
+    Informações técnicas / Relevantes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-a-passo" class="md-nav__link">
+    Passo a passo
   </a>
   
 </li>
@@ -891,27 +933,30 @@
     }
 </style>
 
-<h1 id="importacao-de-xml-manual">Importação de XML manual</h1>
-<h2 id="procedimento-para-importacao-de-xml-direto-do-pc">Procedimento para Importação de XML direto do PC</h2>
-<p>Incluir nova opção no Menu (U_PTX0018) </p>
-<p><center><img alt="Figura 1: Configuração do Menu" src="../../../assets/importacao-manual/config-menu.png" title="Configuração do Menu" />
-<br><em>Figura 1: Configuração do Menu</em><br></center>
-<br></p>
-<p><center><img alt="Figura 2: Menu com a função U_PTX0018" src="../../../assets/importacao-manual/menu-compras.png" title="Menu com a função U_PTX0018" />
-<br><em>Figura 2: Menu com a função U_PTX0018</em><br></center>
-<br></p>
-<p>Entrar na rotina e clicar em "Buscar XML no Computador"</p>
-<p><center><img alt="Figura 3: Buscar XML no Computador" src="../../../assets/importacao-manual/busca-xml.png" title="Buscar XML no Computador" />
-<br><em>Figura 3: Buscar XML no Computador</em><br></center>
-<br></p>
-<p>Seleciona o XML no Computador </p>
-<p><center><img alt="Figura 4: Menu principal" src="../../../assets/importacao-manual/selec-xml.png" title="Menu principal" />
-<br><em>Figura 4: Menu principal</em><br></center>
-<br></p>
-<p>A partir desse momento a entrada é feita de forma normal </p>
-<p><center><img alt="Figura 5: Menu principal" src="../../../assets/importacao-manual/entrada-final.png" title="Menu principal" />
-<br><em>Figura 5: Menu principal</em><br></center></p>
-<div style="text-align: center; font-weight: bold;">-FIM-</div>
+<h1 id="checkdoc-gerar-pre-nota-de-entrada">Checkdoc – Gerar Pré Nota de Entrada</h1>
+<h2 id="resumo-dos-servicos-resultado-esperado">Resumo dos serviços / Resultado esperado</h2>
+<ol>
+<li>Gerar pré-nota automaticamente se não houver divergência na avaliação do Checkdoc</li>
+<li>Criar parâmetro para ativar/desativar a funcionalidade</li>
+</ol>
+<h2 id="detalhamento-dos-servicos-observacoes">Detalhamento dos Serviços / Observações</h2>
+<ol>
+<li>Atividades incluídas<ul>
+<li>Automação e agilidade na inclusão das pré-notas</li>
+</ul>
+</li>
+</ol>
+<h2 id="informacoes-tecnicas-relevantes">Informações técnicas / Relevantes</h2>
+<ol>
+<li>Parâmetros envolvidos na adequação:<ul>
+<li><strong>ZZ_CHKNOTA:</strong> Parâmetro lógico informando se a geração automática da pré-nota pelo CheckDoc está ativa.
+    <span style="color: red">Exemplo: .T.</span></li>
+</ul>
+</li>
+</ol>
+<h2 id="passo-a-passo">Passo a passo</h2>
+<p>A aplicação do patch com a melhoria e a criação do parâmetro com o valor “.T.” são suficientes para ativar a nova funcionalidade.</p>
+<p>Sempre que o CheckDoc verificar o XML e não encontrar divergências, será gerado a pré-nota automaticamente via JOB.</p>
 
 
 
