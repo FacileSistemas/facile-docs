@@ -46,21 +46,21 @@ Utilizamos esse ponto de entrada para realizar a checagem da TES e do pedido de 
 Sugerimos incluir o código abaixo no final do fonte, logo antes do RETURN (caso tenha o P.E. já aplicado no ERP).
 
 ```c
-If SubStr( Alltrim( FunName() ), 1, 3) == 'PTX'   
-    MsgRun("Checando impostos, aguarde...","Processando",{|| U_PTX0015(.T.) })
+If FwIsInCallStack("U_PTX0001")
+    FWMsgRun(, {|| U_PTX0015(.T.) }, "Processando!", "Calculando impostos, aguarde...")			
 EndIf
 ```
 
-Segue exemplo do ponto de entrada completo que poderá ser utilizado (caso **NÃO ** tenha o P.E. já aplicado ERP).
+Segue exemplo do ponto de entrada completo que poderá ser utilizado (caso **NÃO ** tenha o P.E. já aplicado no ERP).
 
 ```c
 User Function MT103PN()
-
-    If SubStr(Alltrim(FunName()),1,3) == 'PTX'
-        MsgRun("Checando impostos, aguarde..."," ",{|| U_PTX0015(.T.) })
-    EndIf
-
-Return .T.
+	
+	If FwIsInCallStack("U_PTX0001")
+		FWMsgRun(, {|| U_PTX0015(.T.) }, "Processando!", "Calculando impostos, aguarde...")			
+	EndIf
+	
+Return .T.
 ```
 
 ## MT140PC

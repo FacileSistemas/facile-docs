@@ -960,18 +960,18 @@ Return lValido
 <p><mark>Uso necessário para o correto funcionamento da ferramenta</mark></p>
 <p>Utilizamos esse ponto de entrada para realizar a checagem da TES e do pedido de compra nos itens do documento de entrada.</p>
 <p>Sugerimos incluir o código abaixo no final do fonte, logo antes do RETURN (caso tenha o P.E. já aplicado no ERP).</p>
-<pre><code class="language-c">If SubStr( Alltrim( FunName() ), 1, 3) == 'PTX'   
-    MsgRun(&quot;Checando impostos, aguarde...&quot;,&quot;Processando&quot;,{|| U_PTX0015(.T.) })
+<pre><code class="language-c">If FwIsInCallStack(&quot;U_PTX0001&quot;)
+    FWMsgRun(, {|| U_PTX0015(.T.) }, &quot;Processando!&quot;, &quot;Calculando impostos, aguarde...&quot;)         
 EndIf
 </code></pre>
-<p>Segue exemplo do ponto de entrada completo que poderá ser utilizado (caso <strong>NÃO </strong> tenha o P.E. já aplicado ERP).</p>
+<p>Segue exemplo do ponto de entrada completo que poderá ser utilizado (caso <strong>NÃO </strong> tenha o P.E. já aplicado no ERP).</p>
 <pre><code class="language-c">User Function MT103PN()
 
-    If SubStr(Alltrim(FunName()),1,3) == 'PTX'
-        MsgRun(&quot;Checando impostos, aguarde...&quot;,&quot; &quot;,{|| U_PTX0015(.T.) })
-    EndIf
+    If FwIsInCallStack(&quot;U_PTX0001&quot;)
+        FWMsgRun(, {|| U_PTX0015(.T.) }, &quot;Processando!&quot;, &quot;Calculando impostos, aguarde...&quot;)         
+    EndIf
 
-Return .T.
+Return .T.
 </code></pre>
 <h2 id="mt140pc">MT140PC</h2>
 <p><mark>Esse ponto de entrada deverá ser utilizado exclusivamente na situação em que a empresa utilize o parâmetro <strong>MV_PCNFE </strong> ativo.</mark></p>
