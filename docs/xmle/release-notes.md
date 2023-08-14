@@ -2,6 +2,27 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5051
+
+14/08/2023
+
+- BUG: Tratativa no relatório de entradas para a NFS-e
+- MELHORIA: Incluído download da NFS-e Nacional via webservice
+- BUG: Ajuste automático do tamanho do campo do Código do Produto do Fornecedor
+
+### Versão 4.33.5050
+
+27/07/2023
+
+- MELHORIA: Criado ponto de entrada PTXF1SER para manipular a série dos documentos
+- MELHORIA: Inclusão de novos campos na entrada da NFS-e
+
+### Versão 4.33.5049
+
+21/07/2023
+
+- BUG: Corrigido importação de CTE de compra com amarração em NF de importação (formulário próprio)
+
 ### Versão 4.33.5048
 
 14/07/2023
