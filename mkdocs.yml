@@ -69,7 +69,7 @@ nav:
       - 14 - Configuração do Webservice Checkdoc: 'xmle/manuais/webservice.md'
       - 15 - Gerar Pré-Nota de Entrada com o Checkdoc: 'xmle/manuais/prenota-checkdoc.md'
       - 16 - Importar XML por e-mail: 'xmle/manuais/xml-email.md'
-      - 17 - Regras de Classificação: 'xmle/manuais/regras-classi.md'
+      - 17 - Regras por Processo: 'xmle/manuais/regras-classi.md'
   - CIFA:
     - Introdução: 'cifa/index.md'
 

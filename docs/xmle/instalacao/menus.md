@@ -36,7 +36,7 @@ Clique no botão **“Novo Item”** e preencha as Descrições: **“Central XM
 
 Vamos para o próximo item de menu:
 
-Clique no botão “Novo Item” e preencha as Descrições: **“XML-e a Vista”**, Programa: **“PTX0017”** e configure conforme a imagem abaixo, em seguida clique em **“OK”** para salvar:
+Clique no botão **“Novo Item”** e preencha as Descrições: **“XML-e a Vista”**, Programa: **“PTX0017”** e configure conforme a imagem abaixo, em seguida clique em **“OK”** para salvar:
 
 ![Menu](../../assets/xmle_menu5.png "Menu")
 
@@ -44,9 +44,17 @@ Clique no botão “Novo Item” e preencha as Descrições: **“XML-e a Vista�
 
 Vamos para o próximo item de menu:
 
-Clique no botão **“Novo Item”** e preencha as Descrições: **“Prod. X Fornecedor”**, Programa: **“PTX0030”** e configure conforme a imagem abaixo, em seguida clique em **“OK” **para salvar:
+Clique no botão **“Novo Item”** e preencha as Descrições: **“Prod. X Fornecedor”**, Programa: **“PTX0030”** e configure conforme a imagem abaixo, em seguida clique em **“OK”** para salvar:
 
 ![Menu](../../assets/xmle_menu6.png "Menu")
+
+## PTX0052 - Regras por Processo
+
+Vamos para o próximo item de menu:
+
+Clique no botão **“Novo Item”** e preencha as Descrições: **“Regras por Processo”**, Programa: **PTX0052** e configure conforme a imagem abaixo, em seguida clique em **“OK”** para salvar:
+
+![Menu](../../assets/xmle_menu8.png "Menu")
 
 ## Finalizando o Menu
 

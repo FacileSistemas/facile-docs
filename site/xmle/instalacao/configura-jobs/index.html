@@ -601,6 +601,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ptxj008-download-do-xml-da-nfs-e" class="md-nav__link">
+    PTXJ008 - Download do XML da NFS-e
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -902,7 +909,7 @@
   
     <li class="md-nav__item">
       <a href="../../manuais/regras-classi/" class="md-nav__link">
-        17 - Regras de Classificação
+        17 - Regras por Processo
       </a>
     </li>
   
@@ -1075,6 +1082,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ptxj008-download-do-xml-da-nfs-e" class="md-nav__link">
+    PTXJ008 - Download do XML da NFS-e
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1215,6 +1229,7 @@ REFRESHRATE=4000
 <p>REFRESHRATE    =&gt; Intervalo de tempo (em segundos) para que execução do JOB</p>
 </blockquote>
 <p>Basta salvar o appserver.ini com essas alterações.</p>
+<p><strong><p style="background-color: yellow;">Atenção:</strong> Esses quatro Schedules a seguir só deverão ser utilizados se seu servidor Protheus estiver num servidor na Nuvem TOTVS T-Cloud, do contrário, <strong><span style="color: red;">NÃO</span></strong> utilizar o procedimento abaixo.</p></p>
 <h2 id="via-schedule-do-erp">Via Schedule do ERP</h2>
 <p>Acesse o ambiente Configurador (SIGACFG)</p>
 <p><em>Ambiente &gt; Schedule &gt; Schedule</em></p>
@@ -1255,6 +1270,19 @@ REFRESHRATE=4000
 <p><u>O campo "Empresa/Filial" ficará: 01/0101;</u></p>
 <p>Realize o cadastro do terceiro JOB seguindo o exemplo abaixo:</p>
 <p><img alt="Schedule" src="../../../assets/xmle_schedule3.png" title="Schedule" /></p>
+<p><em>Lembre-se de alterar o "Ambiente" e "Empresa/Filial" conforme o seu cenário.</em></p>
+<p>Antes de confimar o cadastro, vamos configurar a recorrência do JOB (clicando no botão parecido com: 🔄️).</p>
+<p>Na tela de recorrência:</p>
+<p><img alt="Schedule" src="../../../assets/xmle_schedule2.png" title="Schedule" /></p>
+<p><strong>Obs.:</strong> O SEFAZ por padrão bloqueio consultas repetidas em menos de 1 hora de intervalo.</p>
+<p>Agora sim podemos confirmar a tela de recorrência e a tela de cadastro do agendamento ✔️.</p>
+<h3 id="ptxj008-download-do-xml-da-nfs-e">PTXJ008 - Download do XML da NFS-e</h3>
+<p>Deve ser configurado um agendamento do PTXJ008 para cada grupo de empresas e selecionar apenas a primeira filial.</p>
+<p><strong>Exemplo:</strong></p>
+<p><u>Empresa 01 e possui as filiais 0101, 0102 e 0103</u></p>
+<p><u>O campo "Empresa/Filial" ficará: 01/0101;</u></p>
+<p>Realize o cadastro do segundo JOB seguindo o exemplo abaixo:</p>
+<p><img alt="Schedule" src="../../../assets/xmle_schedule6.png" title="Schedule" /></p>
 <p><em>Lembre-se de alterar o "Ambiente" e "Empresa/Filial" conforme o seu cenário.</em></p>
 <p>Antes de confimar o cadastro, vamos configurar a recorrência do JOB (clicando no botão parecido com: 🔄️).</p>
 <p>Na tela de recorrência:</p>

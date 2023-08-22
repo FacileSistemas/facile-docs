@@ -112,6 +112,8 @@ REFRESHRATE=4000
 
 Basta salvar o appserver.ini com essas alterações.
 
+**<p style="background-color: yellow;">Atenção:** Esses quatro Schedules a seguir só deverão ser utilizados se seu servidor Protheus estiver num servidor na Nuvem TOTVS T-Cloud, do contrário, **<span style="color: red;">NÃO</span>** utilizar o procedimento abaixo.</p>
+
 ## Via Schedule do ERP
 
 Acesse o ambiente Configurador (SIGACFG)
@@ -191,6 +193,32 @@ Deve ser configurado um agendamento do PTXJ003 para cada grupo de empresas e sel
 Realize o cadastro do terceiro JOB seguindo o exemplo abaixo:
 
 ![Schedule](../../assets/xmle_schedule3.png "Schedule")
+
+*Lembre-se de alterar o "Ambiente" e "Empresa/Filial" conforme o seu cenário.*
+
+Antes de confimar o cadastro, vamos configurar a recorrência do JOB (clicando no botão parecido com: 🔄️).
+
+Na tela de recorrência:
+
+![Schedule](../../assets/xmle_schedule2.png "Schedule")
+
+**Obs.:** O SEFAZ por padrão bloqueio consultas repetidas em menos de 1 hora de intervalo.
+
+Agora sim podemos confirmar a tela de recorrência e a tela de cadastro do agendamento ✔️.
+
+### PTXJ008 - Download do XML da NFS-e
+
+Deve ser configurado um agendamento do PTXJ008 para cada grupo de empresas e selecionar apenas a primeira filial.
+
+**Exemplo:**
+
+<u>Empresa 01 e possui as filiais 0101, 0102 e 0103</u>
+
+<u>O campo "Empresa/Filial" ficará: 01/0101;</u>
+
+Realize o cadastro do segundo JOB seguindo o exemplo abaixo:
+
+![Schedule](../../assets/xmle_schedule6.png "Schedule")
 
 *Lembre-se de alterar o "Ambiente" e "Empresa/Filial" conforme o seu cenário.*
 

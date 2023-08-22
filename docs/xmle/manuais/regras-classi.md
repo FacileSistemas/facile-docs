@@ -17,7 +17,7 @@
     }
 </style>
 
-# Regras de Classificação
+# Regras por Processo
 
 ## Introdução
 
