@@ -30,7 +30,7 @@ Entre na pasta criada e altere o arquivo appserver.ini configurando RPO exclusiv
 ;;Job Responsável por baixar as NF-e no Sefaz
 [PTXJ001]
 MAIN=U_PTXJ001
-ENVIRONMENT=PRODUCAO
+ENVIRONMENT=FACILE
 nparms=2
 Parm1=01
 Parm2=01
@@ -38,7 +38,7 @@ Parm2=01
 ;;Job responsável por realizar o download do CT-e no Sefaz
 [PTXJ003]
 MAIN=U_PTXJ003
-ENVIRONMENT=PRODUCAO
+ENVIRONMENT=FACILE
 nparms=2
 Parm1=01
 Parm2=01
@@ -85,7 +85,7 @@ Entre na pasta criada e altere o arquivo appserver.ini configurando RPO exclusiv
 ;;Job Responsável por revalidar os documentos no Sefaz
 [PTXJ004]
 MAIN=U_PTXJ004
-ENVIRONMENT=PRODUCAO
+ENVIRONMENT=FACILE
 nparms=2
 Parm1=01
 Parm2=0101
