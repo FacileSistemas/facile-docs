@@ -73,11 +73,11 @@ Utilizamos o ponto de entrada para informar ao sistema que naquele momento da in
 
 Segue exemplo do ponto de entrada que poderá ser utilizado:
 
-```c
+```
 User Function MT140PC()
 
     //|Apenas na rotina Facile XML-e |
-    If !Alltrim( FunName() ) $ "PTX0007/PTX0018/PTX0008/PTX0001"
+    If !FwIsInCallStack("U_PTX0001")
         Return Nil
     EndIf
 

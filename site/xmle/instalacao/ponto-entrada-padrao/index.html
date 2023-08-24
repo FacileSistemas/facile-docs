@@ -319,6 +319,8 @@
         
           
         
+          
+        
       
       
         
@@ -816,6 +818,58 @@
 
             
           
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          Anexos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Anexos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../anexos/email-fornecedores/" class="md-nav__link">
+        01 - Modelo de e-mail para fornecedores
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -978,10 +1032,10 @@ Return .T.
 <p>Utilizamos o ponto de entrada para informar ao sistema que naquele momento da inclusão da Pré-Nota pela ferramenta não será necessário realizar a validação do pedido de compra.</p>
 <p><strong>Obs.:</strong> A utilização desse ponto de entrada não atrapalha no processo padrão adotado pelo MV_PCNFE.</p>
 <p>Segue exemplo do ponto de entrada que poderá ser utilizado:</p>
-<pre><code class="language-c">User Function MT140PC()
+<pre><code>User Function MT140PC()
 
     //|Apenas na rotina Facile XML-e |
-    If !Alltrim( FunName() ) $ &quot;PTX0007/PTX0018/PTX0008/PTX0001&quot;
+    If !FwIsInCallStack(&quot;U_PTX0001&quot;)
         Return Nil
     EndIf
 
