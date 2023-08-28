@@ -160,3 +160,5 @@ Segue documentação do dicionário de dados criado pela ferramenta.
 | ZZ_VLDPIS      | L        | Ativa validação de PIS na classificação                                           |
 | ZZ_VLDST       | L        | Ativa validação de ICMS ST na classificação                                       |
 | ZZ_XMLAUTO     | L        | Informa se irá baixar o XML automaticamente via JOB                               |
+| ZZ_DCTECP      | N        | Até quantos dias para trás deve buscar os CT-e de Compra                          |
+| ZZ_DCTEVD      | N        | Até quantos dias para trás deve buscar os CT-e de Venda                           |
