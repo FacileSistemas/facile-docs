@@ -83,6 +83,7 @@ Segue documentação do dicionário de dados criado pela ferramenta.
 | ZZZ_YHORA  | C    | 5    | 0    | Hora         | Hora do download XML         |
 | ZZZ_ECKDOC | C    | 1    | 0    | Email CkDoc  | Email Enviado pelo CKDoc     |
 | ZZZ_PDF    | M    | 10   | 0    | Doc. PDF     | Documento PDF                |
+| ZZZ_PROVID | C    | 50   | 0    | Provider     | Provedor de XML              |
 
 ### 
 
