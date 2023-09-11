@@ -1709,6 +1709,36 @@
 <td>Tipo de tratativa para transmissao da confirmacao da operacao</td>
 </tr>
 <tr>
+<td>ZZ_CTECAUT</td>
+<td>L</td>
+<td>Ativa a importação automática do CTE de Compra</td>
+</tr>
+<tr>
+<td>ZZ_CTECSPE</td>
+<td>L</td>
+<td>Especie do CTE de compra na entrada. Caso não exista, é definido como CTE.</td>
+</tr>
+<tr>
+<td>ZZ_CTEVAUT</td>
+<td>L</td>
+<td>Ativa a importação automática do CTE de Venda</td>
+</tr>
+<tr>
+<td>ZZ_CTEVSPE</td>
+<td>L</td>
+<td>Especie do CTE de venda na entrada. Caso não exista, é definido como CTE.</td>
+</tr>
+<tr>
+<td>ZZ_DCTECP</td>
+<td>N</td>
+<td>Até quantos dias para trás deve buscar os CT-e de Compra</td>
+</tr>
+<tr>
+<td>ZZ_DCTEVD</td>
+<td>N</td>
+<td>Até quantos dias para trás deve buscar os CT-e de Venda</td>
+</tr>
+<tr>
 <td>ZZ_DEBUG</td>
 <td>L</td>
 <td>Ativa o modo Debug no console do appserver</td>
@@ -1729,9 +1759,44 @@
 <td>Ativa busca de XML no e-mail</td>
 </tr>
 <tr>
+<td>ZZ_MUDASE3</td>
+<td>L</td>
+<td>Possibilita o usuário de alterar a série da NFS-e no momento do lançamento</td>
+</tr>
+<tr>
+<td>ZZ_NFSEAUT</td>
+<td>L</td>
+<td>Ativa a importação automática da NFS-e</td>
+</tr>
+<tr>
+<td>ZZ_NFSESER</td>
+<td>C</td>
+<td>Altera a série padrão das NFS-e</td>
+</tr>
+<tr>
+<td>ZZ_NFSESPE</td>
+<td>C</td>
+<td>Altera a espécie padrão das NFS-e</td>
+</tr>
+<tr>
+<td>ZZ_OPERNFS</td>
+<td>C</td>
+<td>Tipo de operação para busca de TES Inteligente na NFSe</td>
+</tr>
+<tr>
 <td>ZZ_OPERCOM</td>
 <td>C</td>
 <td>Tipo de operação para entrada normal</td>
+</tr>
+<tr>
+<td>ZZ_OPECTEC</td>
+<td>C</td>
+<td>Tipo de operação para busca de TES Inteligente no CTE</td>
+</tr>
+<tr>
+<td>ZZ_OPECTEV</td>
+<td>C</td>
+<td>Tipo de operação para busca de TES Inteligente no CTE</td>
 </tr>
 <tr>
 <td>ZZ_OPERTRA</td>
@@ -1777,6 +1842,11 @@
 <td>ZZ_TESCTE</td>
 <td>C</td>
 <td>TES padrão para entrada de CT-e</td>
+</tr>
+<tr>
+<td>ZZ_TESCTEC</td>
+<td>C</td>
+<td>TES padrão para entrada de CT-e de Compra</td>
 </tr>
 <tr>
 <td>ZZ_TIMEUPD</td>
@@ -1837,16 +1907,6 @@
 <td>ZZ_XMLAUTO</td>
 <td>L</td>
 <td>Informa se irá baixar o XML automaticamente via JOB</td>
-</tr>
-<tr>
-<td>ZZ_DCTECP</td>
-<td>N</td>
-<td>Até quantos dias para trás deve buscar os CT-e de Compra</td>
-</tr>
-<tr>
-<td>ZZ_DCTEVD</td>
-<td>N</td>
-<td>Até quantos dias para trás deve buscar os CT-e de Venda</td>
 </tr>
 </tbody>
 </table>

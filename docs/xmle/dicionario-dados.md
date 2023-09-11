@@ -135,11 +135,24 @@ Segue documentação do dicionário de dados criado pela ferramenta.
 | ZZ_CLASSIF     | L        | Ativa a abertura da classificação do documento automaticamente ao gerar pré-nota? |
 | ZZ_CODEAUT     | L        | Ativa autenticação na Facile                                                      |
 | ZZ_CONFAUT     | C        | Tipo de tratativa para transmissao da confirmacao da operacao                     |
+| ZZ_CTECAUT     | L        | Ativa a importação automática do CTE de Compra                                    |
+| ZZ_CTECSPE     | L        | Especie do CTE de compra na entrada. Caso não exista, é definido como CTE.        |
+| ZZ_CTEVAUT     | L        | Ativa a importação automática do CTE de Venda                                     |
+| ZZ_CTEVSPE     | L        | Especie do CTE de venda na entrada. Caso não exista, é definido como CTE.         |
+| ZZ_DCTECP      | N        | Até quantos dias para trás deve buscar os CT-e de Compra                          |
+| ZZ_DCTEVD      | N        | Até quantos dias para trás deve buscar os CT-e de Venda                           |
 | ZZ_DEBUG       | L        | Ativa o modo Debug no console do appserver                                        |
 | ZZ_DELMAIL     | L        | Deleta o e-mail da caixa de correio apos o download do XML?                       |
 | ZZ_DESTFIS     | C        | Destinatarios para workflow de  mudanças de status das NFe                        |
 | ZZ_MAILXML     | L        | Ativa busca de XML no e-mail                                                      |
+| ZZ_MUDASE3     | L        | Possibilita o usuário de alterar a série da NFS-e no momento do lançamento        |
+| ZZ_NFSEAUT     | L        | Ativa a importação automática da NFS-e                                            |
+| ZZ_NFSESER     | C        | Altera a série padrão das NFS-e                                                   |
+| ZZ_NFSESPE     | C        | Altera a espécie padrão das NFS-e                                                 |
+| ZZ_OPERNFS     | C        | Tipo de operação para busca de TES Inteligente na NFSe                            |
 | ZZ_OPERCOM     | C        | Tipo de operação para entrada normal                                              |
+| ZZ_OPECTEC     | C        | Tipo de operação para busca de TES Inteligente no CTE                             |
+| ZZ_OPECTEV     | C        | Tipo de operação para busca de TES Inteligente no CTE                             |
 | ZZ_OPERTRA     | C        | Tipo de operação para transferências                                              |
 | ZZ_PCOBRIG     | L        | Obrigatório vincular pedido de compra em todos os itens                           |
 | ZZ_POPCNT      | C        | Conta de e-mail para conexão POP                                                  |
@@ -149,6 +162,7 @@ Segue documentação do dicionário de dados criado pela ferramenta.
 | ZZ_PRODCTE     | C        | Produto padrão para entrada de CT-e                                               |
 | ZZ_PSWENTR     | C        | Senha que autoriza entrada com divergência de impostos                            |
 | ZZ_TESCTE      | C        | TES padrão para entrada de CT-e                                                   |
+| ZZ_TESCTEC     | C        | TES padrão para entrada de CT-e de Compra                                         |
 | ZZ_TIMEUPD     | N        | Tempo de refresh da tela de gestão à vista (minutos)                              |
 | ZZ_UPDEAN      | L        | Atualiza o EAN no campo B1_CODBAR de acordo com o XML                             |
 | ZZ_VERSAOM     | C        | Versão do webservice Sefaz                                                        |
@@ -161,5 +175,4 @@ Segue documentação do dicionário de dados criado pela ferramenta.
 | ZZ_VLDPIS      | L        | Ativa validação de PIS na classificação                                           |
 | ZZ_VLDST       | L        | Ativa validação de ICMS ST na classificação                                       |
 | ZZ_XMLAUTO     | L        | Informa se irá baixar o XML automaticamente via JOB                               |
-| ZZ_DCTECP      | N        | Até quantos dias para trás deve buscar os CT-e de Compra                          |
-| ZZ_DCTEVD      | N        | Até quantos dias para trás deve buscar os CT-e de Venda                           |
+
