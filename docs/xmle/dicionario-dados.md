@@ -164,6 +164,7 @@ Segue documentação do dicionário de dados criado pela ferramenta.
 | ZZ_TESCTE      | C        | TES padrão para entrada de CT-e                                                   |
 | ZZ_TESCTEC     | C        | TES padrão para entrada de CT-e de Compra                                         |
 | ZZ_TIMEUPD     | N        | Tempo de refresh da tela de gestão à vista (minutos)                              |
+| ZZ_ULTNSU      | C        | Ultimo NSU de busca para NFe                                                      |
 | ZZ_UPDEAN      | L        | Atualiza o EAN no campo B1_CODBAR de acordo com o XML                             |
 | ZZ_VERSAOM     | C        | Versão do webservice Sefaz                                                        |
 | ZZ_VLDCEST     | L        | Ativa a validacao do CEST                                                         |
