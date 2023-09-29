@@ -2,6 +2,22 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5053
+
+18/09/2023
+
+- MELHORIA: Alterado para não precisar do Parm2 para realizar a autenticação dos JOBs
+- BUG: Removido a busca da logo da empresa na impressão do DACTE
+- MELHORIA: Inclusão de entrada de CT-e de compras referenciado a beneficiamento e devolução
+
+
+### Versão 4.33.5052
+
+28/08/2023
+
+- MELHORIA: Criado dois parâmetros para alterar a data de busca dos CTEs de compra (ZZ_DCTECP) e dos CTEs de venda (ZZ_DCTEVD) na rotina de classificação automática
+- BUG: Removido as NFS-e do primeiro painel do gestão a vista, será desenvolvido um painel própria para a NFS-e
+
 ### Versão 4.33.5051
 
 14/08/2023
