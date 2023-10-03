@@ -144,6 +144,7 @@ Segue documentação do dicionário de dados criado pela ferramenta.
 | ZZ_DEBUG       | L        | Ativa o modo Debug no console do appserver                                        |
 | ZZ_DELMAIL     | L        | Deleta o e-mail da caixa de correio apos o download do XML?                       |
 | ZZ_DESTFIS     | C        | Destinatarios para workflow de  mudanças de status das NFe                        |
+| ZZ_GRPBLOQ     | C        | Id dos Grupos de Usuários autorizados a bloquear/desbloquear documentos, separados por barra. Ex.: 000001/000010/000025 |
 | ZZ_MAILXML     | L        | Ativa busca de XML no e-mail                                                      |
 | ZZ_MUDASE3     | L        | Possibilita o usuário de alterar a série da NFS-e no momento do lançamento        |
 | ZZ_NFSEAUT     | L        | Ativa a importação automática da NFS-e                                            |
