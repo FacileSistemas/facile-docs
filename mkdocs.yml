@@ -70,6 +70,7 @@ nav:
       - 15 - Gerar Pré-Nota de Entrada com o Checkdoc: 'xmle/manuais/prenota-checkdoc.md'
       - 16 - Importar XML por e-mail: 'xmle/manuais/xml-email.md'
       - 17 - Regras por Processo: 'xmle/manuais/regras-classi.md'
+      - 18 - Segunda Unidade de Medida da Amarração Produto x Fornecedor: 'xmle/manuais/produtoxforn.md'
     - Anexos:
       - 01 - Modelo de e-mail para fornecedores: 'xmle/anexos/email-fornecedores.md'
   - CIFA:
