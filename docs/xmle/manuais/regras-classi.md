@@ -50,6 +50,12 @@ JOBS=PTXJ007
 - CTEV – CTE de Venda
     - Ativado através do parâmetro: ZZ_CTEVAUT = .T. (deverá ser criado com tipo lógico)
 
+- CTEC – CTE de Compra
+    - Ativado através do parâmetro: ZZ_CTECAUT = .T. (deverá ser criado com tipo lógico)
+
+- NFSE – Nota Fiscal de Serviço
+    - Ativado através do parâmetro: ZZ_NFSEAUT = .T. (deverá ser criado com tipo lógico)
+
 ## Tabela de Regras por Processo
 
 Segue abaixo os campos e detalhes sobre o preenchimento:
