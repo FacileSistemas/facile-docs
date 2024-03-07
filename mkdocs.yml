@@ -46,7 +46,9 @@ nav:
   - Home: 'index.md'
   - Facile XML-e: 
     - Introdução: 'xmle/index.md'
-    - Notas de Versão: 'xmle/release-notes.md'
+    - Notas de Versão:
+      - Notas: 'xmle/release-notes.md'
+      - Prefeituras Homologadas: 'xmle/prefeituras.md'
     - Download do Patch: 'xmle/download-patch.md'
     - Dicionário de Dados: 'xmle/dicionario-dados.md'
     - Instalação:
@@ -73,6 +75,11 @@ nav:
       - 18 - Segunda Unidade de Medida da Amarração Produto x Fornecedor: 'xmle/manuais/produtoxforn.md'
     - Anexos:
       - 01 - Modelo de e-mail para fornecedores: 'xmle/anexos/email-fornecedores.md'
+      - Videos:
+        - 01 - Apresentação Ferramenta FACILE XML-e: 'https://www.youtube.com/watch?v=cJyqAefUalU&t=16s'
+        - 02 - Importação de XML no ERP Protheus. Conheço o novo FACILE XML-e: 'https://www.youtube.com/watch?v=LcOI3j66tRc'
+        - 03 - Manual Central FACILE XML-e - 01 Ajustes e inclusão Vários Itens em Um: 'https://www.youtube.com/watch?v=TTBkagNY2KI'
+        - 04 - Importador XML no Totvs Protheus - Como funciona e Qual usar?: 'https://www.youtube.com/watch?v=mG0ZtHArLYo'
   - CIFA:
     - Introdução: 'cifa/index.md'
   - Facin Sales: https://www.facilesistemas.com.br/facin/

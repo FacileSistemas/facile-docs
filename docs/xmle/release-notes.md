@@ -2,6 +2,52 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5059
+
+27/02/2024
+
+- BUG: Correção de variável na entrada em lote
+- MELHORIA: Informação do vencimento da primeira parcela na tela de entrada de CTE de Compras
+- BUG: Correção para não apresentar a tela de manifestação quando configurado para manifestar a confirmação automaticamente
+
+### Versão 4.33.5058
+
+12/01/2024
+
+- MELHORIA: Incluido no ponto de entrada SAVEZZZ a informação se o documento já existia na ZZZ
+- MELHORIA: Relatório de status dos documentos
+- MELHORIA: Possibilidade de desativar a verificação do IPI quando a CST for 99
+
+### Versão 4.33.5057
+
+04/12/2023
+
+- BUG: Ajuste para impressão da Danfe quando não há a chave da NFE da referenciada
+- MELHORIA: Criação de nova legenda para pré-nota bloqueada para conferência fisica
+- MELHORIA: Fracionamento automático de acordo com os lotes do produto
+- BUG: Corrigido vinculo com pré-nota de transferência
+
+### Versão 4.33.5056
+
+09/11/2023
+
+- BUG: Correção para importação de CTE com CPF no destinatário
+- MELHORIA: Incluído possibilidade de informar o range de data para buscar a NF referenciada no CTE de compra
+- MELHORIA: Alterado a Busca CTE Sefaz manual utilizando o novo processo de download de CTEs
+
+### Versão 4.33.5055
+
+19/10/2023
+
+- MELHORIA: Rotina para importar vários XMLs do computador simultaneamente
+
+### Versão 4.33.5054
+
+06/10/2023
+
+- MELHORIA: Criado parametro ZZ_BUSCAPC para deixar já marcado a pesquisa de produtos com pedido de compra
+- MELHORIA: Incluído o XML dos parametros do ponto de entrada P018COLS
+
 ### Versão 4.33.5053
 
 18/09/2023

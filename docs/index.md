@@ -50,6 +50,37 @@ Interligando aplicações de ponta a ponta através de robôs inteligentes.
 
 - Agendamentos personalizados
 
+### Facin Sales
+
+Potencialize suas vendas externas com essa excelente ferramenta, tornando o processo de venda simples e ágil.
+
+Controle o estoque de sua empresa, clientes e fluxo de mercadorias, integrado ao ERP Protheus com tecnologias modernas da Web e Mobile.
+
+- Permita que suas vendas externas ocorram com mais velocidade e qualidade, independente da conexão com a internet-
+
+- Força de Vendas
+Autonomia e agilidade em seu sistema para garantir o melhor fluxo de vendas para você e o seu cliente.
+
+- Tecnologia Moderna
+Experimente o que há de mais novo no mercado de tecnologia, unindo a potência das vendas no celular com a qualidade de gestão em um Painel Web.
+
+- Controle na palma da mão
+Tenha controle total de suas mercadorias, estoque, clientes e vendas!
+
+#### Principais Funcionalidades
+✔ Aplicativo off-line (venda mesmo sem internet)<br>
+✔ Multi empresas e filiais<br>
+✔ Funciona independente de outros sistemas integrados<br>
+✔ Cadastro e controle de Prospects e Clientes<br>
+✔ Múltiplas tabelas de preço e frete<br>
+✔ Controle de metas dos vendedores<br>
+✔ Controle de comissões<br>
+✔ Registro de vendas não realizadas<br>
+✔ Orçamentos por e-mail e WhatsApp<br>
+✔ Painel de Gestão Web
+
+Entre várias outras...
+
 ## Suporte
 
 Para suporte específico favor registrar o ticket no portal: [Central de Tickets](http://suporte.facilesistemas.com.br/)
