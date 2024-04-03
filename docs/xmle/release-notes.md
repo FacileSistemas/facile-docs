@@ -2,6 +2,15 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5060
+
+03/2024
+
+- BUG: Corrigido para não importar XML do computador que não possui assinatura digital
+- MELHORIA: Criado ponto de entrada P07GERAENT que é chamado ao clicar no botão "Gerar Entrada"
+- MELHORIA: Criado ponto de entrada P018SF1 para manipular o array de cabeçalho da NFe
+- BUG: Correção no sequencial de NSU para NFS-e Nacional
+
 ### Versão 4.33.5059
 
 27/02/2024
