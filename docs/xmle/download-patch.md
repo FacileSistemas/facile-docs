@@ -1,6 +1,7 @@
 <style>
     #yellow{
         background-color: yellow;
+        color: black;
     }
 </style>
 
