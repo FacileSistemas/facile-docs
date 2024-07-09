@@ -2,6 +2,38 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5064
+
+26/06/2024
+
+- MELHORIA: Criado parametro ZZ_CTECBLQ para bloquear entrada de CTE de Compra quando tiver NF vinculada que ainda não está classificada
+- MELHORIA: Funcionalidade para exportar as DANFE/DACTE em lote
+- MELHORIA: Desenvolvido função U_PTX0060_Importa_Xml(cStringXml) para importar uma NF-e ou CT-e passando diretamente a string do XML, mantendo o padrão da ferramenta
+- MELHORIA: Alterado para não abrir tela de amarração ao cancelar a tela de tipo de documento
+- BUG: Correção no compatibilizador para criar o campo D1_ZNFIMP e F1_ZNFIMP
+
+### Versão 4.33.5063
+
+06/06/2024
+
+- MELHORIA: Criado campo F1_ZNFIMP para informar que o documento foi importado pelo Facile XML-e
+
+### Versão 4.33.5062
+
+22/05/2024
+
+- BUG: Corrigido francionamento para NFS-e
+- BUG: Incluído tratativa de pedido por fornecedor vinculado na busca avançada de produtos
+- BUG: Incluído preenchimento do campo D1_ZNFIMP na entrada dos CTE
+- BUG: Ajuste na tela de confronto de impostos para melhor visualização em resoluções menores
+
+### Versão 4.33.5061
+
+23/04/2024
+
+- MELHORIA: Criado workflow para envio de e-mail avisando ao comprador quando o pedido de compras dele der entrada pela NF (parâmetro ZZ_AVISENT = .T.)
+- BUG: Corrigido busca na SF1 para NFS-e na opção de excluir o documento
+
 ### Versão 4.33.5060
 
 03/2024
