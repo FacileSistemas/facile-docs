@@ -2,6 +2,15 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5065
+
+01/08/2024
+
+- BUG: Ajustes no checkdoc para ambiente Oracle
+- BUG: Correção na legenda para NF de operação não realizada
+- BUG: incluído código do item no execauto da NF-e
+- MELHORIA: Inclusão da busca de NFS-e direto na prefeitura de Uberaba-MG
+
 ### Versão 4.33.5064
 
 26/06/2024

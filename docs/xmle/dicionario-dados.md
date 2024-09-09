@@ -135,6 +135,7 @@ Segue documentação do dicionário de dados criado pela ferramenta.
 | ZZ_CLASSIF     | L        | Ativa a abertura da classificação do documento automaticamente ao gerar pré-nota? |
 | ZZ_CODEAUT     | L        | Ativa autenticação na Facile                                                      |
 | ZZ_CONFAUT     | C        | Tipo de tratativa para transmissao da confirmacao da operacao                     |
+| ZZ_CONFFIS     | L        | Ativa integração com o módulo ACD Protheus para conferência Cega pelo FACILE XML-e. Necessário também ativar o MV_CONFFIS.  |
 | ZZ_CTECAUT     | L        | Ativa a importação automática do CTE de Compra                                    |
 | ZZ_CTECSPE     | L        | Especie do CTE de compra na entrada. Caso não exista, é definido como CTE.        |
 | ZZ_CTEVAUT     | L        | Ativa a importação automática do CTE de Venda                                     |
