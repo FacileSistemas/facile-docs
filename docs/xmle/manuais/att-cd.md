@@ -30,9 +30,9 @@ Com usuário admin, abra a tela do FACILE XML-e.
 
 ### Passo 02
 
-Vá na opção em Wiz. Config.
+Vá na opção em Outras Ações > Manutenção TI > Wiz. Config.
 
-<center>![Figura 2: Opção Wiz. Config.](../../assets/att-cd/wiz-config.png "Opção Wiz. Config.")
+<center>![Figura 2: Opção Wiz. Config.](../../assets/att-cd/wiz-config.jpg "Opção Wiz. Config.")
 <br>*Figura 2: Opção Wiz. Config.*<br></center>
 <br>
 

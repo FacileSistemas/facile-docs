@@ -73,6 +73,7 @@ nav:
       - 16 - Importar XML por e-mail: 'xmle/manuais/xml-email.md'
       - 17 - Regras por Processo: 'xmle/manuais/regras-classi.md'
       - 18 - Segunda Unidade de Medida da Amarração Produto x Fornecedor: 'xmle/manuais/produtoxforn.md'
+      - 19 - Lista de Pontos de Entrada: 'xmle/manuais/peferramenta.md'
     - Anexos:
       - 01 - Modelo de e-mail para fornecedores: 'xmle/anexos/email-fornecedores.md'
       - Videos:
