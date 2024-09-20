@@ -824,7 +824,7 @@ _______
 
 ## P018FIM
 
-???Ponto de entrada para mudar a URL do TSS.???
+Ponto de entrada para manutenções diversas ao final da geração do documento, devido a isso, já se encontra posicionado na ZZZ e na SF1.
 
 Segue exemplo de utilização.
 
