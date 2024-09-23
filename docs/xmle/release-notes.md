@@ -2,6 +2,19 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5066
+
+18/09/2024
+
+- MELHORIA: Incluído o ponto de entrada PX011CTE também na rotina de entrada automática de CTE
+- MELHORIA: Adicionado a funcionalidade de importação de NF-e de complemento de ICMS
+- MELHORIA: Adicionado a informação da UF do fornecedor no relatório de status das NF-e
+- BUG: Mudança na URL da prefeitura de Cachoeiro de Itapemirim
+- BUG: Removido validação de status do documento ao acessar rotina de exportar XML
+- BUG: Correção na atualização da legenda após excluir um CTE de Compras lançado
+- BUG: Correção no primeiro painel do gestão a vista (Notas não classificadas)
+- BUG: Correção para liberar o bloqueio de entrada de documento quando é realizado a manifestação da confirmação da operação
+
 ### Versão 4.33.5065
 
 01/08/2024
