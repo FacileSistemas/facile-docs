@@ -2880,8 +2880,150 @@ Return aItemCols
 </code></pre>
 <hr />
 <h2 id="p018prod">P018PROD</h2>
+<p>Ponto de entrada para analisar os itens do XML no momento da entrada.</p>
+<p>Parâmetros:</p>
+<ul>
+<li><strong>ParamIxb[1]:</strong>  Array com o objeto XML dos produtos da nota fiscal eletronica.</li>
+<li><strong>ParamIxb[2]:</strong>  Se .T. indica que é uma devolução de venda.</li>
+<li><strong>ParamIxb[3]:</strong>  Código do fornecedor no Protheus.</li>
+<li><strong>ParamIxb[4]:</strong>  Loja do fornecedor no Protheus.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function P018PROD()
+
+  Local nCont       := 0
+  Local aItensXml   := ParamIxb[1]
+  Local lDevoluc    := ParamIxb[2]
+  Local cFornece    := ParamIxb[3]
+  Local cLoja       := ParamIxb[4]
+  Local aArea       := GetArea()
+  Local aAreaZZW    := ZZW-&gt;( GetArea() )
+
+  //|Não processa para devolução |
+  If lDevoluc
+    Return
+  EndIf
+
+  dbselectarea('ZZW')
+  ZZW-&gt;(dbsetorder(1))
+
+  For nCont := 1 To Len(aItensXml)
+
+    cProdFornec     := aItensXml[nCont]:_PROD:_CPROD:TEXT
+    cCodBarras        := IIf( XmlChildEx(aItensXml[nCont]:_PROD, &quot;_CEAN&quot;) &lt;&gt; NIL,aItensXml[nCont]:_PROD:_CEAN:TEXT,space(12) )
+
+    //|Nesse ponto procura o produto na SB1 |
+    //...
+    //...
+    //...
+
+    //|Deve adicionar o produto na ZZW quando não existir |
+    If !ZZW-&gt;( dbSeek( xFilial('ZZW') + cfornece + cLoja + PADR(AllTrim(cProdFornec),TamSX3(&quot;ZZW_CODPRF&quot;)[1]) + SB1-&gt;B1_COD) )
+
+      Reclock('ZZW',.T.)
+      ZZW-&gt;ZZW_FILIAL       := xFilial('ZZW')
+      ZZW-&gt;ZZW_PRODUT       := SB1-&gt;B1_COD
+      ZZW-&gt;ZZW_FORNEC       := cfornece
+      ZZW-&gt;ZZW_LOJA       := cLoja
+      ZZW-&gt;ZZW_CODPRF   := cProdFornec
+
+      If ZZW-&gt;( FieldPos(&quot;ZZW_DPRODF&quot;) ) &gt; 0
+        ZZW-&gt;ZZW_DPRODF := aItensXml[nCont]:_PROD:_XPROD:TEXT
+      EndIf
+
+      ZZW-&gt;(MsUnlock())
+
+    EndIf
+
+  Next nCont
+
+
+  RestArea(aAreaZZW)
+  RestArea(aArea)
+
+Return
+</code></pre>
 <hr />
 <h2 id="p018proprio">P018PROPRIO</h2>
+<p>Ponto de entrada para indicar formulário próprio na entrada.</p>
+<p>Parâmetros:</p>
+<ul>
+<li><strong>ParamIxb[1]:</strong>  Se é formulário próprio. Identificado com "S" ou "N".</li>
+<li><strong>ParamIxb[2]:</strong>  Número da NF que está entrando no sistema.</li>
+<li><strong>ParamIxb[3]:</strong>  Série da NF que está entrando no sistema.</li>
+</ul>
+<p>Retorno:</p>
+<ul>
+<li><strong>aRetorno:</strong> array, array com dados para a NF-e.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function P018PROPRIO()
+
+    Local cFormProprio  := ParamIxb[1]
+    Local cNumNFe               := ParamIxb[2]
+    Local cNumSerie         := ParamIxb[3]
+    Local cSerieNF          := &quot;&quot;
+    Local aRetorno          := {}
+
+    cFormProprio    := fFormProrio()
+
+    If cFormProprio == &quot;S&quot;
+
+        cNumero := &quot;&quot;
+        Sx5NumNota( @cSerieNF, SuperGetMV(&quot;MV_TPNRNFS&quot;) )
+
+        cNumNFe     := cNumero
+        cNumSerie   := cSerieNF
+
+    EndIf
+
+    aAdd(aRetorno, cFormProprio )
+    aAdd(aRetorno, cNumNFe          )
+    aAdd(aRetorno, cNumSerie        )
+
+Return aRetorno
+
+
+
+Static Function fFormProrio()
+
+    Local cRetorno   := &quot;N&quot;
+    Local aCombo1    := {&quot;Não&quot;,&quot;Sim&quot;}
+    Local aAuxCombo1 := {&quot;N&quot;,&quot;S&quot;}
+
+    oDlg1     := MSDialog():New( 091,243,300,650,&quot;XML-e - Formulário Próprio&quot;,,,.F.,,,,,,.T.,,,.T. )
+
+    oSay1      := TSay():New( 030,016,{||&quot;Formulário Próprio?&quot;},oDlg1,,,.F.,.F.,.F.,.T.,CLR_BLACK,CLR_WHITE,072,012)
+
+    @ 048,016 MSCOMBOBOX oBox1 VAR cRetorno ITEMS aCombo1 SIZE 150,100 OF oDlg1 PIXEL
+
+    oBtn1      := TButton():New( 088,068,&quot;Confirmar&quot;,oDlg1,{|| TipoCombo(aCombo1,cRetorno,aAuxCombo1) },056,012,,,,.T.,,&quot;&quot;,,,,.F. )
+
+    oDlg1:Activate(,,,.T.)
+
+    If Empty(cRetorno)
+        cRetorno    := &quot;N&quot;
+    EndIf
+
+  cRetorno := SubStr(cRetorno, 1, 1)
+
+Return cRetorno
+
+
+Static Function TipoCombo(aCombo,cCombo,aReferencia)
+
+    Local nPos  := aScan(aCombo,cCombo)
+    Local lRet  := (nPos &gt; 0)
+
+    If nPos &gt; 0
+        cCombo := aReferencia[nPos]
+    EndIf
+
+    oDlg1:End()
+
+Return (lRet)
+
+</code></pre>
 <hr />
 <h2 id="p018sf1">P018SF1</h2>
 <hr />

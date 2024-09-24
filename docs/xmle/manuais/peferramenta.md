@@ -894,9 +894,159 @@ _______
 
 ## P018PROD
 
+Ponto de entrada para analisar os itens do XML no momento da entrada.
+
+Parâmetros:
+
+* **ParamIxb[1]:**  Array com o objeto XML dos produtos da nota fiscal eletronica.
+* **ParamIxb[2]:**  Se .T. indica que é uma devolução de venda.
+* **ParamIxb[3]:**  Código do fornecedor no Protheus.
+* **ParamIxb[4]:**  Loja do fornecedor no Protheus.
+
+Segue exemplo de utilização.
+
+```C
+User Function P018PROD()
+
+  Local nCont       := 0
+  Local aItensXml   := ParamIxb[1]
+  Local lDevoluc    := ParamIxb[2]
+  Local cFornece    := ParamIxb[3]
+  Local cLoja       := ParamIxb[4]
+  Local aArea       := GetArea()
+  Local aAreaZZW    := ZZW->( GetArea() )
+
+  //|Não processa para devolução |
+  If lDevoluc
+    Return
+  EndIf
+
+  dbselectarea('ZZW')
+  ZZW->(dbsetorder(1))
+
+  For nCont := 1 To Len(aItensXml)
+
+    cProdFornec     := aItensXml[nCont]:_PROD:_CPROD:TEXT
+    cCodBarras		  := IIf( XmlChildEx(aItensXml[nCont]:_PROD, "_CEAN") <> NIL,aItensXml[nCont]:_PROD:_CEAN:TEXT,space(12) )
+
+    //|Nesse ponto procura o produto na SB1 |
+    //...
+    //...
+    //...
+
+    //|Deve adicionar o produto na ZZW quando não existir |
+    If !ZZW->( dbSeek( xFilial('ZZW') + cfornece + cLoja + PADR(AllTrim(cProdFornec),TamSX3("ZZW_CODPRF")[1]) + SB1->B1_COD) )
+
+      Reclock('ZZW',.T.)
+      ZZW->ZZW_FILIAL		:= xFilial('ZZW')
+      ZZW->ZZW_PRODUT		:= SB1->B1_COD
+      ZZW->ZZW_FORNEC		:= cfornece
+      ZZW->ZZW_LOJA		  := cLoja
+      ZZW->ZZW_CODPRF 	:= cProdFornec
+
+      If ZZW->( FieldPos("ZZW_DPRODF") ) > 0
+        ZZW->ZZW_DPRODF	:= aItensXml[nCont]:_PROD:_XPROD:TEXT
+      EndIf
+
+      ZZW->(MsUnlock())
+
+    EndIf
+
+  Next nCont
+
+
+  RestArea(aAreaZZW)
+  RestArea(aArea)
+
+Return
+```
+
 _______
 
 ## P018PROPRIO
+
+Ponto de entrada para indicar formulário próprio na entrada.
+
+Parâmetros:
+
+* **ParamIxb[1]:**  Se é formulário próprio. Identificado com "S" ou "N".
+* **ParamIxb[2]:**  Número da NF que está entrando no sistema.
+* **ParamIxb[3]:**  Série da NF que está entrando no sistema.
+
+Retorno:
+
+* **aRetorno:** array, array com dados para a NF-e.
+
+Segue exemplo de utilização.
+
+```C
+User Function P018PROPRIO()
+
+	Local cFormProprio 	:= ParamIxb[1]
+	Local cNumNFe			 	:= ParamIxb[2]
+	Local cNumSerie 	 	:= ParamIxb[3]
+	Local cSerieNF 			:= ""
+	Local aRetorno			:= {}
+
+	cFormProprio	:= fFormProrio()
+
+	If cFormProprio	== "S"
+
+		cNumero	:= ""
+		Sx5NumNota( @cSerieNF, SuperGetMV("MV_TPNRNFS") )
+
+		cNumNFe		:= cNumero
+		cNumSerie	:= cSerieNF
+
+	EndIf
+
+	aAdd(aRetorno, cFormProprio	)
+	aAdd(aRetorno, cNumNFe			)
+	aAdd(aRetorno, cNumSerie 		)
+
+Return aRetorno
+
+
+
+Static Function fFormProrio()
+
+	Local cRetorno	 := "N"
+	Local aCombo1    := {"Não","Sim"}
+	Local aAuxCombo1 := {"N","S"}
+
+	oDlg1     := MSDialog():New( 091,243,300,650,"XML-e - Formulário Próprio",,,.F.,,,,,,.T.,,,.T. )
+
+	oSay1      := TSay():New( 030,016,{||"Formulário Próprio?"},oDlg1,,,.F.,.F.,.F.,.T.,CLR_BLACK,CLR_WHITE,072,012)
+
+	@ 048,016 MSCOMBOBOX oBox1 VAR cRetorno ITEMS aCombo1 SIZE 150,100 OF oDlg1 PIXEL
+
+	oBtn1      := TButton():New( 088,068,"Confirmar",oDlg1,{|| TipoCombo(aCombo1,cRetorno,aAuxCombo1) },056,012,,,,.T.,,"",,,,.F. )
+
+	oDlg1:Activate(,,,.T.)
+
+	If Empty(cRetorno)
+		cRetorno	:= "N"
+	EndIf
+
+  cRetorno := SubStr(cRetorno, 1, 1)
+
+Return cRetorno
+
+
+Static Function TipoCombo(aCombo,cCombo,aReferencia)
+
+	Local nPos	:= aScan(aCombo,cCombo)
+	Local lRet  := (nPos > 0)
+
+	If nPos > 0
+		cCombo := aReferencia[nPos]
+	EndIf
+
+	oDlg1:End()
+
+Return (lRet)
+
+```
 
 _______
 
