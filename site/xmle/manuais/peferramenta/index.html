@@ -3026,8 +3026,171 @@ Return (lRet)
 </code></pre>
 <hr />
 <h2 id="p018sf1">P018SF1</h2>
+<p>Ponto de entrada para manipular o array de cabeçalho (SF1) do documento de entrada antes do execauto.</p>
+<p>Parâmetros:</p>
+<ul>
+<li><strong>ParamIxb[1]:</strong>  Array com os campos do item a ser gerado no Protheus.</li>
+<li><strong>ParamIxb[2]:</strong>  Array com o cabeçalho do XML.</li>
+<li><strong>ParamIxb[3]:</strong>  Objeto do XML.</li>
+</ul>
+<p>Retorno:</p>
+<ul>
+<li><strong>_aCabecalho:</strong> array, novo array do cabeçalho.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function P018SF1()
+
+    // Local _aItensCols := ParamIxb[1] as Array
+    Local _aCabecalho := ParamIxb[2] as Array
+    Local _oXml       := ParamIxb[3] as Object
+    Local oTransp     := Nil         as Object
+    Local cVolume     := &quot;&quot;          as Character
+
+    Local cExcept      := &quot;&quot;          as Character
+  Local bError                      as CodeBlock
+
+  bError    := ErrorBlock({|e| cExcept := &quot;&lt;h3&gt;&quot;+e:Description+&quot;&lt;/h3&gt;&quot;+e:ERRORSTACK})
+
+    BEGIN SEQUENCE
+
+        If ZZZ-&gt;ZZZ_TIPO == &quot;1&quot; //|NF-e |
+
+            oTransp     := _oXml:_InfNfe:_Transp
+
+            If XmlChildEx(oTransp, &quot;_VOL&quot;) != Nil
+
+                cVolume := U_PTX_GetTagValue( oTransp, &quot;oTransp:_VOL:_QVOL&quot; )
+
+                If !Empty(cVolume)
+
+                    aAdd(_aCabecalho,{&quot;F1_VOLUME1&quot;, Val(cVolume), Nil, Nil})
+
+                EndIf
+
+            EndIf
+
+        EndIf
+
+    END SEQUENCE
+
+    ErrorBlock(bError)
+
+    If !Empty(cExcept)
+        ConOut(cExcept)
+    EndIf
+
+Return _aCabecalho
+</code></pre>
 <hr />
 <h2 id="p018tipo">P018TIPO</h2>
+<p>Ponto de entrada para modificar o tipo de nota fiscal.</p>
+<p>Retorno:</p>
+<ul>
+<li><strong>cRetPE:</strong> caracter, novo tipo do documento fiscal.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function _P018TIPO()
+
+    Local cEstilo1  := &quot;&quot;
+    Local cEstBtn1  := &quot;&quot;
+    Local cEstSay2  := &quot;&quot;
+    Local c103Tipo  := &quot;&quot;
+    Local nAux      := 0
+    Local aCombo1   := {}
+    Local aAuxCombo1:= {}
+    Local cRetPE    := &quot;N&quot;
+
+    Private oBox1
+    Private oSay1
+
+    aCombo1    := {&quot;Normal&quot;,&quot;Devolução&quot;,&quot;Beneficiamento&quot;,&quot;Compl.  ICMS&quot;,&quot;Compl.  IPI&quot;,&quot;Compl. Preco/Frete&quot;}
+    aAuxCombo1 := {&quot;N&quot;,&quot;D&quot;,&quot;B&quot;,&quot;I&quot;,&quot;P&quot;,&quot;C&quot;}
+    nAux       := aScan(aAuxCombo1,cRetPE)
+
+    If !Empty(cRetPE) .And. nAux &lt;&gt; 0
+        c103Tipo := aCombo1[nAux]
+    EndIf
+
+    oFont1     := TFont():New( &quot;Courier New&quot;,0,-16,,.T.,0,,700,.F.,.F.,,,,,, )
+
+    oDlg1      := MSDialog():New( 091,243,270,650,&quot;XML-e - Tipo de Documento de Entrada&quot;,,,.F.,,,,,,.T.,,,.T. )
+
+    oPanel1    := TPanel():New( 000,000,&quot;&quot;,oDlg1,,.F.,.F.,,,280,085,.T.,.F. )
+    oPanel1:align:= CONTROL_ALIGN_ALLCLIENT
+        cEstilo1 := &quot;   QLabel {&quot;
+        cEstilo1 += &quot; background-color: #3D86AB;&quot;
+        cEstilo1 += &quot;}&quot;
+        oPanel1:SetCss(cEstilo1)
+
+    oSay1      := TSay():New( 012,016,{||&quot;Tipo da Nota&quot;},oPanel1,,oFont1,.F.,.F.,.F.,.T.,CLR_WHITE,CLR_WHITE,072,012)
+        cEstSay2    := &quot;    QLabel { &quot;
+        cEstSay2    += &quot;    font-family: cursive; &quot;
+        cEstSay2    += &quot;    font-weight: bold; &quot;
+        cEstSay2    += &quot;    font-size: large; &quot;
+        cEstSay2    += &quot;    line-height: 100%; &quot;
+        cEstSay2    += &quot;    word-spacing: 1ex; &quot;
+        cEstSay2    += &quot;    letter-spacing: normal; &quot;
+        cEstSay2    += &quot;    text-decoration: none; &quot;
+        cEstSay2    += &quot;    text-transform: none; &quot;
+        cEstSay2    += &quot;    text-align: left; &quot;
+        cEstSay2    += &quot;    color: #FFFFFF; &quot;
+        cEstSay2    += &quot;    text-indent: 0ex; &quot;
+        cEstSay2    += &quot;    } &quot;
+        oSay1:SetCss(cEstSay2)
+
+    //oGet1      := TGet():New( 024,016,{|u| If(PCount()&gt;0,cChvNfe:=u,cChvNfe)},oPanel1,240,008,'',,CLR_BLACK,CLR_WHITE,,,,.T.,&quot;&quot;,,,.F.,.F.,,.F.,.F.,&quot;&quot;,&quot;cChvNfe&quot;,,)
+    @ 032,016 MSCOMBOBOX oBox1 VAR c103Tipo ITEMS aCombo1 SIZE 150,100 OF oDlg1 PIXEL
+
+    oBtn1      := TButton():New( 056,068,&quot;Confirmar&quot;,oPanel1,{|| TipoCombo(@cRetPE,aCombo1,c103Tipo,aAuxCombo1,&quot;1&quot;) },056,012,,,,.T.,,&quot;&quot;,,,,.F. )
+    cEstBtn1 := &quot;QPushButton {&quot;
+            cEstBtn1 += &quot; background-image: url(rpo:PTX_Refresh.png);&quot;
+            cEstBtn1 += &quot; background-repeat: none; &quot;
+            cEstBtn1 += &quot; background-attachment: fixed; &quot;
+            cEstBtn1 += &quot; background-position: left center; &quot;
+            cEstBtn1 += &quot; border-style: outset;&quot;
+            cEstBtn1 += &quot; border-width: 2px;&quot;
+            cEstBtn1 += &quot; border: 1px solid #C0C0C0;&quot;
+            cEstBtn1 += &quot; border-radius: 5px;&quot;
+            cEstBtn1 += &quot; border-color: #C0C0C0;&quot;
+            cEstBtn1 += &quot; font: bold 12px Arial;&quot;
+            cEstBtn1    += &quot;    color: #ffffff; &quot;
+            cEstBtn1 += &quot; padding: 6px;&quot;
+            cEstBtn1 += &quot;} &quot;
+
+            cEstBtn1 += &quot;QPushButton:hover { &quot;
+            cEstBtn1 += &quot; background-color: #cecef6;&quot;
+            cEstBtn1 += &quot; border-style: inset;&quot;
+            cEstBtn1 += &quot; opacity: 0.2; &quot;
+            cEstBtn1 += &quot;} &quot;
+
+            cEstBtn1 += &quot;QPushButton:pressed {&quot;
+            cEstBtn1 += &quot; background-color: #e6e6f9;&quot;
+            cEstBtn1 += &quot; border-style: inset;&quot;
+            cEstBtn1 += &quot;} &quot;
+            oBtn1:SetCss(cEstBtn1)
+
+    oDlg1:Activate(,,,.T.)
+
+    If Empty(cRetPE)
+        cRetPE  := &quot;N&quot;
+    EndIf
+
+Return cRetPE
+
+
+Static Function TipoCombo(cVariavel,aCombo,cCombo,aReferencia,cIdent)
+
+    Local nPos  := aScan(aCombo,cCombo)
+    Local lRet  := (nPos &gt; 0)
+
+    If nPos &gt; 0
+        cVariavel := aReferencia[nPos]
+    EndIf
+
+    oDlg1:End()
+
+Return (lRet)
+</code></pre>
 <hr />
 <h2 id="p018um">P018UM</h2>
 <hr />

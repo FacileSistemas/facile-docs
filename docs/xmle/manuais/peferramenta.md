@@ -1052,9 +1052,180 @@ _______
 
 ## P018SF1
 
+Ponto de entrada para manipular o array de cabeçalho (SF1) do documento de entrada antes do execauto.
+
+Parâmetros:
+
+* **ParamIxb[1]:**  Array com os campos do item a ser gerado no Protheus.
+* **ParamIxb[2]:**  Array com o cabeçalho do XML.
+* **ParamIxb[3]:**  Objeto do XML.
+
+Retorno:
+
+* **_aCabecalho:** array, novo array do cabeçalho.
+
+Segue exemplo de utilização.
+
+```C
+User Function P018SF1()
+
+	// Local _aItensCols := ParamIxb[1] as Array
+	Local _aCabecalho := ParamIxb[2] as Array
+	Local _oXml       := ParamIxb[3] as Object
+	Local oTransp     := Nil         as Object
+	Local cVolume     := ""          as Character
+
+	Local cExcept      := ""          as Character
+  Local bError                      as CodeBlock
+
+  bError    := ErrorBlock({|e| cExcept := "<h3>"+e:Description+"</h3>"+e:ERRORSTACK})
+
+	BEGIN SEQUENCE
+  
+		If ZZZ->ZZZ_TIPO == "1"	//|NF-e |
+
+			oTransp    	:= _oXml:_InfNfe:_Transp
+
+			If XmlChildEx(oTransp, "_VOL") != Nil
+
+				cVolume	:= U_PTX_GetTagValue( oTransp, "oTransp:_VOL:_QVOL" )
+
+				If !Empty(cVolume)
+
+					aAdd(_aCabecalho,{"F1_VOLUME1", Val(cVolume), Nil, Nil})
+
+				EndIf
+
+			EndIf
+
+		EndIf
+
+	END SEQUENCE
+
+	ErrorBlock(bError)
+
+	If !Empty(cExcept)
+		ConOut(cExcept)
+	EndIf
+
+Return _aCabecalho
+```
+
 _______
 
 ## P018TIPO
+
+Ponto de entrada para modificar o tipo de nota fiscal.
+
+Retorno:
+
+* **cRetPE:** caracter, novo tipo do documento fiscal.
+
+Segue exemplo de utilização.
+
+```C
+User Function _P018TIPO()
+
+	Local cEstilo1	:= ""
+	Local cEstBtn1	:= ""
+	Local cEstSay2	:= ""
+	Local c103Tipo	:= ""
+	Local nAux		:= 0
+	Local aCombo1	:= {}
+	Local aAuxCombo1:= {}
+	Local cRetPE	:= "N"
+
+	Private oBox1
+	Private oSay1
+
+	aCombo1    := {"Normal","Devolução","Beneficiamento","Compl.  ICMS","Compl.  IPI","Compl. Preco/Frete"}
+	aAuxCombo1 := {"N","D","B","I","P","C"}
+	nAux       := aScan(aAuxCombo1,cRetPE)
+
+	If !Empty(cRetPE) .And. nAux <> 0
+		c103Tipo := aCombo1[nAux]
+	EndIf
+
+	oFont1     := TFont():New( "Courier New",0,-16,,.T.,0,,700,.F.,.F.,,,,,, )
+
+	oDlg1      := MSDialog():New( 091,243,270,650,"XML-e - Tipo de Documento de Entrada",,,.F.,,,,,,.T.,,,.T. )
+
+	oPanel1    := TPanel():New( 000,000,"",oDlg1,,.F.,.F.,,,280,085,.T.,.F. )
+	oPanel1:align:= CONTROL_ALIGN_ALLCLIENT
+		cEstilo1 := "	QLabel {"
+		cEstilo1 += " background-color: #3D86AB;"
+		cEstilo1 += "}"
+		oPanel1:SetCss(cEstilo1)
+
+	oSay1      := TSay():New( 012,016,{||"Tipo da Nota"},oPanel1,,oFont1,.F.,.F.,.F.,.T.,CLR_WHITE,CLR_WHITE,072,012)
+		cEstSay2 	:= "	QLabel { "
+		cEstSay2 	+= "	font-family: cursive; "
+		cEstSay2 	+= "	font-weight: bold; "
+		cEstSay2 	+= "	font-size: large; "
+		cEstSay2 	+= "	line-height: 100%; "
+		cEstSay2 	+= "	word-spacing: 1ex; "
+		cEstSay2 	+= "	letter-spacing: normal; "
+		cEstSay2 	+= "	text-decoration: none; "
+		cEstSay2 	+= "	text-transform: none; "
+		cEstSay2 	+= "	text-align: left; "
+		cEstSay2 	+= "	color: #FFFFFF; "
+		cEstSay2 	+= "	text-indent: 0ex; "
+		cEstSay2 	+= "	} "
+		oSay1:SetCss(cEstSay2)
+
+	//oGet1      := TGet():New( 024,016,{|u| If(PCount()>0,cChvNfe:=u,cChvNfe)},oPanel1,240,008,'',,CLR_BLACK,CLR_WHITE,,,,.T.,"",,,.F.,.F.,,.F.,.F.,"","cChvNfe",,)
+	@ 032,016 MSCOMBOBOX oBox1 VAR c103Tipo ITEMS aCombo1 SIZE 150,100 OF oDlg1 PIXEL
+
+	oBtn1      := TButton():New( 056,068,"Confirmar",oPanel1,{|| TipoCombo(@cRetPE,aCombo1,c103Tipo,aAuxCombo1,"1") },056,012,,,,.T.,,"",,,,.F. )
+	cEstBtn1 := "QPushButton {"
+	    	cEstBtn1 += " background-image: url(rpo:PTX_Refresh.png);"
+	    	cEstBtn1 += " background-repeat: none; "
+	    	cEstBtn1 += " background-attachment: fixed; "
+	    	cEstBtn1 += " background-position: left center; "
+	    	cEstBtn1 += " border-style: outset;"
+	    	cEstBtn1 += " border-width: 2px;"
+	    	cEstBtn1 += " border: 1px solid #C0C0C0;"
+	    	cEstBtn1 += " border-radius: 5px;"
+	    	cEstBtn1 += " border-color: #C0C0C0;"
+	    	cEstBtn1 += " font: bold 12px Arial;"
+	    	cEstBtn1 	+= "	color: #ffffff; "
+	    	cEstBtn1 += " padding: 6px;"
+	    	cEstBtn1 += "} "
+
+	    	cEstBtn1 += "QPushButton:hover { "
+	    	cEstBtn1 += " background-color: #cecef6;"
+	    	cEstBtn1 += " border-style: inset;"
+	    	cEstBtn1 += " opacity: 0.2; "
+	    	cEstBtn1 += "} "
+
+	    	cEstBtn1 += "QPushButton:pressed {"
+	    	cEstBtn1 += " background-color: #e6e6f9;"
+	    	cEstBtn1 += " border-style: inset;"
+	    	cEstBtn1 += "} "
+	    	oBtn1:SetCss(cEstBtn1)
+
+	oDlg1:Activate(,,,.T.)
+
+	If Empty(cRetPE)
+		cRetPE	:= "N"
+	EndIf
+
+Return cRetPE
+
+
+Static Function TipoCombo(cVariavel,aCombo,cCombo,aReferencia,cIdent)
+
+	Local nPos	:= aScan(aCombo,cCombo)
+	Local lRet  := (nPos > 0)
+
+	If nPos > 0
+		cVariavel := aReferencia[nPos]
+	EndIf
+
+	oDlg1:End()
+
+Return (lRet)
+```
 
 _______
 
