@@ -1231,6 +1231,71 @@ _______
 
 ## P018UM
 
+Ponto de entrada que realiza a conversão de unidade de medida de acordo com a ZZW.
+
+Parâmetros:
+
+* **ParamIxb[1]:**  Unidade de medida do XML.
+* **ParamIxb[2]:**  Quantidade do produto do XML.
+* **ParamIxb[3]:**  Total do item do XML.
+* **ParamIxb[4]:**  Valor unitário do item no XML.
+* **ParamIxb[5]:**  Número do Pedido de Compra.
+* **ParamIxb[6]:**  Item do Pedido de Compra.
+
+Retorno:
+
+O retorno é efetuado nas variáveis privadas abaixo.
+
+* **cUnMed1:** caracter, Primeira Unidade de Medida D1_UM.
+* **nQtdUM1:** caracter, Quantidade na primeira Unidade de Medida.
+* **cUnMed2:** caracter, Segunda Unidade de Medida utilizada.
+* **nQtdUM2:** caracter, Quantidade na Segunda Unidade de Medida utilizada.
+* **nVlrUM1:** caracter, Valor Unitário na Primeira Unidade de Medida do Produto.
+
+Segue exemplo de utilização.
+
+```C
+User Function P018UM()
+
+  // Local cUmXml    := ParamIxb[1]
+  Local nQtdXML   := ParamIxb[2]
+  Local nTotalXml := ParamIxb[3]
+  // Local nUnitXml  := ParamIxb[4]
+  Local nQtConv   := 0
+
+  dbSelectArea("ZZW")
+  ZZW->(dbSetOrder(2))	//ZZW_FILIAL+ZZW_FORNEC+ZZW_LOJA+ZZW_PRODUT
+  If ZZW->(dbSeek(xFilial("ZZW") + SA2->A2_COD + SA2->A2_LOJA + SB1->B1_COD ))
+
+    If !Empty(ZZW->ZZW_SEGUM) .And. !Empty(ZZW->ZZW_CONV) .And. !Empty(ZZW->ZZW_TIPCON)
+
+      nQtConv		:= U_PTXConvUm( SB1->B1_COD, 0, nQtdXML, 1 )
+
+      If nQtConv > 0
+
+        //|Retorno |
+        cUnMed1		:= SB1->B1_UM		  //|Primeira Unidade de Medida D1_UM |
+        nQtdUM1 	:= nQtConv				//|Qtd UM 1 D1_QUANT |
+
+        cUnMed2	:= ZZW->ZZW_SEGUM
+        nQtdUM2 := nQtdXML
+
+        //IF SAH->(dbSeek(xFilial("SAH") + cUnidMed )) //AH_FILIAL, AH_UNIMED, R_E_C_N_O_, D_E_L_E_T_
+        //  cUnMed2		:= cUnidMed				//|Segunda Unidade de Medida D1_SEGUM |
+        //  nQtdUM2 	:= nQuant				//|Qtd UM 2 D1_QTSEGUM |
+        //ENDIF
+
+        nVlrUM1		:= nTotalXml / nQtConv	//|Valor Unit UM 1 D1_VUNIT |
+
+      EndIf
+
+    EndIf
+
+  EndIf
+
+Return
+```
+
 _______
 
 ## P018ZZW

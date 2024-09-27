@@ -3193,6 +3193,66 @@ Return (lRet)
 </code></pre>
 <hr />
 <h2 id="p018um">P018UM</h2>
+<p>Ponto de entrada que realiza a conversão de unidade de medida de acordo com a ZZW.</p>
+<p>Parâmetros:</p>
+<ul>
+<li><strong>ParamIxb[1]:</strong>  Unidade de medida do XML.</li>
+<li><strong>ParamIxb[2]:</strong>  Quantidade do produto do XML.</li>
+<li><strong>ParamIxb[3]:</strong>  Total do item do XML.</li>
+<li><strong>ParamIxb[4]:</strong>  Valor unitário do item no XML.</li>
+<li><strong>ParamIxb[5]:</strong>  Número do Pedido de Compra.</li>
+<li><strong>ParamIxb[6]:</strong>  Item do Pedido de Compra.</li>
+</ul>
+<p>Retorno:</p>
+<p>O retorno é efetuado nas variáveis privadas abaixo.</p>
+<ul>
+<li><strong>cUnMed1:</strong> caracter, Primeira Unidade de Medida D1_UM.</li>
+<li><strong>nQtdUM1:</strong> caracter, Quantidade na primeira Unidade de Medida.</li>
+<li><strong>cUnMed2:</strong> caracter, Segunda Unidade de Medida utilizada.</li>
+<li><strong>nQtdUM2:</strong> caracter, Quantidade na Segunda Unidade de Medida utilizada.</li>
+<li><strong>nVlrUM1:</strong> caracter, Valor Unitário na Primeira Unidade de Medida do Produto.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function P018UM()
+
+  // Local cUmXml    := ParamIxb[1]
+  Local nQtdXML   := ParamIxb[2]
+  Local nTotalXml := ParamIxb[3]
+  // Local nUnitXml  := ParamIxb[4]
+  Local nQtConv   := 0
+
+  dbSelectArea(&quot;ZZW&quot;)
+  ZZW-&gt;(dbSetOrder(2))  //ZZW_FILIAL+ZZW_FORNEC+ZZW_LOJA+ZZW_PRODUT
+  If ZZW-&gt;(dbSeek(xFilial(&quot;ZZW&quot;) + SA2-&gt;A2_COD + SA2-&gt;A2_LOJA + SB1-&gt;B1_COD ))
+
+    If !Empty(ZZW-&gt;ZZW_SEGUM) .And. !Empty(ZZW-&gt;ZZW_CONV) .And. !Empty(ZZW-&gt;ZZW_TIPCON)
+
+      nQtConv       := U_PTXConvUm( SB1-&gt;B1_COD, 0, nQtdXML, 1 )
+
+      If nQtConv &gt; 0
+
+        //|Retorno |
+        cUnMed1     := SB1-&gt;B1_UM         //|Primeira Unidade de Medida D1_UM |
+        nQtdUM1     := nQtConv              //|Qtd UM 1 D1_QUANT |
+
+        cUnMed2 := ZZW-&gt;ZZW_SEGUM
+        nQtdUM2 := nQtdXML
+
+        //IF SAH-&gt;(dbSeek(xFilial(&quot;SAH&quot;) + cUnidMed )) //AH_FILIAL, AH_UNIMED, R_E_C_N_O_, D_E_L_E_T_
+        //  cUnMed2     := cUnidMed             //|Segunda Unidade de Medida D1_SEGUM |
+        //  nQtdUM2     := nQuant               //|Qtd UM 2 D1_QTSEGUM |
+        //ENDIF
+
+        nVlrUM1     := nTotalXml / nQtConv  //|Valor Unit UM 1 D1_VUNIT |
+
+      EndIf
+
+    EndIf
+
+  EndIf
+
+Return
+</code></pre>
 <hr />
 <h2 id="p018zzw">P018ZZW</h2>
 <hr />

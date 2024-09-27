@@ -156,6 +156,7 @@ Segue documentação do dicionário de dados criado pela ferramenta.
 | ZZ_OPECTEC     | C        | Tipo de operação para busca de TES Inteligente no CTE                             |
 | ZZ_OPECTEV     | C        | Tipo de operação para busca de TES Inteligente no CTE                             |
 | ZZ_OPERTRA     | C        | Tipo de operação para transferências                                              |
+| ZZ_PCCTE       | L        | Ativa a solicitação de pedido de compras na entrada de CTE de Venda               |
 | ZZ_PCOBRIG     | L        | Obrigatório vincular pedido de compra em todos os itens                           |
 | ZZ_POPCNT      | C        | Conta de e-mail para conexão POP                                                  |
 | ZZ_POPEND      | C        | Endereco do servidor POP de e-mail                                                |
