@@ -1300,9 +1300,525 @@ _______
 
 ## P018ZZW
 
+Ponto de entrada para manutenções após inclusão da ZZW. Nesse momento já está posicionado na ZZW incluída.
+
+Segue exemplo de utilização.
+
+```C
+User Function P018ZZW()
+
+  Local aArea := GetArea()
+  Local cQuery := ""
+
+  cQuery += " SELECT A5_FORNECE "
+  cQuery += " FROM " + RetSqlName("SA5") + " SA5 "
+  cQuery += " WHERE A5_FILIAL = " + ValToSql( xFilial("SA5") )
+  cQuery += "   AND A5_FORNECE = " + ValToSql( ZZW->ZZW_FORNEC )
+  cQuery += "   AND A5_LOJA = " + ValToSql( ZZW->ZZW_LOJA )
+  cQuery += "   AND A5_PRODUTO = " + ValToSql( ZZW->ZZW_PRODUT )
+  cQuery += "   AND A5_CODPRF = " + ValToSql( ZZW->ZZW_CODPRF )
+  cQuery += "   AND SA5.D_E_L_E_T_ = '' "
+
+  If Select("__SA5") > 0
+    __SA5->( dbCloseArea() )
+  EndIf
+
+  cQuery := ChangeQuery(cQuery)
+  dbUseArea( .T., "TOPCONN", TCGenQry(,,cQuery), "__SA5", .T., .T. )
+
+  __SA5->( dbGoTop() )
+
+  //|Caso não exista cadastrado |
+  If __SA5->( EoF() )
+
+    RecLock("SA5", .T.)
+    SA5->A5_FILIAL  := xFilial("SA5")
+    SA5->A5_FORNECE := ZZW->ZZW_FORNEC
+    SA5->A5_LOJA    := ZZW->ZZW_LOJA
+    SA5->A5_PRODUTO := ZZW->ZZW_PRODUT
+    SA5->A5_CODPRF  := ZZW->ZZW_CODPRF
+    SA5->( MsUnLock() )
+
+  EndIf
+
+  RestArea( aArea )
+  
+Return
+```
+
 _______
 
 ## PT006XML
+
+Ponto de Entrada para realizar ações após a importação do CTE.
+
+Segue exemplo de utilização.
+
+```C
+user function PT006XML()
+
+	Local aArea		:= GetArea()
+	Local aAreaZZZ	:= ZZZ->(GetArea())
+	
+	dbSelectArea("ZZZ")
+	ZZZ->(dbSetOrder(1))
+	ZZZ->(dbSeek(xFilial("ZZZ") + "32171001928075005835550020000243931464892230"))
+	
+
+	
+	If !Empty(ZZZ->ZZZ_XML)
+		
+		//|Chama rotina para gerar o documento de entrada |
+		fClassDev()
+	
+	EndIf
+	
+	RestArea(aAreaZZZ)
+	RestArea(aArea)
+	
+return
+
+
+Static Function fClassDev()
+	
+	Local cError  		:= ""
+	Local cWarning		:= ""
+	Local cCliente		:= ""
+	Local cLoja			:= ""
+	Local cEmissao		:= ""
+	Local cNumNf		:= ""
+	Local cSerie		:= ""
+	Local cCnpjEmi		:= ""
+	Local cCfoDev		:= SuperGetMV("MV_YCFODEV",.F.,"201/411/410")
+	Local aArea   		:= GetArea()
+	Local aItTemp 		:= {}
+	Local aItens 		:= {}
+	Local nI	  		:= 0
+	Local lDevol		:= .F.
+	Local oXml    		:= NIL
+	
+	oXml := XmlParser( ZZZ->ZZZ_XML, "_", @cError, @cWarning )
+				
+	If !Empty(alltrim(cError))
+		oXml := NIL
+	EndIf
+	
+	If oXml <> NIL
+		//Tratamento caso o xml possua a tag NFEPROC
+		if XmlChildEx(oXml, "_NFEPROC") <> nil
+			oXml := XmlChildEx(oXml, "_NFEPROC")
+		endif
+		if XmlChildEx(oXml, "_NFE") == nil
+			oXml := NIL
+		elseIf ValType(oXml:_NFE:_INFNFE:_DET) <> "A"
+			XmlNode2Arr(oXml:_NFE:_INFNFE:_DET,"_DET")
+		EndIf
+	endif
+	
+	If oXml <> nil
+	
+		aItens	:= oXml:_NFE:_INFNFE:_DET
+		
+		For nI := 1 To Len(aItens)
+			
+			If XmlChildEx(aItens[1]:_PROD, "_CFOP") <> Nil
+				
+				If SubStr(aItens[nI]:_PROD:_CFOP:TEXT,2,3) $ cCfoDev
+					lDevol	:= .T.
+					Exit
+				EndIf
+			
+			EndIf
+		
+		Next nI
+		
+		//|Nota Fiscal de Devolução |
+		If lDevol
+			
+			//|Valida cliente emissor da devolução |
+			cCnpjEmi	:= PadR(Alltrim(oXml:_NFE:_INFNFE:_EMIT:_CNPJ:TEXT),TamSX3("A1_CGC")[1])
+		
+			dbSelectArea("SA1")
+			SA1->(dbSetOrder(3))
+			If SA1->(dbSeek(xFilial("SA2") + cCnpjEmi))
+				cCliente	:= SA2->A2_COD
+				cLoja		:= SA2->A2_LOJA
+			Else
+				ConOut("###### ERRO -> CLIENTE NAO ENCONTRADO - CNPJ: " + cCnpjEmi)
+				Return
+			EndIf
+			
+			cEmissao	:= IIf(XmlChildEx(oXml:_NFE:_INFNFE:_IDE, "_DHEMI")<>nil,ConvDate(Substr(oXml:_NFE:_INFNFE:_IDE:_DHEMI:TEXT,1,10)),"")
+			cNumNf		:= PadL(AllTrim(oXml:_NFE:_INFNFE:_IDE:_NNF:TEXT),TamSX3("F1_DOC")[1],"0")
+			cSerie		:= AllTrim(oXml:_NFE:_INFNFE:_IDE:_SERIE:TEXT)
+			
+			dbSelectArea("SF1")
+			SF1->(dbSetOrder(1))
+			If SF1->(dbSeek(xFilial("SF1")+ PadL(Alltrim(cNumNf),TamSX3("F1_DOC")[1]) + PadR(cSerie,TamSX3("F1_SERIE")[1]) + ;
+					PadR(Alltrim(cCliente),TamSX3("F1_FORNECE")[1]) + PadR(cLoja,TamSX3("F1_LOJA")[1])))
+				
+				ConOut("###### ERRO -> Nota No.: "+ Alltrim(SF1->F1_DOC)+"/"+SF1->F1_SERIE+" do Fornec. "+SF1->F1_FORNECE+"/"+SF1->F1_LOJA+" Ja Existe. A Importacao sera interrompida!!")
+				Return
+				
+			EndIf
+			
+			If Type("oXml:_NfeProc")<> "U"
+				oNF := oXml:_NFeProc:_NFe
+			Else
+				If Type("oXml:_NFe")<> "U"
+					oNF := oXml:_NFe
+				Else
+					ConOut('O arquivo informado nao esta no formato XML ou esta corrompido.')
+					Return
+				EndIf
+			EndIf
+			
+			//|Rotina para gerar o documento de entrada |
+			SFP001()
+			
+		EndIf
+	
+	EndIf
+	
+	
+Return
+
+
+
+Static Function SFP001()
+
+	Local aCabec 		:= {}
+	Local aItens  		:= {}
+	Local nX			:= 1
+	
+	Private aXML		:= {}
+	Private oEmitente  	:= oNF:_InfNfe:_Emit
+	Private oIdent     	:= oNF:_InfNfe:_IDE
+	Private oDestino   	:= oNF:_InfNfe:_Dest
+	Private oTotal     	:= oNF:_InfNfe:_Total
+	Private oTransp    	:= oNF:_InfNfe:_Transp
+	Private oDet       	:= oNF:_InfNfe:_Det
+	
+	If Type("oNF:_InfNfe:_ICMS")<> "U"
+		Private oICM     	:= oNF:_InfNfe:_ICMS
+	Else
+		Private oICM		:= nil
+	Endif
+	
+	Private oFatura    	:= IIf(Type("oNF:_InfNfe:_Cobr")=="U",Nil,oNF:_InfNfe:_Cobr)
+	Private cEdit1		:= Space(15)
+	Private _DESCdigit 	:= space(55)
+	Private _NCMdigit  	:= space(8)
+	Private cChave     	:= oNFe:_NFeProc:_protNFe:_infProt:_chNFe:TEXT
+	
+	oDet := IIf(ValType(oDet)=="O",{oDet},oDet)
+	
+	aAdd(aCabec,{"F1_TIPO"   ,"D" 									,Nil,Nil})
+	aAdd(aCabec,{"F1_FORMUL" ,"N"									,Nil,Nil})
+	aAdd(aCabec,{"F1_DOC"    ,Alltrim(oIdent:_nNF:TEXT)				,Nil,Nil})
+	aAdd(aCabec,{"F1_SERIE"  ,oIdent:_serie:TEXT						,Nil,Nil})
+	
+	If(Type("oNF:_InfNfe:_infAdic:_infCpl:TEXT")<>"U")
+		aAdd(aCabec,{"F1_MENNOTA",oNF:_InfNfe:_infAdic:_infCpl:TEXT 	,Nil,Nil})
+	EndIf
+	
+	cCodTrans := Transp()
+	Volumes()
+	
+	If AllTrim(cCodTrans) != ""
+		aAdd(aCabec,{"F1_TRANSP", cCodTrans,Nil,Nil})
+	EndIf
+	
+	If(Type("oTransp:_VeicTransp:_Placa:TEXT")<>"U")
+		aAdd(aCabec,{"F1_PLACA", oTransp:_VeicTransp:_Placa:TEXT,Nil,Nil})
+	Endif
+	
+	cCgc		:= StrTran(cCnpjEmi,',','')
+	cCgc		:= StrTran(cCgc,'.','')
+	cCgc		:= StrTran(cCgc,'/','')
+	cCgc		:= StrTran(cCgc,'-','')
+	
+	dbSelectArea("SA1")
+	SA1->(dbSetOrder(3))
+	SA1->(dbSeek(xFilial("SA1") + cCgc))
+	
+	cData	:= ""
+	If Type('oIdent:_dEmi:TEXT') <> "U"
+		cData	:= Alltrim(oIdent:_dEmi:TEXT)
+	EndIf
+	
+	If	cData == "" .And. Type('oIdent:_dhEmi:TEXT') <> "U"
+		cData	:= SubStr(Alltrim(oIdent:_dhEmi:TEXT),1, 10)
+	EndIf
+	
+	If Empty(cData)
+		cData := DToS(dDatabase)
+	EndIf
+	
+	dData	:= CtoD(Right(cData,2)+'/'+Substr(cData,6,2)+'/'+Left(cData,4))
+	aAdd(aCabec,{"F1_EMISSAO",dData,Nil,Nil})
+	aAdd(aCabec,{"F1_FORNECE",SA1->A1_COD,Nil,Nil})
+	aAdd(aCabec,{"F1_LOJA"   ,SA1->A1_LOJA,Nil,Nil})
+	aAdd(aCabec,{"F1_ESPECIE","SPED",Nil,Nil})
+	aAdd(aCabec,{"F1_CHVNFE",cChave,Nil,Nil})
+	
+	For nX := 1 To Len(oDet)
+	
+		cItemXml	:= oDet[nZ]:_NITEM:TEXT
+		aXML		:= {oDet[nZ]}	
+		
+		If Empty(aXML)
+			ConOut("##### ERRO -> Falha na estrutura do array!!")
+			Return .F.
+		EndIf
+		
+		cProduto	:= PadR(AllTrim(aXML[nX]:_Prod:_cProd:TEXT),20)
+		cUnidMed	:= Right(AllTrim(aXML[nX]:_Prod:_uCom:TEXT),2) 
+		
+		dbSelectArea("SB1")
+		SB1->(dbSetOrder(1))
+		SB1->(dbSeek(xFilial("SB1")+ PadR(cProduto,TamSX3("B1_COD")[1])))
+		
+		aLinha 	:= {}
+		
+		cNCM		:= IIf(Type("aXML[1]:_Prod:_NCM")=="U",space(12),aXML[1]:_Prod:_NCM:TEXT)
+		Chkproc	:= .F.
+		
+		// DEFINIR AS QUANTIDADES / PREÇO UNITARIO / PRIMEIRA E SEGUNDA UM
+		nQtdOri	:= 0
+		If Val(aXML[nX]:_Prod:_qCom:TEXT) != 0
+			nQtdOri	:= Val(aXML[nX]:_Prod:_qCom:TEXT)
+		Else
+			nQtdOri	:= Val(aXML[nX]:_Prod:_qTrib:TEXT)
+		EndIf
+		
+		nQtdUM1 	:= 0	// Qtd UM 1
+		nQtdUM2 	:= 0	// Qtd UM 2
+		nVlrUM1		:= 0	// Valor Unit UM 1
+		
+		If cUnidMed == SB1->B1_UM
+			nQtdUM1		:= nQtdOri
+			nQtdUM2		:= 0
+			nVlrUM1		:= Val(aXML[nX]:_Prod:_vProd:TEXT) / nQtdOri
+		ElseIf SB1->B1_CONV > 0
+			nQtdUM1 	:= ConvUM(SB1->B1_COD, 0, nQtdOri, 1)  // PRI UM
+			nQtdUM2 	:= nQtdOri  // SEG UM
+			nVlrUM1		:= Val(aXML[nX]:_Prod:_vProd:TEXT) / nQtdUM1 // nQtdUM2
+			lSegUM		:= .T.
+		Else
+			nQtdUM1		:= nQtdOri
+			nQtdUM2		:= 0
+			nVlrUM1		:= Val(aXML[nX]:_Prod:_vProd:TEXT) / nQtdOri
+		EndIf
+		
+		aAdd(aLinha,{"D1_COD"	,SB1->B1_COD,Nil,Nil})
+		
+		aAdd(aLinha,{"D1_QUANT"	,nQtdUM1,Nil,Nil})
+		If nQtdUM2 > 0
+			aAdd(aLinha,{"D1_QTSEGUM",nQtdUM2,Nil,Nil})
+		EndIf
+		aAdd(aLinha,{"D1_VUNIT",Round(nVlrUM1,6),Nil,Nil})
+		nQdeOrig   := nQtdOri
+		
+		aAdd(aLinha,{"D1_TOTAL",Val(aXML[nX]:_Prod:_vProd:TEXT),Nil,Nil})
+		
+		If Type('aXML[nX]:_Prod:_vOutro:TEXT') != 'U'
+			aadd(aLinha,{"D1_DESPESA",Val(aXML[nX]:_Prod:_vOutro:TEXT),Nil,Nil})
+		EndIf
+		
+		If Type('aXML[nX]:_Prod:_vFrete:TEXT') != 'U'
+			aadd(aLinha,{"D1_VALFRE",Val(aXML[nX]:_Prod:_vFrete:TEXT),Nil,Nil})
+		EndIf
+		
+		If Type('aXML[nX]:_Prod:_vSeg:TEXT') != 'U'
+			aadd(aLinha,{"D1_SEGURO",Val(aXML[nX]:_Prod:_vSeg:TEXT),Nil,Nil})
+		EndIf
+		
+		If Type('aXML[nX]:_Prod:_vDesc:TEXT') != 'U'
+			aadd(aLinha,{"D1_VALDESC",Val(aXML[nX]:_Prod:_vDesc:TEXT),Nil,Nil})
+		EndIf
+		
+		cItem 		:= StrZero(nX, TamSX3("D1_ITEM"[1]))
+		
+		aadd(aLinha,{"D1_TIPO", "D",Nil,Nil})
+		
+		_cfop:=aXML[nX]:_Prod:_CFOP:TEXT
+			
+		If Left(Alltrim(_cfop),1)="5"
+			_cfop:=Stuff(_cfop,1,1,"1")
+		Else
+			_cfop:=Stuff(_cfop,1,1,"2")
+		EndIf
+		
+		If Type("oDet[nX]:_Prod:_vDesc")<> "U"
+			aadd(aLinha,{"D1_VALDESC",Val(aXML[nX]:_Prod:_vDesc:TEXT),Nil,Nil})
+		Else
+			aadd(aLinha,{"D1_VALDESC",0,Nil,Nil})
+		EndIf	
+		
+		If Type("aXML[nX]:_Imposto:_IPI:_IPITrib") != "U"
+			oIPI	:= aXML[nX]:_Imposto:_IPI:_IPITrib
+			aadd(aLinha,{"D1_VALIPI",VAL(oIPI:_vIPI:TEXT),,Nil})
+			If Type("aXML[nX]:_Imposto:_IPI:_IPITrib:_pIPI") <> "U"  				                                 
+				aadd(aLinha,{"D1_IPI"	,VAL(oIPI:_pIPI:TEXT),,Nil})
+			EndIf		  
+		EndIf
+			
+		Do Case
+			Case Type("aXML[nX]:_Imposto:_ICMS:_ICMS00")<> "U"
+			oICM:=aXML[nX]:_Imposto:_ICMS:_ICMS00
+			Case Type("aXML[nX]:_Imposto:_ICMS:_ICMS10")<> "U"
+			oICM:=aXML[nX]:_Imposto:_ICMS:_ICMS10
+			Case Type("aXML[nX]:_Imposto:_ICMS:_ICMS20")<> "U"
+			oICM:=aXML[nX]:_Imposto:_ICMS:_ICMS20
+			Case Type("aXML[nX]:_Imposto:_ICMS:_ICMS30")<> "U"
+			oICM:=aXML[nX]:_Imposto:_ICMS:_ICMS30
+			Case Type("aXML[nX]:_Imposto:_ICMS:_ICMS40")<> "U"
+			oICM:=aXML[nX]:_Imposto:_ICMS:_ICMS40
+			Case Type("aXML[nX]:_Imposto:_ICMS:_ICMS51")<> "U"
+			oICM:=aXML[nX]:_Imposto:_ICMS:_ICMS51
+			Case Type("aXML[nX]:_Imposto:_ICMS:_ICMS60")<> "U"
+			oICM:=aXML[nX]:_Imposto:_ICMS:_ICMS60
+			Case Type("aXML[nX]:_Imposto:_ICMS:_ICMS70")<> "U"
+			oICM:=aXML[nX]:_Imposto:_ICMS:_ICMS70
+			Case Type("aXML[nX]:_Imposto:_ICMS:_ICMS90")<> "U"
+			oICM:=aXML[nX]:_Imposto:_ICMS:_ICMS90
+		EndCase
+		If Type("oICM:_orig:TEXT")<> "U"
+			cOrigProd := oICM:_orig:TEXT
+		EndIf
+		
+		aAdd(aLinha,{"AUTDELETA"	,"N",,Nil})
+		
+		//|Vincula a NF de origem da devolução |
+		dbSelectArea("SD2")
+		SD2->(dbSetOrder(3))
+		If SD2->(dbSeek(xFilial("SD2") + PADL(Alltrim(oIdent:_nNF:TEXT),TamSX3("F2_DOC")[1]) + PADL(Alltrim(oIdent:_serie:TEXT),TamSX3("F2_DOC")[1]) +; 
+					SA1->A1_COD + SA1->A1_LOJA + SB1->B1_COD))
+			
+			aAdd(aLinha,{"D1_NFORI"		,SD2->D2_DOC,,Nil})
+			aAdd(aLinha,{"D1_SERIORI"	,SD2->D2_SERIE,,Nil})
+			aAdd(aLinha,{"D1_ITEMORI"	,SD2->D2_ITEM,,Nil})
+		
+		Else
+		
+			ConOut("##### ERRO -> NAO FOI POSSIVEL ENCONTRAR A NF ORIGINAL DA DEVOLUCAO NA SD2!")
+			Return
+			
+		EndIf
+		
+		aAdd(aItens,aLinha)
+		
+	Next nX
+	
+	If Len(aItens) > 0
+		
+		Private lMsErroAuto := .F.
+		Private lMsHelpAuto := .T.
+		
+		SB1->( dbSetOrder(1) )
+		SA2->( dbSetOrder(1) )
+		
+		//|Gera o documento de entrada classificado |
+		Begin Transaction
+		
+		nModulo := 4  //Estoque
+		
+		MSExecAuto({|x,y,Z| MATA103(x,y,z)},aCabec,aItens,3,.F.)
+		
+		If lMsErroAuto
+			DisarmTransaction()
+			ConOut(MostraErro())
+		Else    
+		
+			ConOut("-----> GERADO DOCUMENTO DE ENTRADA DA DEVOLUCAO COM SUCESSO <-----")
+			
+			//|Altera o status para classificado |
+			RecLock("ZZZ",.F.)
+			ZZZ->ZZZ_OK	:= "C"
+			ZZZ->(MsUnLock())
+		
+		EndIf
+		
+		End Transaction
+		MsUnlockAll()
+		
+	EndIf
+	
+Return
+
+
+/*
+------------------------------------------------------------------------------------------------------------
+Função		: Transp
+Tipo			: Função de Usuário
+Descrição		: Consulta o código da transportadora, caso a mesma esteja cadastrado
+Parâmetros	:
+Retorno		: Código da transportadora
+------------------------------------------------------------------------------------------------------------
+Atualizações:
+- 20/07/2016 - Pontin - Construção inicial do fonte
+------------------------------------------------------------------------------------------------------------
+*/
+
+Static Function Transp()
+	
+	Local cDoc 		:= ""
+	Local cCodigo 	:= ""
+	
+	If Type("oTransp:_Transporta:_CNPJ:TEXT")<>"U"
+		cDoc := oTransp:_Transporta:_CNPJ:TEXT
+		
+	ElseIf Type("oTransp:_Transporta:_CPF:TEXT")<>"U"
+		cDoc := oTransp:_Transporta:_CPF:TEXT
+		
+	EndIf
+	
+	If AllTrim(cDoc) == ""
+		Return()
+	EndIf
+	
+	cCodigo := Posicione("SA4", 3, XFILIAL("SA4")+cDoc, "A4_COD")
+	
+Return cCodigo
+
+
+/*
+------------------------------------------------------------------------------------------------------------
+Função		: Volumes
+Tipo			: Função de Usuário
+Descrição		: Cadastra os valores referentes ao volume da nota fiscal
+Parâmetros	:
+Retorno		:
+------------------------------------------------------------------------------------------------------------
+Atualizações:
+- 30/07/2015 - Pontin - Construção inicial do fonte
+------------------------------------------------------------------------------------------------------------
+*/
+Static Function Volumes()
+	
+	If Type("oTransp:_Vol:_PesoL"	)!="U"
+		aadd(aCabec,{"F1_PESOL"  	,Val(oTransp:_Vol:_PesoL:TEXT)	,Nil,Nil})
+	EndIf
+	
+	If Type("oTransp:_Vol:_PesoL"	)!="U"
+		aadd(aCabec,{"F1_PLIQUI"  	,Val(oTransp:_Vol:_PesoL:TEXT) 	,Nil,Nil})
+	EndIf
+	
+	If Type("oTransp:_Vol:_PesoB"	)!="U"
+		aadd(aCabec,{"F1_PBRUTO"	,Val(oTransp:_Vol:_PesoB:TEXT) 	,Nil,Nil})
+	EndIf
+	
+	If Type("oTransp:_Vol:_Esp"		)!="U"
+		aadd(aCabec,{"F1_ESPECI1"  	,oTransp:_Vol:_Esp:TEXT			,Nil,Nil})
+	EndIf
+	
+	If Type("oTransp:_Vol:_nVol"	)!="U" .And. val(oTransp:_Vol:_nVol:TEXT) <= 999999
+		aadd(aCabec,{"F1_VOLUME1"	,val(oTransp:_Vol:_nVol:TEXT)	,Nil,Nil})
+	EndIf
+	
+Return
+```
 
 _______
 
