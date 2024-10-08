@@ -1157,6 +1157,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mt100tok" class="md-nav__link">
+    <span class="md-ellipsis">
+      MT100TOK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mt103pn" class="md-nav__link">
+    <span class="md-ellipsis">
+      MT103PN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mt140pc" class="md-nav__link">
+    <span class="md-ellipsis">
+      MT140PC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#p007cte" class="md-nav__link">
     <span class="md-ellipsis">
       P007CTE
@@ -1748,6 +1775,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mt100tok" class="md-nav__link">
+    <span class="md-ellipsis">
+      MT100TOK
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mt103pn" class="md-nav__link">
+    <span class="md-ellipsis">
+      MT103PN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mt140pc" class="md-nav__link">
+    <span class="md-ellipsis">
+      MT140PC
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#p007cte" class="md-nav__link">
     <span class="md-ellipsis">
       P007CTE
@@ -2030,6 +2084,64 @@
   EndIf
 
 Return lRet
+</code></pre>
+<hr />
+<h2 id="mt100tok">MT100TOK</h2>
+<p><mark>Uso necessário para o correto funcionamento da ferramenta</mark></p>
+<p>Utilizamos esse ponto de entrada para realizar a validação dos impostos no momento da classificação do documento de entrada.</p>
+<p>Sugerimos incluir o código abaixo no final do fonte, logo antes do RETURN (caso tenha o P.E. já aplicado no ERP).</p>
+<pre><code class="language-C">If lValido .And. AllTrim( FunName() ) $ &quot;MATA103/PTX0007/PTX0018/PTX0008/PTX0001&quot;
+    lValido := U_PTX0010()
+EndIf
+</code></pre>
+<p>Segue exemplo do ponto de entrada completo que poderá ser utilizado (caso **NÃO ** tenha o P.E. já aplicado ERP).</p>
+<pre><code class="language-c">User Function MT100TOK()
+
+    Local aArea   := GetArea()
+    local lValido := ParamIxb[1]
+
+    If lValido .And. AllTrim( FunName() ) $ &quot;MATA103/PTX0007/PTX0018/PTX0008/PTX0001&quot;
+
+        lValido := U_PTX0010()
+
+    EndIf
+
+    RestArea(aArea)
+
+Return lValido
+</code></pre>
+<hr />
+<h2 id="mt103pn">MT103PN</h2>
+<p><mark>Uso necessário para o correto funcionamento da ferramenta</mark></p>
+<p>Utilizamos esse ponto de entrada para realizar a checagem da TES e do pedido de compra nos itens do documento de entrada.</p>
+<p>Sugerimos incluir o código abaixo no final do fonte, logo antes do RETURN (caso tenha o P.E. já aplicado no ERP).</p>
+<pre><code class="language-c">If FwIsInCallStack(&quot;U_PTX0001&quot;)
+    FWMsgRun(, {|| U_PTX0015(.T.) }, &quot;Processando!&quot;, &quot;Calculando impostos, aguarde...&quot;)         
+EndIf
+</code></pre>
+<p>Segue exemplo do ponto de entrada completo que poderá ser utilizado (caso **NÃO ** tenha o P.E. já aplicado no ERP).</p>
+<pre><code class="language-c">User Function MT103PN()
+
+    If FwIsInCallStack(&quot;U_PTX0001&quot;)
+        FWMsgRun(, {|| U_PTX0015(.T.) }, &quot;Processando!&quot;, &quot;Calculando impostos, aguarde...&quot;)         
+    EndIf
+
+Return .T.
+</code></pre>
+<hr />
+<h2 id="mt140pc">MT140PC</h2>
+<p><mark>Esse ponto de entrada deverá ser utilizado exclusivamente na situação em que a empresa utilize o parâmetro **MV_PCNFE ** ativo.</mark></p>
+<p>Utilizamos o ponto de entrada para informar ao sistema que naquele momento da inclusão da Pré-Nota pela ferramenta não será necessário realizar a validação do pedido de compra.</p>
+<p><strong>Obs.:</strong> A utilização desse ponto de entrada não atrapalha no processo padrão adotado pelo MV_PCNFE.</p>
+<p>Segue exemplo do ponto de entrada que poderá ser utilizado:</p>
+<pre><code>User Function MT140PC()
+
+    //|Apenas na rotina Facile XML-e |
+    If !FwIsInCallStack(&quot;U_PTX0001&quot;)
+        Return Nil
+    EndIf
+
+Return .F.
 </code></pre>
 <hr />
 <h2 id="p007cte">P007CTE</h2>
