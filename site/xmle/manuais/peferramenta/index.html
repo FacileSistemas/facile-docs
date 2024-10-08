@@ -2047,7 +2047,7 @@
 <p>Ponto de entrada para validar se o XML será analisado pelo CheckDoc.</p>
 <p>Parâmetros:</p>
 <ul>
-<li><strong>ParamIxb[1]:</strong>  Object, Objeto com o XML a ser analisado pelo checkdoc</li>
+<li><strong>ParamIxb[1]:</strong> Object, Objeto com o XML a ser analisado pelo checkdoc</li>
 </ul>
 <p>Retorno:</p>
 <ul>
@@ -2072,7 +2072,7 @@ Return lRet
 <p>Ponto de entrada para analisar se o CTE deve entrar via rotina de CTE MATA116 ou via documento de entrada MATA103.</p>
 <p>Parâmetros:</p>
 <ul>
-<li><strong>ParamIxb[1]:</strong>  Object, Objeto XML do CTE</li>
+<li><strong>ParamIxb[1]:</strong> Object, Objeto XML do CTE</li>
 </ul>
 <p>Retorno:</p>
 <ul>
@@ -2784,9 +2784,9 @@ Return _oImp
 <p>Ponto de entrada para adicionar campos extras na SD1 antes do execauto. <strong>Esse ponto de entrada será chamado para cada item do documento de entrada.</strong></p>
 <p>Parâmetros:</p>
 <ul>
-<li><strong>ParamIxb[1]:</strong>  Array com os campos do item a ser gerado no Protheus.</li>
-<li><strong>ParamIxb[2]:</strong>  Array com o item do XML.</li>
-<li><strong>ParamIxb[3]:</strong>  Array com o cabeçalho do XML.</li>
+<li><strong>ParamIxb[1]:</strong> Array com os campos do item a ser gerado no Protheus.</li>
+<li><strong>ParamIxb[2]:</strong> Array com o item do XML.</li>
+<li><strong>ParamIxb[3]:</strong> Array com o cabeçalho do XML.</li>
 </ul>
 <p>Retorno:</p>
 <ul>
@@ -2835,9 +2835,9 @@ Return
 <p>Ponto de entrada para alterar informações do item antes do execauto.</p>
 <p>Parâmetros:</p>
 <ul>
-<li><strong>ParamIxb[1]:</strong>  Array com os campos do item a ser gerado no Protheus.</li>
-<li><strong>ParamIxb[2]:</strong>  Array com o item do XML.</li>
-<li><strong>ParamIxb[3]:</strong>  Array com o cabeçalho do XML.</li>
+<li><strong>ParamIxb[1]:</strong> Array com os campos do item a ser gerado no Protheus.</li>
+<li><strong>ParamIxb[2]:</strong> Array com o item do XML.</li>
+<li><strong>ParamIxb[3]:</strong> Array com o cabeçalho do XML.</li>
 </ul>
 <p>Retorno:</p>
 <ul>
@@ -2883,10 +2883,10 @@ Return aItemCols
 <p>Ponto de entrada para analisar os itens do XML no momento da entrada.</p>
 <p>Parâmetros:</p>
 <ul>
-<li><strong>ParamIxb[1]:</strong>  Array com o objeto XML dos produtos da nota fiscal eletronica.</li>
-<li><strong>ParamIxb[2]:</strong>  Se .T. indica que é uma devolução de venda.</li>
-<li><strong>ParamIxb[3]:</strong>  Código do fornecedor no Protheus.</li>
-<li><strong>ParamIxb[4]:</strong>  Loja do fornecedor no Protheus.</li>
+<li><strong>ParamIxb[1]:</strong> Array com o objeto XML dos produtos da nota fiscal eletronica.</li>
+<li><strong>ParamIxb[2]:</strong> Se .T. indica que é uma devolução de venda.</li>
+<li><strong>ParamIxb[3]:</strong> Código do fornecedor no Protheus.</li>
+<li><strong>ParamIxb[4]:</strong> Loja do fornecedor no Protheus.</li>
 </ul>
 <p>Segue exemplo de utilização.</p>
 <pre><code class="language-C">User Function P018PROD()
@@ -2948,9 +2948,9 @@ Return
 <p>Ponto de entrada para indicar formulário próprio na entrada.</p>
 <p>Parâmetros:</p>
 <ul>
-<li><strong>ParamIxb[1]:</strong>  Se é formulário próprio. Identificado com "S" ou "N".</li>
-<li><strong>ParamIxb[2]:</strong>  Número da NF que está entrando no sistema.</li>
-<li><strong>ParamIxb[3]:</strong>  Série da NF que está entrando no sistema.</li>
+<li><strong>ParamIxb[1]:</strong> Se é formulário próprio. Identificado com "S" ou "N".</li>
+<li><strong>ParamIxb[2]:</strong> Número da NF que está entrando no sistema.</li>
+<li><strong>ParamIxb[3]:</strong> Série da NF que está entrando no sistema.</li>
 </ul>
 <p>Retorno:</p>
 <ul>
@@ -3029,9 +3029,9 @@ Return (lRet)
 <p>Ponto de entrada para manipular o array de cabeçalho (SF1) do documento de entrada antes do execauto.</p>
 <p>Parâmetros:</p>
 <ul>
-<li><strong>ParamIxb[1]:</strong>  Array com os campos do item a ser gerado no Protheus.</li>
-<li><strong>ParamIxb[2]:</strong>  Array com o cabeçalho do XML.</li>
-<li><strong>ParamIxb[3]:</strong>  Objeto do XML.</li>
+<li><strong>ParamIxb[1]:</strong> Array com os campos do item a ser gerado no Protheus.</li>
+<li><strong>ParamIxb[2]:</strong> Array com o cabeçalho do XML.</li>
+<li><strong>ParamIxb[3]:</strong> Objeto do XML.</li>
 </ul>
 <p>Retorno:</p>
 <ul>
@@ -3196,12 +3196,12 @@ Return (lRet)
 <p>Ponto de entrada que realiza a conversão de unidade de medida de acordo com a ZZW.</p>
 <p>Parâmetros:</p>
 <ul>
-<li><strong>ParamIxb[1]:</strong>  Unidade de medida do XML.</li>
-<li><strong>ParamIxb[2]:</strong>  Quantidade do produto do XML.</li>
-<li><strong>ParamIxb[3]:</strong>  Total do item do XML.</li>
-<li><strong>ParamIxb[4]:</strong>  Valor unitário do item no XML.</li>
-<li><strong>ParamIxb[5]:</strong>  Número do Pedido de Compra.</li>
-<li><strong>ParamIxb[6]:</strong>  Item do Pedido de Compra.</li>
+<li><strong>ParamIxb[1]:</strong> Unidade de medida do XML.</li>
+<li><strong>ParamIxb[2]:</strong> Quantidade do produto do XML.</li>
+<li><strong>ParamIxb[3]:</strong> Total do item do XML.</li>
+<li><strong>ParamIxb[4]:</strong> Valor unitário do item no XML.</li>
+<li><strong>ParamIxb[5]:</strong> Número do Pedido de Compra.</li>
+<li><strong>ParamIxb[6]:</strong> Item do Pedido de Compra.</li>
 </ul>
 <p>Retorno:</p>
 <p>O retorno é efetuado nas variáveis privadas abaixo.</p>
@@ -3770,11 +3770,11 @@ Return
 <p>Ponto de Entrada na abertura da tela de classificação do documento de entrada. Chamado para cada item do documento de entrada.</p>
 <p>Parâmetros:</p>
 <ul>
-<li><strong>ParamIxb[1]:</strong>  Array de dados da Linha.</li>
-<li><strong>ParamIxb[2]:</strong>  Número da linha.</li>
+<li><strong>ParamIxb[1]:</strong> Array de dados da Linha.</li>
+<li><strong>ParamIxb[2]:</strong> Número da linha.</li>
 </ul>
 <p>Segue exemplo de utilização.</p>
-<pre><code class="language-C">User Function _PT015ITE()
+<pre><code class="language-C">User Function PT015ITE()
 
     Local aDados    := ParamIxb[1]
     Local nLinha    := ParamIxb[2]
@@ -4336,10 +4336,10 @@ Return
 <p>Ponto de entrada para retornar o cliente/fornecedor a ser utilizado.</p>
 <p>Parâmetros:</p>
 <ul>
-<li><strong>ParamIxb[1]:</strong>  Array com Código, Loja e UF do cliente/fornecedor.</li>
-<li><strong>ParamIxb[2]:</strong>  CGC do cliente/fornecedor.</li>
-<li><strong>ParamIxb[3]:</strong>  Tabela que foi utilizada para pesquisar o cliente/fornecedor.</li>
-<li><strong>ParamIxb[4]:</strong>  Objeto com o XML a ser utilizado.</li>
+<li><strong>ParamIxb[1]:</strong> Array com Código, Loja e UF do cliente/fornecedor.</li>
+<li><strong>ParamIxb[2]:</strong> CGC do cliente/fornecedor.</li>
+<li><strong>ParamIxb[3]:</strong> Tabela que foi utilizada para pesquisar o cliente/fornecedor.</li>
+<li><strong>ParamIxb[4]:</strong> Objeto com o XML a ser utilizado.</li>
 </ul>
 <p>Retorno:</p>
 <ul>
@@ -4432,13 +4432,14 @@ Return aCliFor
 <p>Deverá retornar o objeto recebido no ParamIxb[1] na mesma estrutura que foi recebido.</p>
 <p>Parâmetros:</p>
 <ul>
-<li><strong>ParamIxb[1]:</strong>  Objeto do CTE tratado e estruturado pela Ferramenta.</li>
-<li><strong>ParamIxb[2]:</strong>  Objeto do XML do CTE.</li>
+<li><strong>ParamIxb[1]:</strong> Objeto do CTE tratado e estruturado pela Ferramenta.</li>
+<li><strong>ParamIxb[2]:</strong> Objeto do XML do CTE.</li>
 </ul>
 <p>Retorno:</p>
 <ul>
 <li><strong>oObj:</strong> object, Objeto do CTE com os dados a serem processados.</li>
 </ul>
+<p>Segue exemplo de utilização.</p>
 <pre><code class="language-C">User Function PTCTEDAD()
 
   Local oObj            := ParamIxb[1]
@@ -4663,24 +4664,292 @@ Return cResposta
 </code></pre>
 <hr />
 <h2 id="ptx01fil">PTX01FIL</h2>
+<p>Ponto de entrada para filtrar o browse da Central XML-e (tabela ZZZ).</p>
+<p>Retorno:</p>
+<ul>
+<li><strong>cFiltro:</strong> character, expressão SQL de filtro da ZZZ.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function PTX01FIL()
+
+  Local cFiltro    as Character
+  Local cUsersNFSe as Character
+
+  cUsersNFSe  := SuperGetMV(&quot;MV_YUSRNFS&quot;, .F., &quot;&quot;)
+
+  If !Empty(cUsersNFSe) .And. !AllTrim(__cUserID) $ cUsersNFSe
+    cFiltro := &quot; ZZZ_TIPO &lt;&gt; '3' &quot;
+  EndIf
+
+Return cFiltro
+</code></pre>
 <hr />
 <h2 id="ptx0001mnu">PTX0001MNU</h2>
+<p>Ponto de entrada para inserir opções no menu da rotina XML-e.</p>
+<p>Retorno:</p>
+<ul>
+<li><strong>aRet:</strong> array, array com os menus personalizados.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function PTX0001MNU()
+
+    Local aRet    := {}
+    Local aBotoes := {}
+
+    //|Adiciona os botões customizados |
+    aAdd(aBotoes, {&quot;Botão 01&quot;, &quot;Alert('Botão 01')&quot;, 0, 1, 0, Nil})
+    aAdd(aBotoes, {&quot;Botão 02&quot;, &quot;Alert('Botão 02')&quot;, 0, 1, 0, Nil})
+
+    //Retorno pra rotina
+    aAdd(aRet, &quot;# Personalizados&quot;)
+    aAdd(aRet, aBotoes)
+    aAdd(aRet, 0)
+    aAdd(aRet, 1)
+    aAdd(aRet, 0)
+    aAdd(aRet, nil)
+
+Return aRet
+</code></pre>
 <hr />
 <h2 id="ptxf1doc">PTXF1DOC</h2>
+<p>Ponto de entrada para customizar o F1_DOC.</p>
+<p>Parâmetros:</p>
+<ul>
+<li><strong>ParamIxb[1]:</strong> Numero do documento fiscal processado.</li>
+<li><strong>ParamIxb[2]:</strong> Objeto do documento fiscal (se for nfe, é o XML em forma de objeto).</li>
+<li><strong>ParamIxb[3]:</strong> Indica que se trata de uma NFe.</li>
+</ul>
+<p>Retorno:</p>
+<ul>
+<li><strong>cRetorno:</strong> character, valor do F1_DOC a ser retornado.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function PTXF1DOC()
+
+  Local cNumeroDoc  := ParamIxb[1]  //|Numero do documento fiscal processado |
+  Local oObj        := ParamIxb[2]  //|Objeto do documento fiscal (se for nfe, é o XML em forma de objeto) |
+  Local lNFe        := ParamIxb[3]  //|Indica que se trata de uma NFe |
+  Local cRetorno    := cNumeroDoc   //|Valor do F1_DOC a ser retornado |
+
+  If lNFe .And. ValType(oObj) == &quot;O&quot;
+
+    //|PERSONALIZE O cRetorno CONFORME SUA REGRA |
+
+  EndIf
+
+Return cRetorno
+</code></pre>
 <hr />
 <h2 id="ptxf1ser">PTXF1SER</h2>
+<p>Ponto de entrada para customizar o F1_SERIE.</p>
+<p>Parâmetros:</p>
+<ul>
+<li><strong>ParamIxb[1]:</strong> Serie do documento fiscal processado.</li>
+<li><strong>ParamIxb[2]:</strong> Objeto do documento fiscal (se for nfe, é o XML em forma de objeto).</li>
+<li><strong>ParamIxb[3]:</strong> Indica que se trata de uma NFe.</li>
+</ul>
+<p>Retorno:</p>
+<ul>
+<li><strong>cRetorno:</strong> character, valor do F1_SERIE a ser retornado.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function PTXF1SER()
+
+  Local cSerieDoc   := ParamIxb[1]  //|Serie do documento fiscal processado |
+  Local oObj        := ParamIxb[2]  //|Objeto do documento fiscal (se for nfe, é o XML em forma de objeto) |
+  Local cTipoDoc    := ParamIxb[3]  //|Indica que se trata de uma NFe |
+  Local cRetorno    := cSerieDoc   //|Valor do F1_SERIE a ser retornado |
+  Local cCnpjFornec := &quot;&quot;
+
+  If cTipoDoc == &quot;NFE&quot; .And. ValType(oObj) == &quot;O&quot;
+
+    //|PERSONALIZE O cRetorno CONFORME SUA REGRA |
+    IIf(XmlChildEx(oObj:_INFNFE:_EMIT, &quot;_CNPJ&quot;) &lt;&gt; Nil, cCnpjFornec := oObj:_INFNFE:_EMIT:_CNPJ:TEXT, '')
+
+    If Empty(cCnpjFornec)
+      IIf(XmlChildEx(oObj:_INFNFE:_EMIT, &quot;_CPF&quot;) &lt;&gt; Nil, cCnpjFornec := oObj:_INFNFE:_EMIT:_CPF:TEXT, '')
+    EndIf
+
+    //|Verifica se é filial |
+    If SubStr( cCnpjFornec, 1, 8 ) == SubStr( SM0-&gt;M0_CGC, 1, 8 )
+
+      //|Muda a série para 2 digitos |
+      cRetorno := StrZero( Val(cRetorno), 2 )
+
+    EndIf
+
+  EndIf
+
+Return cRetorno
+</code></pre>
 <hr />
 <h2 id="ptxjobsa5">PTXJOBSA5</h2>
 <hr />
 <h2 id="px011cte">PX011CTE</h2>
+<p>Ponto de entrada para alterar informações após a importação do CTE.</p>
+<p>Parâmetros:</p>
+<ul>
+<li><strong>ParamIxb[1]:</strong> Chave do índice utilizado no banco de dados para localizar o CTE.</li>
+<li><strong>ParamIxb[2]:</strong> Objeto do XML do CTE.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function PX011CTE()
+
+    Local cSeekSF1  := ParamIxb[1]
+
+    Private oXMLCTE := ParamIxb[2]
+
+    //|Grava a chave de nota referenciada no CTe |
+    U_fChvOrig(oXMLCTE,cSeekSF1)
+
+Return
+</code></pre>
 <hr />
 <h2 id="px041vld">PX041VLD</h2>
+<p>Ponto de entrada que verifica se o CTE pode manifestar desacordo.</p>
+<p>Parâmetros:</p>
+<ul>
+<li><strong>ParamIxb[1]:</strong> Chave do CTE.</li>
+<li><strong>ParamIxb[2]:</strong> Status do CTE na ferramenta. Referente ao campo ZZZ_OK.</li>
+</ul>
+<p>Retorno:</p>
+<ul>
+<li><strong>lValido:</strong> logical, retorna se deve seguir com o processo de manifestação de desacordo.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function PX041VLD()
+
+    Local cChave   := Paramixb[1]
+    Local cStatus  := Paramixb[2]
+    Local cMsgErro := &quot;&quot;
+    Local lValido  := .T.
+
+    If AllTrim(cStatus) $ &quot;C/P&quot;
+
+        cMsgErro := &quot;Não é possível manifestar desacordo pois esse documento possui entrada.&quot; + CR
+        lValido  := .F.
+
+        MsgStop(cMsgErro)
+
+    Endif
+
+Return lValido
+</code></pre>
 <hr />
 <h2 id="savezzz">SAVEZZZ</h2>
+<p>Ponto de entrada para manipular a ZZZ após gravação. Nesse momento a ZZZ já está gravada e após o MsUnLock.</p>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function SAVEZZZ()
+
+    Local cTipoDocumento := &quot;&quot;
+    Local cError         := &quot;&quot;
+    Local cTipoCTE           := &quot;&quot;
+    Local oError         := Nil
+  Local bError         := ErrorBlock({|oError| cError := oError:Description})
+
+    Begin Sequence
+
+    If !Empty(ZZZ-&gt;ZZZ_XML) //|Em alguns casos (NF-e resumida) o XML chega depois |
+
+        If AllTrim(ZZZ-&gt;ZZZ_TIPO) == &quot;2&quot; .And. ZZZ-&gt;ZZZ_SITDOC == &quot;1&quot;   //|CT-E autorizado |
+
+            cTipoDocumento := U_PTXTipoDocumento()
+
+            cTipoCTE    := SuperGetMV(&quot;MC_YTPCTE&quot;, .F., &quot;CTEV/CTEC&quot;)
+
+            If cTipoDocumento $ cTipoCTE    //|CTEV = CTE de Venda / CTEC = CTE de compra |
+
+                //|Grava o XML em arquivo |
+                Exporta_XML_Disco(cTipoDocumento)
+
+            EndIf
+
+        EndIf
+
+    EndIf
+
+    End Sequence
+
+  ErrorBlock(bError)
+
+  If !Empty(cError)
+    ConOut( &quot;### ERRO PONTO DE ENTRADA SAVEZZZ &quot; + CRLF + CRLF + cError )
+  EndIf
+
+Return
+
+
+
+Static Function Exporta_XML_Disco(cTipoDocumento)
+
+    Local cDiretorio   as Character
+    Local cNomeArquivo as Character
+
+    cDiretorio  := SuperGetMV( &quot;MC_YXMLDIR&quot;, .F., &quot;\facile\cte\&quot; )
+
+    If !Empty( cDiretorio )
+
+        If Right(cDiretorio,1) != &quot;\&quot;
+            cDiretorio += &quot;\&quot;
+        EndIf
+
+        If !ExistDir(cDiretorio)
+            FWMakeDir( cDiretorio )
+        EndIf
+
+        cNomeArquivo    := AllTrim(ZZZ-&gt;ZZZ_CHAVE) + &quot;-&quot; + &quot;prot&quot; + cTipoDocumento + &quot;.xml&quot;
+
+        If File( cDiretorio + cNomeArquivo )
+            fErase(cDiretorio + cNomeArquivo)
+        EndIf
+
+        nHandle  := FCreate( cDiretorio + cNomeArquivo )
+
+        If nHandle &gt; 0
+
+            FWrite( nHandle, AllTrim(ZZZ-&gt;ZZZ_XML) )
+            FClose(nHandle)
+
+        EndIf
+
+    Else
+
+        ConOut( &quot;FACILE - PE SAVEZZZ -&gt; Parametro MC_YXMLDIR nao existe ou esta vazio, nao foi possivel salvar o XML no disco&quot; )
+
+    EndIf
+
+Return
+</code></pre>
 <hr />
 <h2 id="sf1140i">SF1140I</h2>
 <hr />
 <h2 id="xcarregdados">XCarregDados</h2>
+<p>Ponto de entrada para manipular valores antes de salvar a ZZZ.</p>
+<p>Retorno:</p>
+<ul>
+<li><strong>oDados:</strong> object, Objeto com os dados a serem salvos na ZZZ.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function XCarregDados()
+
+  Local oDados   := ParamIxb[1] as Object
+  Local cFilNova := &quot;&quot;          as Character
+
+  If !Empty(oDados:cIEDestinatario) .And. oDados:cCodigoFilial == &quot;AAPES001&quot;  //|Só processa na filial 1 |
+
+    //|Código para identificar a filial onde vai salvar o XML |
+    // bla bla bla
+    // bla bla bla
+    // bla bla bla
+
+    cFilNova := &quot;AAPES002&quot;
+
+    oDados:cCodigoFilial := cFilNova
+
+  EndIf
+
+Return oDados
+</code></pre>
 
 
 
