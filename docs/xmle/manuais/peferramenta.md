@@ -2888,10 +2888,6 @@ Return cRetorno
 
 _______
 
-## PTXJOBSA5
-
-_______
-
 ## PX011CTE
 
 Ponto de entrada para alterar informações após a importação do CTE.
@@ -2958,6 +2954,10 @@ _______
 ## SAVEZZZ
 
 Ponto de entrada para manipular a ZZZ após gravação. Nesse momento a ZZZ já está gravada e após o MsUnLock.
+
+Parâmetros:
+
+* **ParamIxb[1]:** Variável lógica para identificar se o documento é novo (.F.) e está sendo salvo pela primeira vez ou se é uma alteração de status no documento já gravado (.T.).
 
 Segue exemplo de utilização.
 
@@ -3043,10 +3043,6 @@ Static Function Exporta_XML_Disco(cTipoDocumento)
 
 Return
 ```
-
-_______
-
-## SF1140I
 
 _______
 

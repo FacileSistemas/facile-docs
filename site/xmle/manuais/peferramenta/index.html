@@ -1364,15 +1364,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ptxjobsa5" class="md-nav__link">
-    <span class="md-ellipsis">
-      PTXJOBSA5
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#px011cte" class="md-nav__link">
     <span class="md-ellipsis">
       PX011CTE
@@ -1394,15 +1385,6 @@
   <a href="#savezzz" class="md-nav__link">
     <span class="md-ellipsis">
       SAVEZZZ
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sf1140i" class="md-nav__link">
-    <span class="md-ellipsis">
-      SF1140I
     </span>
   </a>
   
@@ -1973,15 +1955,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ptxjobsa5" class="md-nav__link">
-    <span class="md-ellipsis">
-      PTXJOBSA5
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#px011cte" class="md-nav__link">
     <span class="md-ellipsis">
       PX011CTE
@@ -2003,15 +1976,6 @@
   <a href="#savezzz" class="md-nav__link">
     <span class="md-ellipsis">
       SAVEZZZ
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sf1140i" class="md-nav__link">
-    <span class="md-ellipsis">
-      SF1140I
     </span>
   </a>
   
@@ -4783,8 +4747,6 @@ Return cRetorno
 Return cRetorno
 </code></pre>
 <hr />
-<h2 id="ptxjobsa5">PTXJOBSA5</h2>
-<hr />
 <h2 id="px011cte">PX011CTE</h2>
 <p>Ponto de entrada para alterar informações após a importação do CTE.</p>
 <p>Parâmetros:</p>
@@ -4838,6 +4800,10 @@ Return lValido
 <hr />
 <h2 id="savezzz">SAVEZZZ</h2>
 <p>Ponto de entrada para manipular a ZZZ após gravação. Nesse momento a ZZZ já está gravada e após o MsUnLock.</p>
+<p>Parâmetros:</p>
+<ul>
+<li><strong>ParamIxb[1]:</strong> Variável lógica para identificar se o documento é novo (.F.) e está sendo salvo pela primeira vez ou se é uma alteração de status no documento já gravado (.T.).</li>
+</ul>
 <p>Segue exemplo de utilização.</p>
 <pre><code class="language-C">User Function SAVEZZZ()
 
@@ -4920,8 +4886,6 @@ Static Function Exporta_XML_Disco(cTipoDocumento)
 
 Return
 </code></pre>
-<hr />
-<h2 id="sf1140i">SF1140I</h2>
 <hr />
 <h2 id="xcarregdados">XCarregDados</h2>
 <p>Ponto de entrada para manipular valores antes de salvar a ZZZ.</p>
