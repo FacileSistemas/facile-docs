@@ -3767,12 +3767,900 @@ Return
 </code></pre>
 <hr />
 <h2 id="pt015ite">PT015ITE</h2>
+<p>Ponto de Entrada na abertura da tela de classificação do documento de entrada. Chamado para cada item do documento de entrada.</p>
+<p>Parâmetros:</p>
+<ul>
+<li><strong>ParamIxb[1]:</strong>  Array de dados da Linha.</li>
+<li><strong>ParamIxb[2]:</strong>  Número da linha.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function _PT015ITE()
+
+    Local aDados    := ParamIxb[1]
+    Local nLinha    := ParamIxb[2]
+    Local aArea     := GetArea()
+    Local nPOSTES   := ASCAN(aHEADER,{|X|ALLTRIM(UPPER(X[2])) == &quot;D1_TES&quot;})
+    Local nPOSCFOP  := ASCAN(aHEADER,{|X|ALLTRIM(UPPER(X[2])) == &quot;D1_CF&quot;})
+    Local cCodTES   := &quot;&quot;
+
+    If !Empty(aCols[nLinha,nPOSTES]) .And. AllTrim(SF1-&gt;F1_ESPECIE) == &quot;CTE&quot;
+
+        cCodTES := aCols[nLinha,nPOSTES]
+
+        dbSelectArea(&quot;SF4&quot;)
+        SF4-&gt;(dbSetOrder(1))
+        SF4-&gt;(dbSeek(xFilial(&quot;SF4&quot;) + cCodTES))
+
+        aCols[nLinha,nPOSCFOP]  := SF4-&gt;F4_CF
+
+        MaFisLoad(&quot;IT_TES&quot;,&quot;&quot;,nLinha)
+        MaFisAlt(&quot;IT_TES&quot;,cTes,nLinha)
+        MaFisLoad(&quot;IT_CF&quot;,&quot;&quot;,nLinha)
+        MaFisAlt(&quot;IT_CF&quot;,SF4-&gt;F4_CF,nLinha)             
+        MaFisToCols(aHeader,aCols,nLinha,&quot;MT100&quot;)
+        //A103Trigger(&quot;D1_COD&quot;)
+
+    EndIf
+
+    RestArea(aArea)
+
+Return
+</code></pre>
 <hr />
 <h2 id="pt024cte">PT024CTE</h2>
+<p>Ponto de Entrada para realizar ações após a importação do CTE.</p>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">user function PT024CTE()
+
+    Private lJob    := IsBlind()
+
+    If !Empty(ZZZ-&gt;ZZZ_XML)
+
+        //|Chama rotina para gerar o documento de entrada |
+        If !lJob
+
+            If MsgYesNo(&quot;Deseja gerar a entrada automática do frete selecionado?&quot;,FunName()) .And. ZZZ-&gt;ZZZ_TIPO == &quot;2&quot;
+                MsgRun(&quot;Gerando entrada do frete&quot;,&quot;Processando&quot;,{|| fClassCte() })
+            EndIf
+
+        Else
+            fClassCte()
+        EndIf
+
+    EndIf
+
+return
+
+
+Static Function fClassCte()
+
+    Local aArea     := GetArea()
+    Local aCabNF    := {}
+    Local aItem     := {}
+    Local aTotItem  := {}
+    Local aAreaSM0  := {}
+    Local aDadosCfo := {}
+    Local cAlias    := &quot;&quot;
+    Local cProduto  := &quot;&quot;
+    Local cTes      := &quot;&quot;
+    Local cAviso    := &quot;&quot;
+    Local cErro     := &quot;&quot;
+    Local cDoc      := &quot;&quot;
+    Local cSerie    := &quot;&quot;
+    Local cDtCte    := &quot;&quot;
+    Local cCNPJ     := &quot;&quot;
+    Local cCnpjEmp  := &quot;&quot;
+    Local cIdCte    := &quot;&quot;
+    Local cNewFil   := &quot;&quot;
+    Local cOldFil   := &quot;&quot;
+    Local cChvCte   := &quot;&quot;
+    Local cChvSF2   := &quot;&quot;
+    Local cMsg      := &quot;&quot;
+    Local cCfop     := &quot;&quot;
+    Local cProdXML  := &quot;ATHOS&quot;
+    Local dDtCte    := CtoD(&quot; &quot;)
+    Local nVlrFrete := 0
+    Local nBaseIcms := 0
+    Local nAliqIcms := 0
+    Local nVlrIcms  := 0
+
+    Private oCTe    := Nil
+
+    If Empty(ZZZ-&gt;ZZZ_XML)
+
+        cMsg    := &quot;------&gt; ERRO: CTE SEM XML &lt;------&quot;
+        If lJob
+            //ConOut(cMsg)
+        Else
+            MsgStop(cMsg)
+        EndIf
+        Return 
+
+    EndIf
+
+    oCTe := XmlParser( ZZZ-&gt;ZZZ_XML, &quot;_&quot;, @cAviso, @cErro )
+
+    If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_NCT&quot; ) &lt;&gt; &quot;U&quot;
+        cDoc      := Alltrim(oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_NCT:TEXT )
+    EndIf
+
+    If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_SERIE&quot; ) &lt;&gt; &quot;U&quot;
+        cSerie    := oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_SERIE:TEXT
+    EndIf
+
+    If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_DHEMI&quot; ) &lt;&gt; &quot;U&quot;
+        cDtCte    := oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_DHEMI:TEXT
+        dDtCte    := Ctod( ( SubStr( cDtCte, 9, 2 ) + &quot;/&quot; + SubStr( cDtCte, 6, 2 ) + &quot;/&quot; + SubStr( cDtCte, 1, 4 ) ) )
+    EndIf
+
+    If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_EMIT:_CNPJ&quot; ) &lt;&gt; &quot;U&quot;
+        cCNPJ     := oCTe:_CTEPROC:_CTE:_INFCTE:_EMIT:_CNPJ:TEXT
+    EndIf
+
+    If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_VPREST:_VTPREST&quot; ) &lt;&gt; &quot;U&quot;
+        nVlrFrete := Val( oCTe:_CTEPROC:_CTE:_INFCTE:_VPREST:_VTPREST:TEXT )
+    EndIf
+
+    If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_IMP:_ICMS:_ICMS00:_VBC&quot; ) &lt;&gt; &quot;U&quot;
+        nBaseIcms := Val( oCTe:_CTEPROC:_CTE:_INFCTE:_IMP:_ICMS:_ICMS00:_VBC:TEXT )
+    EndIf
+
+    If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_IMP:_ICMS:_ICMS00:_PICMS&quot; ) &lt;&gt; &quot;U&quot;
+        nAliqIcms := Val( oCTe:_CTEPROC:_CTE:_INFCTE:_IMP:_ICMS:_ICMS00:_PICMS:TEXT )
+    EndIf
+
+    If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_IMP:_ICMS:_ICMS00:_VICMS&quot; ) &lt;&gt; &quot;U&quot;
+        nVlrIcms  := Val( oCTe:_CTEPROC:_CTE:_INFCTE:_IMP:_ICMS:_ICMS00:_VICMS:TEXT )
+    EndIf
+
+    If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_ID&quot; ) &lt;&gt; &quot;U&quot;
+        cIdCte    := StrTran( ( oCTe:_CTEPROC:_CTE:_INFCTE:_ID:TEXT ), &quot;CTe&quot;, &quot;&quot; )
+    EndIf
+
+    If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_INFCTENORM:_INFDOC:_INFNFE:_CHAVE&quot; ) &lt;&gt; &quot;U&quot;
+        cChvSF2    := oCTe:_CTEPROC:_CTE:_INFCTE:_INFCTENORM:_INFDOC:_INFNFE:_CHAVE:TEXT
+    EndIf
+    /*  
+    If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA03:_TOMA&quot; ) &lt;&gt; &quot;U&quot;
+
+        If oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA03:_TOMA:TEXT == &quot;0&quot;
+
+            If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_REM:_CNPJ&quot; ) &lt;&gt; &quot;U&quot;
+                cCnpjEmp    := oCTe:_CTEPROC:_CTE:_INFCTE:_REM:_CNPJ:TEXT   
+            EndIf
+
+        ElseIf oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA03:_TOMA:TEXT == &quot;1&quot;
+            MsgInfo(&quot;Problema na importação do CTE &quot; + cDoc) 
+        ElseIf oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA03:_TOMA:TEXT == &quot;2&quot;
+            MsgInfo(&quot;Problema na importação do CTE &quot; + cDoc)
+        ElseIf oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA03:_TOMA:TEXT == &quot;3&quot;
+
+            If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_DEST:_CNPJ&quot; ) &lt;&gt; &quot;U&quot;  
+                cCnpjEmp    := oCTe:_CTEPROC:_CTE:_INFCTE:_DEST:_CNPJ:TEXT  
+            EndIf
+
+        EndIf       
+
+    EndIf
+    */
+
+    //|Informações do destinatário |
+    If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA03:_TOMA&quot; ) &lt;&gt; &quot;U&quot;
+
+        If oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA03:_TOMA:TEXT == &quot;0&quot;
+
+            If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_REM:_CNPJ&quot; ) &lt;&gt; &quot;U&quot;
+                cCnpjEmp    := oCTe:_CTEPROC:_CTE:_INFCTE:_REM:_CNPJ:TEXT   
+            EndIf
+
+        ElseIf oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA03:_TOMA:TEXT == &quot;1&quot;
+            MsgInfo(&quot;Problema na importação do CTE &quot; + cDoc) 
+        ElseIf oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA03:_TOMA:TEXT == &quot;2&quot;
+            MsgInfo(&quot;Problema na importação do CTE &quot; + cDoc)
+        ElseIf oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA03:_TOMA:TEXT == &quot;3&quot;
+
+            If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_DEST:_CNPJ&quot; ) &lt;&gt; &quot;U&quot;  
+                cCnpjEmp    := oCTe:_CTEPROC:_CTE:_INFCTE:_DEST:_CNPJ:TEXT  
+            EndIf
+
+        EndIf       
+
+    Else
+
+        If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA3:_TOMA&quot; ) &lt;&gt; &quot;U&quot;
+
+            If oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA3:_TOMA:TEXT == &quot;0&quot;
+
+                If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_REM:_CNPJ&quot; ) &lt;&gt; &quot;U&quot;
+                    cCnpjEmp    := oCTe:_CTEPROC:_CTE:_INFCTE:_REM:_CNPJ:TEXT   
+                EndIf
+
+            ElseIf oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA3:_TOMA:TEXT == &quot;1&quot;
+                MsgInfo(&quot;Problema na importação do CTE &quot; + cDoc) 
+            ElseIf oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA3:_TOMA:TEXT == &quot;2&quot;
+                MsgInfo(&quot;Problema na importação do CTE &quot; + cDoc)
+            ElseIf oCTe:_CTEPROC:_CTE:_INFCTE:_IDE:_TOMA3:_TOMA:TEXT == &quot;3&quot;
+
+                If Type( &quot;oCTe:_CTEPROC:_CTE:_INFCTE:_DEST:_CNPJ&quot; ) &lt;&gt; &quot;U&quot;  
+                    cCnpjEmp    := oCTe:_CTEPROC:_CTE:_INFCTE:_DEST:_CNPJ:TEXT  
+                EndIf
+
+            EndIf   
+
+        EndIf   
+
+    EndIf
+
+    //|Tratamentos de segurança |
+    If Empty( cDoc )
+
+        cMsg    := &quot;------&gt; ERRO: Numero do Documento não preenchido &lt;------&quot;
+        If lJob
+            //ConOut(cMsg)
+        Else
+            MsgStop(cMsg)
+        EndIf
+        Return
+
+    ElseIf Empty( cSerie )
+
+        cMsg    := &quot;------&gt; ERRO: Serie do Documento não preenchido &lt;------&quot;
+        If lJob
+            //ConOut(cMsg)
+        Else
+            MsgStop(cMsg)
+        EndIf
+        Return
+
+    ElseIf Empty( cCNPJ )
+
+        cMsg    := &quot;------&gt; ERRO: CNPJ do fornecedor não preenchido &lt;------&quot;
+        If lJob
+            //ConOut(cMsg)
+        Else
+            MsgStop(cMsg)
+        EndIf
+        Return
+
+    ElseIf nVlrFrete == 0
+
+        cMsg    := &quot;------&gt; ERRO: Valor do frete zerado &lt;------&quot;
+        If lJob
+            //ConOut(cMsg)
+        Else
+            MsgStop(cMsg)
+        EndIf
+        Return
+
+    EndIf
+
+    dbSelectArea( &quot;SF1&quot; )
+    SF1-&gt;(dbSetOrder(1))
+
+    //|Busca o Fornecedor |
+    cAlias      := GetNextAlias()
+    If Select(cAlias) &gt; 0 
+        dbSelectArea(cAlias)
+        (cAlias)-&gt;(dbCloseArea())
+    EndIf   
+
+    BeginSql Alias cAlias
+        SELECT R_E_C_N_O_ AS REC
+        FROM   %Table:SA2% SA2
+        WHERE  A2_FILIAL = %xFilial:SA2%
+            AND A2_CGC = %Exp:cCNPJ%
+            AND A2_MSBLQL &lt;&gt; '1'
+            AND SA2.%NotDel%
+    EndSql
+
+    (cAlias)-&gt;(dbGoTop())           
+
+    If (cAlias)-&gt;(EoF())
+
+        cMsg    := &quot;------&gt; ERRO: NAO FOI POSSIVEL ENCONTRAR O FORNECEDOR PARA O CTE &lt;------&quot;
+        If lJob
+            //ConOut(cMsg)
+        Else
+            MsgStop(cMsg)
+        EndIf       
+        Return
+
+    Else    
+        dbSelectArea(&quot;SA2&quot;)
+        SA2-&gt;(dbSetOrder(1))
+        SA2-&gt;(dbGoTo((cAlias)-&gt;REC))
+        (cAlias)-&gt;(dbCloseArea())
+    EndIf
+
+    cProduto    := SFP001(cProdXML)
+    cTes        := SA2-&gt;A2_YTESCTE
+
+    If Empty(cProduto) .Or. Empty(cTes) .Or. Empty(SA2-&gt;A2_COND)
+
+        cMsg    := &quot;------&gt; ERRO: NAO FOI POSSIVEL ENCONTRAR O PRODUTO, TES OU CONDICAO DE PAGAMENTO PARA O CTE &lt;------&quot;
+        If lJob
+            //ConOut(cMsg)
+        Else
+            MsgStop(cMsg)
+        EndIf
+        Return
+
+    EndIf 
+
+    lMsErroAuto := .F.
+
+    //|Monta array cabecalho do CTE |
+    aCabNF := { {&quot;F1_TIPO&quot;    , &quot;N&quot;                     , NIL},;
+                {&quot;F1_FORMUL&quot;  , &quot;&quot;                      , NIL},;
+                {&quot;F1_ESPECIE&quot; , &quot;CTE&quot;                   , NIL},;
+                {&quot;F1_DOC&quot;     , cDoc                    , NIL},;
+                {&quot;F1_SERIE&quot;   , cSerie                  , NIL},;
+                {&quot;F1_FORNECE&quot; , SA2-&gt;A2_COD             , NIL},;
+                {&quot;F1_LOJA&quot;    , SA2-&gt;A2_LOJA            , NIL},;
+                {&quot;F1_EMISSAO&quot; , dDtCte                  , NIL},;
+                {&quot;F1_DTDIGIT&quot; , dDtCte                  , NIL},;
+                {&quot;F1_VALICM&quot;  , nVlrIcms                , NIL},;
+                {&quot;F1_CHVNFE&quot;  , cIdCte                  , NIL},;
+                {&quot;F1_YCHVSF2&quot; , cChvSF2                 , NIL},;
+                {&quot;F1_TPCTE&quot;   , &quot;N&quot;                     , NIL},;
+                {&quot;F1_VALBRUT&quot;,  nVlrFrete               , NIL}} 
+
+    dbSelectArea(&quot;SF4&quot;)
+    SF4-&gt;( dbSetOrder(1) )
+
+    If SF4-&gt;( dbSeek( xFilial(&quot;SF4&quot;) + cTes ) )
+
+        aDadosCfo := {}
+        aadd(aDadosCfo, {&quot;OPERNF&quot;  , &quot;E&quot;})
+        aadd(aDadosCfo, {&quot;TPCLIFOR&quot;, SA2-&gt;A2_TIPO})
+        aadd(aDadosCfo, {&quot;UFDEST&quot;  , SA2-&gt;A2_EST})
+        aadd(aDadosCfo, {&quot;INSCR&quot;   , SA2-&gt;A2_INSCR})
+        aadd(aDadosCfo, {&quot;CONTR&quot;   , &quot;&quot;})
+
+        cCfop := MaFisCfo( , SF4-&gt;F4_CF, aDadosCfo )
+
+    EndIf
+
+    //|Array com o item do frete |
+    aItem := {  {&quot;D1_COD&quot;       , cProduto          ,NIL},;
+                {&quot;D1_QUANT&quot;     , 1                 ,NIL},;
+                {&quot;D1_VUNIT&quot;     , nVlrFrete         ,NIL},;
+                {&quot;D1_TOTAL&quot;     , nVlrFrete         ,NIL},;     
+                {&quot;D1_FORNECE&quot;   , SA2-&gt;A2_COD       ,NIL},;
+                {&quot;D1_LOJA&quot;      , SA2-&gt;A2_LOJA      ,NIL},;
+                {&quot;D1_DOC&quot;       , cDoc              ,NIL},;
+                {&quot;D1_SERIE&quot;     , cSerie            ,NIL},;
+                {&quot;D1_TES&quot;       , cTes              ,NIL},;
+                {&quot;D1_CF&quot;        , cCfop             ,NIL},;
+                {&quot;D1_LOCAL&quot;     , SB1-&gt;B1_LOCPAD    ,NIL},;
+                {&quot;D1_BASEICM&quot;   , nBaseIcms         ,NIL},;
+                {&quot;D1_PICM&quot;      , nAliqIcms         ,NIL},;
+                {&quot;D1_VALICM&quot;    , nVlrIcms          ,NIL},;
+                {&quot;D1_TIPO&quot;      ,&quot;N&quot;                ,NIL},;
+                {&quot;D1_ITEM&quot;      ,&quot;0001&quot;             ,Nil},;
+                {&quot;AUTDELETA&quot;    ,&quot;N&quot;                ,Nil}}
+
+    aAdd(aTotItem, aItem)
+
+    cNewFil     := &quot;&quot;
+    cOldFil     := cFilAnt
+    aAreaSM0    := SM0-&gt;(GetArea())
+
+    dbSelectArea(&quot;SM0&quot;)
+    SM0-&gt;(dbSetOrder(1))
+    SM0-&gt;( dbSeek( cEmpAnt ) )
+    While !SM0-&gt;( EoF() ) .And. AllTrim(SM0-&gt;M0_CODIGO) == cEmpAnt
+
+        If AllTrim(SM0-&gt;M0_CGC) == AllTrim(cCnpjEmp)
+            cNewFil := SM0-&gt;M0_CODFIL   
+            Exit                            
+        EndIf               
+
+        SM0-&gt;(dbSkip())
+    EndDo
+    RestArea(aAreaSM0)
+
+    If Empty(cNewFil)
+
+        cMsg    := &quot;------&gt; ERRO: NAO FOI POSSIVEL ENCONTRAR FILIAL DE DESTINO DO CT-E &lt;------&quot;
+        If lJob
+            //ConOut(cMsg)
+        Else
+            MsgStop(cMsg)
+        EndIf
+        Return
+
+    EndIf
+
+    cFilAnt := cNewFil
+
+    cChvCte := cFilAnt + cDoc + Space(TamSx3(&quot;F1_DOC&quot;)[1]-Len(cDoc)) + cSerie + Space(TamSx3(&quot;F1_SERIE&quot;)[1]-Len(cSerie))+SA2-&gt;A2_COD+SA2-&gt;A2_LOJA
+    If !SF1-&gt;(dbSeek(cChvCte))
+
+        lGerou := .F.
+
+        //|Gera o documento de entrada classificado |
+        Begin Transaction
+
+        nModulo := 4  //Estoque
+
+        MSExecAuto({|x,y,Z| MATA103(x,y,z)},aCabNF,aTotItem,3,.F.)
+
+        If lMsErroAuto
+
+            DisarmTransaction()
+
+            If lJob
+                //ConOut(MostraErro())
+            Else
+                MostraErro()
+            EndIf
+
+        Else
+
+            cMsg    := &quot;-----&gt; GERADO DOCUMENTO DE ENTRADA DO FRETE COM SUCESSO &lt;-----&quot;
+            If lJob
+                //ConOut(cMsg)
+            Else
+                MsgInfo(cMsg)
+            EndIf
+
+            //|Altera o status para classificado |
+            RecLock(&quot;ZZZ&quot;,.F.)
+            ZZZ-&gt;ZZZ_OK := &quot;C&quot;
+            ZZZ-&gt;(MsUnLock())
+
+            lGerou := .T.
+
+            //|Grava a chave de nota referenciada no CTe |
+            U_fChvOrig(oCTe,cChvCte)
+
+        EndIf
+
+        End Transaction
+        MsUnlockAll() 
+
+        /*If lGerou
+            //|Preenche campo do tipo de CTE |
+            RecLock(&quot;SF1&quot;,.F.)
+            SF1-&gt;F1_TPCTE := &quot;N&quot;
+            SF1-&gt;(MsUnLock())
+        EndIf */
+
+    EndIf
+
+    RestArea(aArea)
+
+Return
+
+
+//|Função para busca o produto |
+Static Function SFP001(cProdXML)
+
+    Local cProduto  := &quot;&quot;
+
+    dbSelectArea(&quot;SA5&quot;)
+    SA5-&gt;(dbSetOrder(14))   //|FILIAL + FORNECEDOR + LOJA + CODIGO PRODUTO NO FORNECEDOR |
+    If SA5-&gt;(dbSeek(xFilial(&quot;SA5&quot;) + SA2-&gt;A2_COD + SA2-&gt;A2_LOJA + cProdXML))
+
+        dbSelectArea(&quot;SB1&quot;)
+        SB1-&gt;(dbSetOrder(1)) 
+        SB1-&gt;(dbSeek(xFilial(&quot;SB1&quot;) + SA5-&gt;A5_PRODUTO))
+
+        cProduto    := SB1-&gt;B1_COD
+
+    EndIf
+
+    If Empty(cProduto)
+        cProduto := &quot;DA.3127.20.001                &quot;
+    EndIf
+
+Return cProduto
+
+
+
+User Function Forcado()
+
+    Local aTotItem := {}
+    Local aCabNF := {}
+    Local aItem := {}
+
+    lMsErroAuto := .F.
+
+    dbSelectArea(&quot;SA2&quot;)
+    SA2-&gt;(dbSetOrder(1))
+    SA2-&gt;(dbSeek(xFilial(&quot;SA2&quot;) + &quot;00029901&quot;))
+
+    //|Monta array cabecalho do CTE |
+    aCabNF := { {&quot;F1_TIPO&quot;    , &quot;N&quot;                     , NIL},;
+                {&quot;F1_FORMUL&quot;  , &quot;&quot;                      , NIL},;
+                {&quot;F1_ESPECIE&quot; , &quot;CTE&quot;                   , NIL},;
+                {&quot;F1_DOC&quot;     , &quot;998999&quot;                    , NIL},;
+                {&quot;F1_SERIE&quot;   , &quot;1&quot;                     , NIL},;
+                {&quot;F1_FORNECE&quot; , SA2-&gt;A2_COD             , NIL},;
+                {&quot;F1_LOJA&quot;    , SA2-&gt;A2_LOJA            , NIL},;
+                {&quot;F1_EMISSAO&quot; , dDataBase                   , NIL},;
+                {&quot;F1_DTDIGIT&quot; , dDataBase                   , NIL},;
+                {&quot;F1_VALICM&quot;  , 0               , NIL},;
+                {&quot;F1_CHVNFE&quot;  , &quot;32170401125797001198570120001917711168219529&quot;                  , NIL},;
+                {&quot;F1_TPCTE&quot; , &quot;N&quot;                   , NIL},;
+                {&quot;F1_VALBRUT&quot;,  100                 , NIL}} 
+
+    cCodTES := &quot;001&quot;
+
+    dbSelectArea(&quot;SF4&quot;)
+    SF4-&gt;(dbSetOrder(1))
+    SF4-&gt;(dbSeek(xFilial(&quot;SF4&quot;) + cCodTES))
+
+    //|Array com o item do frete |
+    aItem := {  {&quot;D1_COD&quot;       , &quot;500021         &quot;         ,NIL},;
+                {&quot;D1_QUANT&quot;     , 1                 ,NIL},;
+                {&quot;D1_VUNIT&quot;     , 100       ,NIL},;
+                {&quot;D1_TOTAL&quot;     , 100           ,NIL},;     
+                {&quot;D1_FORNECE&quot;   , SA2-&gt;A2_COD       ,NIL},;
+                {&quot;D1_LOJA&quot;      , SA2-&gt;A2_LOJA      ,NIL},;
+                {&quot;D1_DOC&quot;       , &quot;998899&quot;              ,NIL},;
+                {&quot;D1_SERIE&quot;     , &quot;1&quot;           ,NIL},;
+                {&quot;D1_TES&quot;       , cCodTES           ,NIL},;
+                {&quot;D1_CF&quot;       , SF4-&gt;F4_CF             ,NIL},;
+                {&quot;D1_LOCAL&quot;     , &quot;01&quot;      ,NIL},;
+                {&quot;D1_BASEICM&quot;   , 0         ,NIL},;
+                {&quot;D1_PICM&quot;      , 0         ,NIL},;
+                {&quot;D1_VALICM&quot;    , 0         ,NIL},;
+                {&quot;D1_TIPO&quot;      ,&quot;N&quot;                ,NIL},;
+                {&quot;D1_ITEM&quot;      ,&quot;0001&quot;             ,Nil},;
+                {&quot;AUTDELETA&quot;    ,&quot;N&quot;                ,Nil}}
+
+    aAdd(aTotItem, aItem)
+
+        //|Gera o documento de entrada classificado |
+        Begin Transaction
+
+        nModulo := 4  //Estoque
+
+        MSExecAuto({|x,y,Z| MATA103(x,y,z)},aCabNF,aTotItem,3,.F.)
+
+        If lMsErroAuto
+            DisarmTransaction()
+            //ConOut(MostraErro())
+        Else
+            Alert(&quot;FOIIII&quot;)
+        EndIf
+
+        End Transaction 
+
+Return
+</code></pre>
 <hr />
 <h2 id="ptclifor">PTCLIFOR</h2>
+<p>Ponto de entrada para retornar o cliente/fornecedor a ser utilizado.</p>
+<p>Parâmetros:</p>
+<ul>
+<li><strong>ParamIxb[1]:</strong>  Array com Código, Loja e UF do cliente/fornecedor.</li>
+<li><strong>ParamIxb[2]:</strong>  CGC do cliente/fornecedor.</li>
+<li><strong>ParamIxb[3]:</strong>  Tabela que foi utilizada para pesquisar o cliente/fornecedor.</li>
+<li><strong>ParamIxb[4]:</strong>  Objeto com o XML a ser utilizado.</li>
+</ul>
+<p>Retorno:</p>
+<ul>
+<li><strong>aCliFor:</strong> array, código/loja/UF do cliente/fornecedor.</li>
+</ul>
+<p>Segue exemplo de utilização.</p>
+<pre><code class="language-C">User Function PTCLIFOR()
+
+  Local aCliFor     := ParamIxb[1]
+  Local cCgc          := ParamIxb[2]
+  Local cTipo         := ParamIxb[3]
+  Local oObj          := ParamIxb[4]
+    Local cQuery        := &quot;&quot;
+    Local cInscEst  := &quot;&quot;
+    Local cAlias        := &quot;__TBA1&quot;
+
+    If Select(cAlias) &gt; 0
+        (cAlias)-&gt;(dbCloseArea())
+    EndIf
+
+  If ZZZ-&gt;ZZZ_TIPO == &quot;1&quot; .And. Valtype(oObj) == &quot;O&quot;
+
+    cInscEst  := IIf( XmlChildEx( oObj:_InfNfe:_EMIT, &quot;_IE&quot;) != Nil, oObj:_InfNfe:_EMIT:_IE:TEXT, &quot;&quot; )
+
+
+    If cTipo == &quot;SA1&quot;
+      cQuery += &quot; SELECT A1_CGC AS CGC,A1_MSBLQL AS BLOQUEIO,A1_COD AS CODIGO,A1_LOJA AS LOJA,A1_NOME AS NOME, A1_EST AS UF &quot;
+      cQuery += &quot; FROM &quot; + RetSqlName(&quot;SA1&quot;) + &quot; SA1 &quot;
+      cQuery += &quot; WHERE SA1.A1_FILIAL = &quot; + ValToSql( xFilial(&quot;SA1&quot;) )
+      cQuery += &quot;   AND SA1.A1_CGC = &quot; + ValToSql( cCgc )
+
+      If !Empty(cInscEst)
+        cQuery += &quot;     AND SA1.A1_INSCR = &quot; + ValToSql(cInscEst)
+      EndIf
+
+      cQuery += &quot;   AND SA1.D_E_L_E_T_ = ' ' &quot;
+    Else
+      cQuery += &quot; SELECT A2_CGC AS CGC,A2_MSBLQL AS BLOQUEIO,A2_COD AS CODIGO,A2_LOJA AS LOJA,A2_NOME AS NOME, A2_EST AS UF  &quot;
+      cQuery += &quot; FROM &quot; + RetSqlName(&quot;SA2&quot;) + &quot; SA2 &quot;
+      cQuery += &quot; WHERE SA2.A2_FILIAL = &quot; + ValToSql( xFilial(&quot;SA2&quot;) )
+      cQuery += &quot;   AND SA2.A2_CGC = &quot; + ValToSql( cCgc )
+
+      If !Empty(cInscEst)
+        cQuery += &quot;     AND SA2.A2_INSCR = &quot; + ValToSql(cInscEst)
+      EndIf
+
+      cQuery += &quot;   AND SA2.D_E_L_E_T_ = ' ' &quot;
+    EndIf
+
+    cQuery := ChangeQuery(cQuery)
+    dbUseArea(.T.,&quot;TOPCONN&quot;,TCGenQry(,,cQuery),cAlias,.T.,.T.)
+
+    dbSelectArea(cAlias)
+    (cAlias)-&gt;(dbGoTop())
+
+    //|Alimenta array com as informacoes |
+    While !(cAlias)-&gt;( EoF() )
+
+      If (cAlias)-&gt;BLOQUEIO != &quot;1&quot;
+
+        aCliFor[1, 1]   := (cAlias)-&gt;CODIGO
+        aCliFor[1, 2]   := (cAlias)-&gt;LOJA
+        aCliFor[1, 3]   := (cAlias)-&gt;UF
+
+        Exit
+
+      EndIf
+
+      (cAlias)-&gt;( dbSkip() )
+
+    EndDo
+
+    If Select(cAlias) &gt; 0
+      (cAlias)-&gt;(dbCloseArea())
+    EndIf
+
+  EndIf
+
+  /*
+  aCliFor[1, 1] := Código cliente/fornecedor
+  aCliFor[1, 2] := Loja cliente/fornecedor
+  aCliFor[1, 3] := UF cliente/fornecedor
+  */
+
+Return aCliFor
+</code></pre>
 <hr />
 <h2 id="ptctedad">PTCTEDAD</h2>
+<p>Ponto de entrada para manipular o objeto com os dados do CTE importados do XML.</p>
+<p>Deverá retornar o objeto recebido no ParamIxb[1] na mesma estrutura que foi recebido.</p>
+<p>Parâmetros:</p>
+<ul>
+<li><strong>ParamIxb[1]:</strong>  Objeto do CTE tratado e estruturado pela Ferramenta.</li>
+<li><strong>ParamIxb[2]:</strong>  Objeto do XML do CTE.</li>
+</ul>
+<p>Retorno:</p>
+<ul>
+<li><strong>oObj:</strong> object, Objeto do CTE com os dados a serem processados.</li>
+</ul>
+<pre><code class="language-C">User Function PTCTEDAD()
+
+  Local oObj            := ParamIxb[1]
+  // Local oXml       := ParamIxb[2]  //|XML do CTE em formato objeto |
+  Local aArea           := GetArea()
+  Local lImportaAuto    := .T.
+
+  If oObj:lCteVenda
+
+    //|Possui chave vinculada |
+    If Len(oObj:aChavesVinculadas) &gt; 0
+
+      If fIgnoraPorCFOP(oObj)
+
+        lImportaAuto  := .F.
+
+      Else
+
+        oObj:cItemContabil  := &quot;999&quot;
+
+        //|Grupo do produto deve utilizar o da NF de saída referenciada |
+        oObj:cGrupoProduto  := fBuscaGrupoProduto(oObj)
+
+        //|Atualiza o centro de custo de acordo com o grupo do produto da NF de saída referenciada |
+        oObj:cCentroCusto   := fBuscaCentroCusto(oObj)
+
+        //|Conta Contabil |
+        oObj:cContaContabil := fBuscaContaContabil(oObj)
+
+      EndIf
+
+    Else
+
+      lImportaAuto  := .F.
+
+    EndIf
+
+    If !lImportaAuto
+
+      //|Limpar a variavel cCondPagamento quando quiser forçar a entrada via tela |
+      oObj:cCondPagamento := &quot;&quot;
+
+    EndIf
+
+  EndIf
+
+  RestArea(aArea)
+
+Return oObj
+
+
+Static Function fBuscaGrupoProduto(oObj)
+
+  Local cQuery := &quot;&quot;
+  Local cGrupo := &quot;&quot;
+
+  cQuery += &quot; SELECT TOP 1 B1_GRUPO &quot;
+  cQuery += &quot; FROM &quot; + RetSqlName(&quot;SF2&quot;) + &quot; SF2 &quot;
+  cQuery += &quot; JOIN &quot; + RetSqlName(&quot;SD2&quot;) + &quot; SD2 &quot;
+  cQuery += &quot;   ON D2_FILIAL = F2_FILIAL &quot;
+  cQuery += &quot;   AND D2_DOC = F2_DOC &quot;
+  cQuery += &quot;   AND D2_SERIE = F2_SERIE &quot;
+  cQuery += &quot;   AND D2_CLIENTE = F2_CLIENTE &quot;
+  cQuery += &quot;   AND D2_LOJA = F2_LOJA &quot;
+  cQuery += &quot;   AND SD2.D_E_L_E_T_ = '' &quot;
+  cQuery += &quot; JOIN &quot; + RetSqlName(&quot;SB1&quot;) + &quot; SB1 &quot;
+  cQuery += &quot;   ON B1_FILIAL = &quot; + ValToSql( xFilial(&quot;SB1&quot;) )
+  cQuery += &quot;   AND B1_COD = D2_COD &quot;
+  cQuery += &quot;   AND SB1.D_E_L_E_T_ = '' &quot;
+  cQuery += &quot; WHERE F2_FILIAL = &quot; + ValToSql( oObj:cCodigoFilial )
+  cQuery += &quot; AND F2_CHVNFE = &quot; + ValToSql( oObj:aChavesVinculadas[1] )
+  cQuery += &quot; AND SF2.D_E_L_E_T_ = '' &quot;
+
+  If Select(&quot;__GRP&quot;) &gt; 0
+    __GRP-&gt;( dbCloseArea() )
+  EndIf
+
+  TcQuery cQuery New Alias &quot;__GRP&quot;
+
+  __GRP-&gt;( dbGoTop() )
+
+  If !__GRP-&gt;( EoF() )
+    cGrupo  := __GRP-&gt;B1_GRUPO
+  EndIf
+
+Return cGrupo
+
+
+Static Function fIgnoraPorCFOP(oObj)
+
+  Local cQuery      := &quot;&quot;
+  Local lExisteCfop := .F.
+  Local cCFOPs      := &quot;5915,6915,5901,6901,5949,6949&quot;
+
+  cQuery += &quot; SELECT TOP 1 F2_DOC &quot;
+  cQuery += &quot; FROM &quot; + RetSqlName(&quot;SF2&quot;) + &quot; SF2 &quot;
+  cQuery += &quot; JOIN &quot; + RetSqlName(&quot;SD2&quot;) + &quot; SD2 &quot;
+  cQuery += &quot;   ON D2_FILIAL = F2_FILIAL &quot;
+  cQuery += &quot;   AND D2_DOC = F2_DOC &quot;
+  cQuery += &quot;   AND D2_SERIE = F2_SERIE &quot;
+  cQuery += &quot;   AND D2_CLIENTE = F2_CLIENTE &quot;
+  cQuery += &quot;   AND D2_LOJA = F2_LOJA &quot;
+  cQuery += &quot;   AND SD2.D_E_L_E_T_ = '' &quot;
+  cQuery += &quot; WHERE F2_FILIAL = &quot; + ValToSql( oObj:cCodigoFilial )
+  cQuery += &quot; AND F2_CHVNFE = &quot; + ValToSql( oObj:aChavesVinculadas[1] )
+  cQuery += &quot; AND D2_CF IN &quot; + FormatIN( cCFOPs, &quot;,&quot; )
+  cQuery += &quot; AND SF2.D_E_L_E_T_ = '' &quot;
+
+  If Select(&quot;__GRP&quot;) &gt; 0
+    __GRP-&gt;( dbCloseArea() )
+  EndIf
+
+  TcQuery cQuery New Alias &quot;__GRP&quot;
+
+  __GRP-&gt;( dbGoTop() )
+
+  If !__GRP-&gt;( EoF() )
+    lExisteCfop  := .T.
+  EndIf
+
+Return lExisteCfop
+
+
+Static Function fBuscaContaContabil(oObj)
+
+  Local cContaContabil := oObj:cContaContabil
+
+  //|Busca Natureza |
+  oObj:cNatureza  := fBuscaNatureza(oObj)
+
+  If !Empty( oObj:cNatureza )
+
+    cContaContabil  := Posicione( &quot;SED&quot;, 1, xFilial(&quot;SED&quot;) + oObj:cNatureza, &quot;SED-&gt;ED_DEBITO&quot; )
+
+  EndIf
+
+Return cContaContabil
+
+
+Static Function fBuscaNatureza(oObj)
+
+  Local cEmpProc      := &quot;&quot; as Character
+  Local cFilProc      := &quot;&quot; as Character
+  Local cTipoDcto     := &quot;&quot; as Character
+  Local cCodProduto   := &quot;&quot; as Character
+  Local cGrupoProduto := &quot;&quot; as Character
+  Local cClieFor      := &quot;&quot; as Character
+  Local cLoja         := &quot;&quot; as Character
+  Local cCstIcms      := &quot;&quot; as Character
+  Local cUF           := &quot;&quot; as Character
+  Local cCfop         := &quot;&quot; as Character
+  Local cTribProd     := &quot;&quot; as Character
+  Local cTribCliFor   := &quot;&quot; as Character
+  Local cTipoCliFor   := &quot;&quot; as Character
+  Local cTemIcms      := &quot;&quot; as Character
+  Local cTipoProd     := &quot;&quot; as Character
+  Local cResposta     := &quot;&quot; as Character
+
+  cEmpProc      := oObj:cCodigoEmpresa
+  cFilProc      := oObj:cCodigoFilial
+  cTipoDcto     := IIf( oObj:lCteVenda, &quot;CTEV&quot;, &quot;CTEC&quot; )
+  cClieFor      := oObj:cCodigoFornecCliente
+  cLoja         := oObj:cLojaFornecCliente
+  cUF           := oObj:cUF_FornecCliente
+  cTribCliFor   := oObj:cTrib_FornecCliente
+  cTipoCliFor   := oObj:cTipo_FornecCliente
+
+  cCodProduto   := oObj:cCodigoProduto
+  cGrupoProduto := oObj:cGrupoProduto
+  cTribProd     := oObj:cGrupoTribProd
+  cTipoProd     := oObj:cTipoProduto
+  cTemIcms      := IIf( oObj:nValorIcms &gt; 0, &quot;S&quot;, &quot;N&quot; )
+  cCstIcms      := oObj:cCstIcms
+  cCfop         := oObj:cCfop
+
+  cResposta := U_PTXRegraProcesso(cEmpProc,cFilProc,cTipoDcto,&quot;NATU&quot;,cCodProduto,cGrupoProduto,cClieFor,cLoja,cCstIcms,cUF,cCfop,cTribProd,cTribCliFor,cTipoCliFor,cTemIcms,cTipoProd)
+
+Return cResposta
+
+
+
+Static Function fBuscaCentroCusto(oObj)
+
+  Local cEmpProc      := &quot;&quot; as Character
+  Local cFilProc      := &quot;&quot; as Character
+  Local cTipoDcto     := &quot;&quot; as Character
+  Local cCodProduto   := &quot;&quot; as Character
+  Local cGrupoProduto := &quot;&quot; as Character
+  Local cClieFor      := &quot;&quot; as Character
+  Local cLoja         := &quot;&quot; as Character
+  Local cCstIcms      := &quot;&quot; as Character
+  Local cUF           := &quot;&quot; as Character
+  Local cCfop         := &quot;&quot; as Character
+  Local cTribProd     := &quot;&quot; as Character
+  Local cTribCliFor   := &quot;&quot; as Character
+  Local cTipoCliFor   := &quot;&quot; as Character
+  Local cTemIcms      := &quot;&quot; as Character
+  Local cTipoProd     := &quot;&quot; as Character
+  Local cResposta     := &quot;&quot; as Character
+
+  cEmpProc      := oObj:cCodigoEmpresa
+  cFilProc      := oObj:cCodigoFilial
+  cTipoDcto     := IIf( oObj:lCteVenda, &quot;CTEV&quot;, &quot;CTEC&quot; )
+  cClieFor      := oObj:cCodigoFornecCliente
+  cLoja         := oObj:cLojaFornecCliente
+  cUF           := oObj:cUF_FornecCliente
+  cTribCliFor   := oObj:cTrib_FornecCliente
+  cTipoCliFor   := oObj:cTipo_FornecCliente
+
+  cCodProduto   := oObj:cCodigoProduto
+  cGrupoProduto := oObj:cGrupoProduto
+  cTribProd     := oObj:cGrupoTribProd
+  cTipoProd     := oObj:cTipoProduto
+  cTemIcms      := IIf( oObj:nValorIcms &gt; 0, &quot;S&quot;, &quot;N&quot; )
+  cCstIcms      := oObj:cCstIcms
+  cCfop         := oObj:cCfop
+
+  cResposta := U_PTXRegraProcesso(cEmpProc,cFilProc,cTipoDcto,&quot;CCUS&quot;,cCodProduto,cGrupoProduto,cClieFor,cLoja,cCstIcms,cUF,cCfop,cTribProd,cTribCliFor,cTipoCliFor,cTemIcms,cTipoProd)
+
+Return cResposta
+
+</code></pre>
 <hr />
 <h2 id="ptx01fil">PTX01FIL</h2>
 <hr />
