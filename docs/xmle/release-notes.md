@@ -2,6 +2,16 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5067
+
+28/10/2024
+
+- MELHORIA: Incluído opção de estornar a classificação da NF-e
+- MELHORIA: Incluído mais opções de filtro na rotina de monitoramento da manifestação
+- BUG: Incluído as informações complementares do CT-e no DACTE
+- BUG: Correção no "Buscar Sefaz" do CT-e
+- BUG: Passar a tratar o tipo de CT-e para imprimir o DACTE
+
 ### Versão 4.33.5066
 
 18/09/2024
