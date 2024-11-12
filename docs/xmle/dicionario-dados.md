@@ -140,6 +140,7 @@ Segue documentação do dicionário de dados criado pela ferramenta.
 | ZZ_CTECSPE     | L        | Especie do CTE de compra na entrada. Caso não exista, é definido como CTE.        |
 | ZZ_CTEVAUT     | L        | Ativa a importação automática do CTE de Venda                                     |
 | ZZ_CTEVSPE     | L        | Especie do CTE de venda na entrada. Caso não exista, é definido como CTE.         |
+| ZZ_DADOSB1     | L        | Busca dados contábeis no cadastro do produto.                                     |
 | ZZ_DCTECP      | N        | Até quantos dias para trás deve buscar os CT-e de Compra                          |
 | ZZ_DCTEVD      | N        | Até quantos dias para trás deve buscar os CT-e de Venda                           |
 | ZZ_DEBUG       | L        | Ativa o modo Debug no console do appserver                                        |
