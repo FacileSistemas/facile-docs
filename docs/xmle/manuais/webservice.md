@@ -52,7 +52,7 @@ Parâmetros envolvidos:
 
 **Exemplo:** \web\facile\_checkdoc
 
-* <b>ZZ\_DFWEBS</b> - Parâmetro para registro da url, do serviço webservice – Protheus, direcionado à pasta onde estarão salvos os arquivos, e que será utilizado para carga do arquivo em navegador web (browse). 
+* <b>ZZ\_DFWEBS</b> - Parâmetro para registro da url, do serviço HTTP/HTTPS do Protheus, direcionado à pasta onde estarão salvos os arquivos, e que será utilizado para carga do arquivo em navegador web (browse). 
 
 **Exemplo:** [http://192.168.200.171:8079/facile\_checkdoc/](http://192.168.200.171:8079/facile\_checkdoc/)
 
