@@ -50,11 +50,11 @@ Parâmetros envolvidos:
 
 * <b>ZZ\_PATHWS</b> - Parâmetro para registro do path no Protheus\_Data, do webservice, onde serão gerados os arquivos. 
 
-**Exemplo:** \web\ facile\_checkdoc
+**Exemplo:** \web\facile\_checkdoc
 
-* <b>ZZ\_DFWEBS</b> - Parâmetro para registro do rootpath, do serviço webservice – Protheus, direcionado à pasta onde estarão salvos os arquivos, e que será utilizado para carga do arquivo em navegador web (browse). 
+* <b>ZZ\_DFWEBS</b> - Parâmetro para registro da url, do serviço webservice – Protheus, direcionado à pasta onde estarão salvos os arquivos, e que será utilizado para carga do arquivo em navegador web (browse). 
 
-**Exemplo:** [http://192.168.200.171:8079/facile_checkdoc/](http://192.168.200.171:8079/facile_checkdoc/)
+**Exemplo:** [http://192.168.200.171:8079/facile\_checkdoc/](http://192.168.200.171:8079/facile\_checkdoc/)
 
 * <b>ZZ\_ECKDOC</b> - Parâmetros com e-mails que irão receber, separados por (;)
 
