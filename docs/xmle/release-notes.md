@@ -2,6 +2,20 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5068
+
+**Para essa versão, favor executar o compatibilizador apropriado para o seu ambiente.**
+
+04/12/2024
+
+- MELHORIA: Novo campo para identificar o tipo de documento na tabela ZZZ
+- MELHORIA: Novo campo para identificar se a NF é de Entrada ou Saída do fornecedor
+- MELHORIA: Refatorado o html do e-mail de documentos cancelados para ficar mais leve e clean
+- MELHORIA: Somente atualizar o status da manifestação (ZZZ_STATUS) quando for aceito pelo Sefaz entrando no Monitorar
+- MELHORIA: Informação do CFOP no relatório de documentos
+- MELHORIA: Inclusão da baixa dos XMLs do CTEOS
+- BUG: Correção no relatório de documentos PTXR008 na busca da UF do fornecedor
+
 ### Versão 4.33.5067
 
 28/10/2024
