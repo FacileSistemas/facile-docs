@@ -6,33 +6,34 @@
 
 # Importação de XML manual
 
-## Procedimento para Importação de XML direto do PC
+## Introdução
 
-Incluir nova opção no Menu (U\_PTX0018) 
+O objetivo da importação manual é realizar manualmente a importação de arquivos XML pontuais, de acordo com a necessidade.
 
-<center>![Figura 1: Configuração do Menu](../../assets/importacao-manual/config-menu.png "Configuração do Menu")
-<br>*Figura 1: Configuração do Menu*<br></center>
+## Como usar?
+
+Na Central XML-e, ir em Outras Ações >> Importa XML Computador, conforme imagem abaixo. 
+
+<center>![Figura 1: Acesso à rotina pela Central XML-e](../../assets/importacao-manual/acesso_rotina.png "Acesso à rotina pela Central XML-e")
+<br>*Figura 1: Acesso à rotina pela Central XML-e*<br></center>
 <br>
 
-<center>![Figura 2: Menu com a função U_PTX0018](../../assets/importacao-manual/menu-compras.png "Menu com a função U_PTX0018")
-<br>*Figura 2: Menu com a função U_PTX0018*<br></center>
+Na janela de seleção, escolher o diretório onde estão os arquivos XML.
+
+<center>![Figura 2: Escolher diretório](../../assets/importacao-manual/acesso_rotina.png "Escolher diretório")
+<br>*Figura 2: Escolher diretório*<br></center>
 <br>
 
-Entrar na rotina e clicar em "Buscar XML no Computador"
+Na tela da rotina, basta selecionar os arquivos desejados. É importante prestar atenção na legenda, apenas arquivos com legenda cinza podem ser importados.
 
-<center>![Figura 3: Buscar XML no Computador](../../assets/importacao-manual/busca-xml.png "Buscar XML no Computador")
-<br>*Figura 3: Buscar XML no Computador*<br></center>
+<center>![Figura 3: Tela de importação](../../assets/importacao-manual/tela_de_importacao.png "Tela de importação")
+<br>*Figura 3: Tela de importação*<br></center>
 <br>
 
-Seleciona o XML no Computador 
+Após isso, a mudança de status indicará se a importação foi bem-sucedida. Para finalizar, basta sair da rotina.
 
-<center>![Figura 4: Menu principal](../../assets/importacao-manual/selec-xml.png "Menu principal")
-<br>*Figura 4: Menu principal*<br></center>
+<center>![Figura 4: Tela pós importação e legendas](../../assets/importacao-manual/tela_pos_importacao.png "Tela pós importação e legendas")
+<br>*Figura 4: Tela pós importação e legendas*<br></center>
 <br>
-
-A partir desse momento a entrada é feita de forma normal 
-
-<center>![Figura 5: Menu principal](../../assets/importacao-manual/entrada-final.png "Menu principal")
-<br>*Figura 5: Menu principal*<br></center>
 
 <div style="text-align: center; font-weight: bold;">-FIM-</div>

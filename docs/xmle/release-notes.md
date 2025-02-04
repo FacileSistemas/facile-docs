@@ -2,6 +2,17 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5069
+
+31/01/2025
+
+- MELHORIA: Criado parâmetro ZZ_CTEOSPE para indicar a especie (F1_ESPECIE) a ser utilizada na entrada do CTE
+- MELHORIA: Incluído data de fabricação da devolução de venda
+- MELHORIA: Disponibilizando a funcionalidade para cadastro de fornecedor para as NF-e, e ampliando para disponibilizar a mesma automação para clientes
+- MELHORIA: Impressão da DANFSe (Nota Fiscal de Serviço)
+- BUG: Correção para desbloquear o documento após transmitir a confirmação da operação.
+- BUG: Ajuste para CTE Complementar de compra
+
 ### Versão 4.33.5068
 
 **Para essa versão, favor executar o compatibilizador apropriado para o seu ambiente.**
