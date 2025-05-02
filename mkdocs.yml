@@ -84,6 +84,7 @@ nav:
         - 04 - Importador XML no Totvs Protheus - Como funciona e Qual usar?: 'https://www.youtube.com/watch?v=mG0ZtHArLYo'
   - CIFA:
     - Introdução: 'cifa/index.md'
+    - Download do Patch: 'cifa/download-patch.md'
   - Facin Sales: https://www.facilesistemas.com.br/facin/
 
 plugins:

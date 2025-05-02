@@ -2,6 +2,19 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5070
+
+31/03/2025
+
+- MELHORIA: Impressão da DANFSe (Nota Fiscal de Serviço) importadas via WebService de prefeituras
+- MELHORIA: Incluído funcionalidade de lançamento de CTE de Venda complementar
+- MELHORIA: Adicionado o monitoramento em seguida a manifestação
+- MELHORIA: Incluído entrada de NF-e de complemento de IPI
+- MELHORIA: Criado ponto de entrada CHECKPED para informar o pedido de compra na execução do CheckDoc
+- MELHORIA: Criado novo JOB no CheckDoc para reprocessar as análises sem o envio do workflow
+- BUG: Corrigido erro de variável inválida ao buscar os dados do CTE Completo
+- BUG: Correção na atualização da legenda após a transmissão da confirmação da operação
+
 ### Versão 4.33.5069
 
 31/01/2025
