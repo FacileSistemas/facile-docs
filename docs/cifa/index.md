@@ -13,6 +13,17 @@
         justify-self: center;
         color: white;
     }
+    .images-container {
+        width: 100%; 
+        display: flex; 
+        justify-content: center; 
+        flex-direction: column;
+    }
+    .image-container {
+        display: flex; 
+        flex-direction: row;
+        justify-content: center;
+    }
 </style>
 
 # CIFA - Central Inteligência Financeira Automática
@@ -27,7 +38,28 @@
 
 ## Como funciona o sistema CIFA...
 
-![Fluxo CIFA](../../assets/cifaimg/img3.png "Fluxo CIFA"){: .center-img }
+<div class="images-container">
+    <img src="../../assets/cifaimg/img3.png" />
+    <div class="image-container">
+        <img src="../../assets/cifaimg/img4-1.jpg" alt="Detalhes CIFA" />
+        <img src="../../assets/cifaimg/img4-2.jpg" alt="Detalhes CIFA" />
+    </div>
+    <div class="image-container">
+        <img src="../../assets/cifaimg/img5-1.jpg" alt="Detalhes CIFA" />
+        <img src="../../assets/cifaimg/img5-2.jpg" alt="Detalhes CIFA" />
+    </div>
+    <div class="image-container">
+        <img src="../../assets/cifaimg/img6-1.jpg" alt="Detalhes CIFA" />
+        <img src="../../assets/cifaimg/img6-2.jpg" alt="Detalhes CIFA" />
+    </div>
+    <div class="image-container">
+        <img src="../../assets/cifaimg/img7-1.jpg" alt="Detalhes CIFA" />
+        <img src="../../assets/cifaimg/img7-2.jpg" alt="Detalhes CIFA" />
+    </div>
+</div>
+
+<!-- Código antigo, não era escalável e quebrou quando o HTML5 deixou de usar a tag <center> -->
+<!-- ![Fluxo CIFA](../../assets/cifaimg/img3.png "Fluxo CIFA"){: .center-img }
 ![Detalhes CIFA](../../assets/cifaimg/img4-1.jpg "Detalhes CIFA"){: .center-img }
 ![Detalhes CIFA](../../assets/cifaimg/img4-2.jpg "Detalhes CIFA"){: .center-img }
 ![Detalhes CIFA](../../assets/cifaimg/img5-1.jpg "Detalhes CIFA"){: .center-img }
@@ -35,7 +67,7 @@
 ![Detalhes CIFA](../../assets/cifaimg/img6-1.jpg "Detalhes CIFA"){: .center-img }
 ![Detalhes CIFA](../../assets/cifaimg/img6-2.jpg "Detalhes CIFA"){: .center-img }
 ![Detalhes CIFA](../../assets/cifaimg/img7-1.jpg "Detalhes CIFA"){: .center-img }
-![Detalhes CIFA](../../assets/cifaimg/img7-2.jpg "Detalhes CIFA"){: .center-img }
+![Detalhes CIFA](../../assets/cifaimg/img7-2.jpg "Detalhes CIFA"){: .center-img } -->
 
 **Reduza em até 99% o trabalho de  conciliação da cobrança Bancária**
 
