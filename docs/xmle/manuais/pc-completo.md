@@ -24,8 +24,8 @@ Para acessar a nova funcionalidade, acesse a Central xml-e devidamente configura
 
 Com o registro já selecionado clique em: **Gerar Entrada** > **Outras Ações > Buscar Pedido Compra**. Como na imagem abaixo:
 
-<center>![Figura 01: Buscar Pedido de Compra](../../assets/pc-completo/00-start-busca-pc.png "Buscar Pedido de Compra")
-<br>*Figura 01: Buscar Pedido de Compra*<br></center>
+![Figura 01: Buscar Pedido de Compra](../../assets/pc-completo/00-start-busca-pc.png "Buscar Pedido de Compra")
+<br>*Figura 01: Buscar Pedido de Compra*<br>{: .center-img }
 <br>
 
 ## Marcar todos os itens de um Pedido
@@ -33,16 +33,16 @@ Com o registro já selecionado clique em: **Gerar Entrada** > **Outras Ações >
 <br><br>
 Após fazer o passo anterior você verá uma nova tela com os pedidos de compra feitos para o fornecedor selecionado. Com isso você poderá selecionar/vincular os itens de forma mais conveniente e intuitiva veja:
 
-<center>![Figura 02: PC para o Fornecedor selecionado](../../assets/pc-completo/01-pc-fornecedor.png "PC para o Fornecedor selecionado")
-<br>*Figura 02: PC para o Fornecedor selecionado*<br></center>
+![Figura 02: PC para o Fornecedor selecionado](../../assets/pc-completo/01-pc-fornecedor.png "PC para o Fornecedor selecionado")
+<br>*Figura 02: PC para o Fornecedor selecionado*<br>{: .center-img }
 <br>
 
 ### Selecionando/vinculando os itens
 
 Siga a sequência:
 
-<center>![Figura 03: Seleção de itens](../../assets/pc-completo/02-selecao-itens.png "Seleção de itens")
-<br>*Figura 03: Seleção de itens*<br></center>
+![Figura 03: Seleção de itens](../../assets/pc-completo/02-selecao-itens.png "Seleção de itens")
+<br>*Figura 03: Seleção de itens*<br>{: .center-img }
 <br>
 
 1.1. Selecione um único pedido de compra no campo **Filtrar Pedidos de Compras**.
@@ -58,20 +58,20 @@ Siga a sequência:
 <br><br>
 Com o registro já selecionado clique em: **Gerar Entrada > Outras Ações > Buscar Pedido Compra**. Como na imagem abaixo:
 
-<center>![Figura 04: Buscar Pedido de Compra](../../assets/pc-completo/00-start-busca-pc.png "Buscar Pedido de Compra")
-<br>*Figura 4: Buscar Pedido de Compra*<br></center>
+![Figura 04: Buscar Pedido de Compra](../../assets/pc-completo/00-start-busca-pc.png "Buscar Pedido de Compra")
+<br>*Figura 4: Buscar Pedido de Compra*<br>{: .center-img }
 <br>
 
 2.1. Escolha um item do pedido e clique com o botão direito do mouse na **linha** do item escolhido.  Uma caixa abrirá com a opção de  **Replicar em todos os itens do XML.**  Clique na mesma.
 
-<center>![Figura 05: Replicar em todos os itens do XML](../../assets/pc-completo/04-replicar-ptodos.png "Replicar em todos os itens do XML")
-<br>*Figura 05: Replicar em todos os itens do XML*<br></center>
+![Figura 05: Replicar em todos os itens do XML](../../assets/pc-completo/04-replicar-ptodos.png "Replicar em todos os itens do XML")
+<br>*Figura 05: Replicar em todos os itens do XML*<br>{: .center-img }
 <br>
 
 2.2. Um aviso de confirmação irá ser exibido.
 
-<center>![Figura 06: Confirmação de aplicação](../../assets/pc-completo/05-confirmacao.png "Confirmação de aplicação")
-<br>*Figura 06: Confirmação de aplicação*<br></center>
+![Figura 06: Confirmação de aplicação](../../assets/pc-completo/05-confirmacao.png "Confirmação de aplicação")
+<br>*Figura 06: Confirmação de aplicação*<br>{: .center-img }
 <br>
 
 Clicando em SIM, os itens na seção **Simulação da Pré-Nota.** Ficarão com o status verde.
@@ -83,16 +83,16 @@ Depois basta clicar no botão **confirmar** para finalizar a ação ou no botão
 <br><br>
 Com o registro já selecionado clique em: **Gerar Entrada > Outras Ações > Buscar Pedido Compra**. Como na imagem abaixo:
 
-<center>![Figura 07: Buscar Pedido de Compra](../../assets/pc-completo/00-start-busca-pc.png "Buscar Pedido de Compra")
-<br>*Figura 07: Buscar Pedido de Compra*<br></center>
+![Figura 07: Buscar Pedido de Compra](../../assets/pc-completo/00-start-busca-pc.png "Buscar Pedido de Compra")
+<br>*Figura 07: Buscar Pedido de Compra*<br>{: .center-img }
 <br>
 
 3.1. Selecione um único pedido de compra no campo **Filtrar Pedidos de Compras.**
 
 3.2. Depois clique em gerar pedido completo**.**
 
-<center>![Figura 08: Gerar Pedido Completo](../../assets/pc-completo/07-gerar-pc-completo.png "Gerar Pedido Completo")
-<br>*Figura 08: Gerar Pedido Completo*<br></center>
+![Figura 08: Gerar Pedido Completo](../../assets/pc-completo/07-gerar-pc-completo.png "Gerar Pedido Completo")
+<br>*Figura 08: Gerar Pedido Completo*<br>{: .center-img }
 <br>
 
 Alguns pedidos de compra que possuem muitos itens e quando o fornecedor envia a nota fiscal vem apenas um único item contemplando todos os itens do pedido de compra. Após esse processo os itens do pedido estarão na sessão da pré-nota, mesmo se o XML tiver apenas um único item.

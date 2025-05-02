@@ -24,24 +24,24 @@ Importação do certificado digital para comunicação com o SEFAZ.
 
 Com usuário admin, abra a tela do FACILE XML-e.
 
-<center>![Figura 1: Tela do FACILE XML-e](../../assets/att-cd/tela-facile-xmle.png "Tela do FACILE XML-e")
-<br>*Figura 1: Tela do FACILE XML-e*<br></center>
+![Figura 1: Tela do FACILE XML-e](../../assets/att-cd/tela-facile-xmle.png "Tela do FACILE XML-e")
+<br>*Figura 1: Tela do FACILE XML-e*<br>{: .center-img }
 <br>
 
 ### Passo 02
 
 Vá na opção em Outras Ações > Manutenção TI > Wiz. Config.
 
-<center>![Figura 2: Opção Wiz. Config.](../../assets/att-cd/wiz-config.jpg "Opção Wiz. Config.")
-<br>*Figura 2: Opção Wiz. Config.*<br></center>
+![Figura 2: Opção Wiz. Config.](../../assets/att-cd/wiz-config.jpg "Opção Wiz. Config.")
+<br>*Figura 2: Opção Wiz. Config.*<br>{: .center-img }
 <br>
 
 ### Passo 03
 
 Avance até a tela abaixo.
 
-<center>![Figura 3: Assistente de configuração](../../assets/att-cd/config-cert.png "Assistente de configuração")
-<br>*Figura 3: Assistente de configuração*<br></center>
+![Figura 3: Assistente de configuração](../../assets/att-cd/config-cert.png "Assistente de configuração")
+<br>*Figura 3: Assistente de configuração*<br>{: .center-img }
 <br>
 
 Informe o caminho do arquivo do certificado digital (.PFX) e a sua senha de autenticação, processo parecido com o realizado na configuração do TSS.

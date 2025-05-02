@@ -100,20 +100,20 @@ Com base na execução da rotina JOB, integrante do FACILE XML-e, para apuraçã
 
 Este arquivo é registrado em diretório específico ligado ao webservice – Protheus®.
 
-<center>![Figura 01: Diretório Webservice](../../assets/webservice/ws_direweb.png "Diretório Webservice")
-<br><span id="format">Figura 01: Diretório Webservice</span><br></center>
+![Figura 01: Diretório Webservice](../../assets/webservice/ws_direweb.png "Diretório Webservice")
+<br><span id="format">Figura 01: Diretório Webservice</span><br>{: .center-img }
 
 Ao receber o e-mail contendo as informações de divergência, passe-se a observar e ter a ação de click na coluna: Chave.
 
 Ao clicar na informação, será aberto – em navegador WEB (browse), o arquivo contendo as informações apuradas.
 
-<center>![Figura 02: Divergência encontrada](../../assets/webservice/ws_divenc.png "Divergência encontrada")
-<br><span id="format">Figura 02: Divergência encontrada</span><br></center>
+![Figura 02: Divergência encontrada](../../assets/webservice/ws_divenc.png "Divergência encontrada")
+<br><span id="format">Figura 02: Divergência encontrada</span><br>{: .center-img }
 
 Ao clicar em um dos links abrirá sua consulta:
 
-<center>![Figura 03: Consulta da divergência](../../assets/webservice/ws_consulta.png "Consulta da divergência")
-<br><span id="format">Figura 03: Consulta da divergência</span><br></center>
+![Figura 03: Consulta da divergência](../../assets/webservice/ws_consulta.png "Consulta da divergência")
+<br><span id="format">Figura 03: Consulta da divergência</span><br>{: .center-img }
 
 
 ## Workflow de notificação Checkdoc
