@@ -1,4 +1,8 @@
 # Comandos
+
+## source facile-docs/bin/activate
+inicia o ambiente .venv do python
+
 ## mkdocs serve
 executa a aplicação
 

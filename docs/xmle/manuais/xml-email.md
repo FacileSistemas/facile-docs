@@ -22,15 +22,15 @@ Ao abrir o wizard de configuração, clique em “Avançar” na tela de Bem-vin
 
 Vamos as opções:
 
-![Figura 1: Wizard de Configuração](../../assets/xml-email/wizard-config.png "Wizard de Configuração")
-<br><span id="format">Figura 1: Wizard de Configuração</span><br>{: .center-img }
+![Figura 1: Wizard de Configuração](../../assets/xml-email/wizard-config.png "Wizard de Configuração"){: .center-img }
+<span class="format">Figura 1: Wizard de Configuração</span>
 
 Clique em avançar.
 
 Configurar a Importação do certificado digital para comunicação com o SEFAZ.
 
-![Figura 2: Importação do Certificado Digital](../../assets/xml-email/import-cd.png "Importação do Certificado Digital")
-<br><span id="format">Figura 2: Importação do Certificado Digital</span><br>{: .center-img }
+![Figura 2: Importação do Certificado Digital](../../assets/xml-email/import-cd.png "Importação do Certificado Digital"){: .center-img }
+<span class="format">Figura 2: Importação do Certificado Digital</span>
 
 Informe o caminho do arquivo do certificado digital (.PFX) e a sua senha de autenticação, processo parecido com o realizado na configuração do TSS.
 
@@ -47,8 +47,8 @@ Caso não possua o .PFX ou tenha alguma dificuldade na importação do certifica
 
 Clique em avançar.
 
-![Figura 3: Configuração de monitoramento de e-mail](../../assets/xml-email/import-cd.png "Configuração de monitoramento de e-mail")
-<br><span id="format">Figura 3: Configuração de monitoramento de e-mail</span><br>{: .center-img }
+![Figura 3: Configuração de monitoramento de e-mail](../../assets/xml-email/import-cd.png "Configuração de monitoramento de e-mail"){: .center-img }
+<span class="format">Figura 3: Configuração de monitoramento de e-mail</span>
 
 Nesta página será possível configurar a busca do XML diretamente de um endereço de e-mail, com isso a ferramenta irá realizar a busca de novas NF-e tanto o Sefaz, quanto o endereço de e-mail.
 
@@ -72,7 +72,7 @@ Recomendamos fechar o ERP e abrir novamente para que todas as alterações sejam
 
 Através do ***Central XML-e, vá em Outras Ações/Buscar Xml e-mail***. O sistema irá automaticamente baixar de acordo com o e-mail que foi configurado.
 
-![Figura 4: Opção de Buscar Xml por E-mail](../../assets/xml-email/import-cd.png "Opção de Buscar Xml por E-mail")
-<br><span id="format">Figura 4: Opção de Buscar Xml por E-mail</span><br>{: .center-img }
+![Figura 4: Opção de Buscar Xml por E-mail](../../assets/xml-email/import-cd.png "Opção de Buscar Xml por E-mail"){: .center-img }
+<span class="format">Figura 4: Opção de Buscar Xml por E-mail</span>
 
 <div style="text-align: center; font-weight: bold;">-FIM-</div>

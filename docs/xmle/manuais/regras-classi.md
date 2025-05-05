@@ -60,7 +60,7 @@ JOBS=PTXJ007
 
 Segue abaixo os campos e detalhes sobre o preenchimento:
 
-| Campo      | Descrição        | Observação{: .center-img } |
+| Campo      | Descrição        | Observação |
 | ---------- | ---------------- | --------------------------- |
 | <span style="color: blue">X001EMP</span>    | <span style="color: blue">Empresa</span>          | <span style="color: blue">Código da empresa caso a regra seja exclusiva de determinada empresa</span> |
 | <span style="color: blue">X001FILIAL</span> | <span style="color: blue">Filial</span>           | <span style="color: blue">Código da filial caso a regra seja exclusiva de determinada filial</span> |
@@ -95,19 +95,18 @@ Segue abaixo os campos e detalhes sobre o preenchimento:
 
 A tela de cadastro das Regras por Processo poderá ser acessada no menu do Facile XML-e.
 
-![Figura 1: Menu com a opção 'Regras por Processo'](../../assets/regras-classi/menu-c-regras.png "Menu com a opção 'Regras por Processo'")
-<br>*Figura 1: Menu com a opção 'Regras por Processo'*<br>{: .center-img }
+![Figura 1: Menu com a opção 'Regras por Processo'](../../assets/regras-classi/menu-c-regras.png "Menu com a opção 'Regras por Processo'"){: .center-img }
+<span class="format">*Figura 1: Menu com a opção 'Regras por Processo'*</span>
 
 **Nome da função de usuário:** PTX0052
-<br>
 
-![Figura 2: Tela de Cadastro de Regras](../../assets/regras-classi/cad-regras.png "Tela de Cadastro de Regras")
-<br>*Figura 2: Tela de Cadastro de Regras*<br>{: .center-img }
-<br>
 
-![Figura 3: Tela de Cadastro](../../assets/regras-classi/tela-cad.png "Tela de Cadastro")
-<br>*Figura 3: Tela de Cadastro*<br>{: .center-img }
-<br>
+![Figura 2: Tela de Cadastro de Regras](../../assets/regras-classi/cad-regras.png "Tela de Cadastro de Regras"){: .center-img }
+<span class="format">*Figura 2: Tela de Cadastro de Regras*</span>
+
+
+![Figura 3: Tela de Cadastro](../../assets/regras-classi/tela-cad.png "Tela de Cadastro"){: .center-img }
+<span class="format">*Figura 3: Tela de Cadastro*</span>
 
 ### Sequências utilizadas para obtenção de cada atributo
 

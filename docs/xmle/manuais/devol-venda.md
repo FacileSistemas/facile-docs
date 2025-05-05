@@ -20,14 +20,14 @@ Será verificado:
 
 Para que seja realizado a devolução da venda, basta selecionar o documento desejado na tela principal da Central XML-e e chamar a ferramenta conforme demonstrado na imagem abaixo:
 
-![Figura 01: Opção 'Devolução Venda'](../../assets/devol-venda/opcdevolvenda.png "Opção 'Devolução Venda'")
-<br>*Figura 01: Opção 'Devolução Venda'*<br>{: .center-img }
+![Figura 01: Opção 'Devolução Venda'](../../assets/devol-venda/opcdevolvenda.png "Opção 'Devolução Venda'"){: .center-img }
+<br>*Figura 01: Opção 'Devolução Venda'*<br>
 <br>
 
 Será apresentado uma nova tela conforme a imagem abaixo:
 
-![Figura 02: Filtrar notas de saída](../../assets/devol-venda/filtro-notas.png "Filtrar notas de saída")
-<br>*Figura 02: Filtrar notas de saída*<br>{: .center-img }
+![Figura 02: Filtrar notas de saída](../../assets/devol-venda/filtro-notas.png "Filtrar notas de saída"){: .center-img }
+<br>*Figura 02: Filtrar notas de saída*<br>
 <br>
 
 No formulário **“Documentos de Saída”** irá demonstrar todas as notas fiscais de vendas para o cliente em questão que ainda possuem saldo a serem devolvidos. Esse formulário possui um filtro inteligente para que a busca pelo documento/item devolvido seja mais rápida e fácil.
@@ -38,8 +38,8 @@ Para vincular o item da venda com o item devolvido, basta dar 2 cliques no item 
 
 Após realizar a amarração de todos os itens com seus respectivos documento de saída, basta clicar no botão confirmar para iniciar o processo de geração do documento de saída.
 
-![Figura 03: Opção 'Confirmar'](../../assets/devol-venda/opcconfirmar.png "Opção 'Confirmar'")
-<br>*Figura 03: Opção 'Confirmar'*<br>{: .center-img }
+![Figura 03: Opção 'Confirmar'](../../assets/devol-venda/opcconfirmar.png "Opção 'Confirmar'"){: .center-img }
+<br>*Figura 03: Opção 'Confirmar'*<br>
 <br>
 
 A partir desse momento a rotina seguirá o fluxo normal do processo de entrada de documentos da Central XML-e.
