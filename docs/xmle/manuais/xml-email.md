@@ -47,7 +47,7 @@ Caso não possua o .PFX ou tenha alguma dificuldade na importação do certifica
 
 Clique em avançar.
 
-![Figura 3: Configuração de monitoramento de e-mail](../../assets/xml-email/import-cd.png "Configuração de monitoramento de e-mail"){: .center-img }
+![Figura 3: Configuração de monitoramento de e-mail](../../assets/xml-email/monit-email.png "Configuração de monitoramento de e-mail"){: .center-img }
 <span class="format">Figura 3: Configuração de monitoramento de e-mail</span>
 
 Nesta página será possível configurar a busca do XML diretamente de um endereço de e-mail, com isso a ferramenta irá realizar a busca de novas NF-e tanto o Sefaz, quanto o endereço de e-mail.
@@ -72,7 +72,7 @@ Recomendamos fechar o ERP e abrir novamente para que todas as alterações sejam
 
 Através do ***Central XML-e, vá em Outras Ações/Buscar Xml e-mail***. O sistema irá automaticamente baixar de acordo com o e-mail que foi configurado.
 
-![Figura 4: Opção de Buscar Xml por E-mail](../../assets/xml-email/import-cd.png "Opção de Buscar Xml por E-mail"){: .center-img }
+![Figura 4: Opção de Buscar Xml por E-mail](../../assets/xml-email/busca-xml-email.png "Opção de Buscar Xml por E-mail"){: .center-img }
 <span class="format">Figura 4: Opção de Buscar Xml por E-mail</span>
 
 <div style="text-align: center; font-weight: bold;">-FIM-</div>
