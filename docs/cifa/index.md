@@ -79,3 +79,6 @@
 * Gera liberdade para que seu negócio possa crescer
 
 <a id="button" href="mailto:ar@facilesistemas.com.br?subject=Gostaria%20de%20ver%20uma%20apresenta%C3%A7%C3%A3o%20do%20CIFA&body=Ol%C3%A1%2C%20recebi%20um%20email%20sobre%20o%20CIFA%20e%20gostaria%20de%20ver%20funcionando%20na%20pr%C3%A1tica." class="btn btn-primary">Gostaria de ver funcionando na prática!</a>
+
+<div style='display: flex; justify-content: center;'>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y5GYCR1nFz4?si=0sG7hwoHKeIP3n2_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
