@@ -4,15 +4,18 @@
     }
     #green{
         background-color: #16F529;
+        color: black;
         display: inline;
 
     }
     #red{
         background-color: red;
+        color: black;
         display: inline;
     }
     #blue{
         background-color: blue;
+        color: black;
         display: inline;
     }
 </style>

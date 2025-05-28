@@ -4,12 +4,15 @@
     }
     #green{
         background-color: #16F529;
+        color: black;
     }
     #red{
         background-color: red;
+        color: black;
     }
     #yellow{
         background-color: yellow;
+        color: black;
     }
     table{
         border: 0px !important;
@@ -265,7 +268,7 @@ Será apresentada a tela da figura 39 abaixo. Nela deve-se marcar (duplo click) 
 ![Figura 39: Manifestação em lote.](../../assets/manual_usuario/xmle_manifesemlote.png "Manifestação em lote"){: .center-img }
 <br><span class="format">Figura 39: Manifestação em lote.</span><br>
 
-* ** NFS-e Beta:** Rotina de importação de PDF´s de Notas Fiscais de Serviço, conforme mostra a Figura 40 abaixo:
+* **NFS-e Beta:** Rotina de importação de PDF´s de Notas Fiscais de Serviço, conforme mostra a Figura 40 abaixo:
 
 ![Figura 40: Importar PDF de NFS-e](../../assets/manual_usuario/xmle_importarpdf.png "Importar PDF de NFS-e"){: .center-img }
 <br><span class="format">Figura 40: Importar PDF de NFS-e</span><br>

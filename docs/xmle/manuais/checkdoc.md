@@ -8,12 +8,15 @@
     }
     #green{
         background-color: #16F529;
+        color: black;
     }
     #red{
         background-color: red;
+        color: black;
     }
     #yellow{
         background-color: yellow;
+        color: black;
     }
 </style>
 

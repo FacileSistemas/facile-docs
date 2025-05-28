@@ -1,13 +1,25 @@
 # Comandos
 
-## source facile-docs/bin/activate
-inicia o ambiente .venv do python
+## sudo apt install python3.11
+Instala o python 3.11
+
+## sudo apt install python3.11 python3.11-venv
+Instala o venv
+
+## python3.11 -m venv facile-docs
+Cria o ambiente facile-docs
+
+## source bin/activate
+Inicia o ambiente .venv do python
+
+## pip install -r requirements.txt
+Instala os requisitos do sistema
 
 ## mkdocs serve
-executa a aplicação
+Executa a aplicação
 
 ## mkdocs build
-compila a aplicação e gera o site
+Compila a aplicação e gera o site
 
 ## mkdocs gh-deploy
-publica o site no github.io
+Publica o site no github.io

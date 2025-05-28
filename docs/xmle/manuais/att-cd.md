@@ -4,6 +4,7 @@
     }
     #yellow{
         background-color: yellow;
+        color: black;
         display: inline;
     }
 </style>

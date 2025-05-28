@@ -68,6 +68,12 @@ Concluído.
 
 Recomendamos fechar o ERP e abrir novamente para que todas as alterações sejam efetivadas.
 
+## Particularidades do Gmail
+
+Para utilização do Gmail na aplicação de busca e-mail, é necessário ter em mente que é necessário realizar uma configuração distinta, mas que já consta documentação na TOTVS. Segue abaixo a documentação que trata a respeito da configuração do Gmail para o serviço de importar XML por e-mail.
+
+<a href="https://tdn.totvs.com/display/tec/Application+Server+-+Uso+de+e-mail+com+GMail">Application Server - Uso de e-mail com GMail</a>
+
 ## Utilização
 
 Através do ***Central XML-e, vá em Outras Ações/Buscar Xml e-mail***. O sistema irá automaticamente baixar de acordo com o e-mail que foi configurado.

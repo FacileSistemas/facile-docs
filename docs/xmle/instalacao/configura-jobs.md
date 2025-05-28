@@ -112,7 +112,7 @@ REFRESHRATE=4000
 
 Basta salvar o appserver.ini com essas alterações.
 
-**<p style="background-color: yellow;">Atenção:** Esses quatro Schedules a seguir só deverão ser utilizados se seu servidor Protheus estiver num servidor na Nuvem TOTVS T-Cloud, do contrário, **<span style="color: red;">NÃO</span>** utilizar o procedimento abaixo.</p>
+**<p style="background-color: yellow; color: black;">Atenção:** Esses quatro Schedules a seguir só deverão ser utilizados se seu servidor Protheus estiver num servidor na Nuvem TOTVS T-Cloud, do contrário, **<span style="color: red;">NÃO</span>** utilizar o procedimento abaixo.</p>
 
 ## Via Schedule do ERP
 
