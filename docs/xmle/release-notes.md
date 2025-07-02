@@ -2,6 +2,18 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5071
+
+27/06/2025
+
+MELHORIA: Melhorada a estilização das telas durante a utilização do DarkTheme
+MELHORIA: Incrementado tela de devolução para exibir lote e data de validade
+MELHORIA: Adicionado possibilidade de utilizar a Inscrição Estadual do emitente na busca do fornecedor no ERP
+BUG: Correção da valição não estava permitindo a entrada na alimentação do grid para notas de serviço
+BUG: Ajuste no CTE de compra para posicionar corretamente na SF1 após o execauto
+BUG: Configurado para quando a rejeição da manifestação for por duplicidade a ferramenta entenda que foi vinculado corretamente aquele evento
+BUG: Correção na impressão de impostos na NFS-e
+
 ### Versão 4.33.5070
 
 31/03/2025
