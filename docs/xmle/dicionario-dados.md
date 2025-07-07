@@ -71,8 +71,8 @@ Segue documentação do dicionário de dados criado pela ferramenta.
 | ZZZ_VLDOC  | N    | 13   | 2    | Valor NF-e   | Valor NF-e                   |
 | ZZZ_ANONFE | C    | 4    | 0    | Ano Emissao  | Ano Emissao NFe              |
 | ZZZ_MESNFE | C    | 2    | 0    | Mes Emissao  | Mes Emissao da NFE           |
-| ZZZ_IEEMIT | C    | 11   | 0    | Inscr. Est.  | Inscricao Estadual emiten    |
-| ZZZ_DESRES | C    | 150  | 0    | Desc.Proces. | Descricao do Processament    |
+| ZZZ_IEEMIT | C    | 18   | 0    | Inscr. Est.  | Inscricao Estadual emitente  |
+| ZZZ_DESRES | C    | 150  | 0    | Desc.Proces. | Descricao do Processamento   |
 | ZZZ_CODRET | C    | 3    | 0    | Cod.Process. | Status da Resposta           |
 | ZZZ_DTREC  | D    | 8    | 0    | Data Aut.    | Data recebimento             |
 | ZZZ_UF     | C    | 2    | 0    | Estado       | Estado de Origem             |
