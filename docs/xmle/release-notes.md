@@ -2,6 +2,14 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5072
+
+09/07/2025
+
+- BUG: Correção na busca de fornecedor considerando a inscrição estadual
+- BUG: Não considerar pedidos rejeitados
+- MELHORIA: Aumento do campo ZZZ_IEEMIT para 18 caracteres
+
 ### Versão 4.33.5071
 
 27/06/2025
