@@ -30,6 +30,8 @@
 
 ![Logo Facile](../../assets/cifaimg/logo.png "Logo Facile")
 
+![API CIFA](../../assets/cifaimg/cifa.jpg "API CIFA")
+
 ![Página Principal](../../assets/cifaimg/tela1.png "Página Principal")
 
 <br><br>
