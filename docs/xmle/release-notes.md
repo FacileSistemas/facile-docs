@@ -2,6 +2,31 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5075
+
+02/09/2025
+
+- MELHORIA: Incluido na entrada em lote a possibilidade de utilizar o pedido de compra vinculado na tag xPed
+- MELHORIA: Ponto de Entrada P018PROPRIO indicar se o documento é de cliente ou Fornecedor
+- BUG: Entrada em lote não estava considerando documentos com status de reprovado no CheckDoc
+- BUG: Corrigido download de CTE que estava retornando caracteres estranhos e gravando na ZZZ
+
+### Versão 4.33.5074
+
+20/08/2025
+
+- MELHORIA: A versão 10.1.3 do webapp está causando travamento ao abrir janela de arquivos do computador, realizado contorno para essa versão enquanto a Totvs não corrige a falha.
+- BUG: O pedido de compra do fornecedor cadastrado na entrega por terceiros não está aparecendo na tela de buscar por pedido de compras
+
+### Versão 4.33.5073
+
+14/08/2025
+
+- MELHORIA: parâmetro ZZ_IEZZZ (Fazer a leitura do campo ZZZ_IEEMIT ao invés da leitura dinâmica do XML)
+- MELHORIA: Implementado a funcionalidade de conversão de unidade de medidas para notas de devolução
+- MELHORIA: Implementado a parte de impostos na DANFS-e para o município de São Paulo/SP
+- BUG: Correção de erro gerado ao cancelar a tela de parametros na rotina de monitorar manifestação
+
 ### Versão 4.33.5072
 
 09/07/2025
