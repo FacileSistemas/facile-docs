@@ -2,6 +2,22 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.5077
+
+27/10/2025
+
+- MELHORIA: No checkdoc foi adicionado a busca do pedido tendo apenas o número do pedido (sem o item) e o código do produto interno
+- MELHORIA: Criado ponto de entrada P31CABEC na entrada de CTE de Compra permitindo adicionar campos na SF1 antes do execauto
+- MELHORIA: Exportação de DANFE/DACTE em lote agora permite selecionar as filiais no filtro
+- BUG: Adicionado verificação de cancelamento da NFS-e quando é por substituição
+
+### Versão 4.33.5076
+
+09/10/2025
+
+- MELHORIA: Adicionando parâmetro ZZ_VPEDCKD (Valida pedido Checkdoc) que retornar .T. ou .F. para filtrar na query não exibir pedido consumido/bloqueado
+- BUG: Incluído status 150 da NF-e como autorizado
+
 ### Versão 4.33.5075
 
 02/09/2025
