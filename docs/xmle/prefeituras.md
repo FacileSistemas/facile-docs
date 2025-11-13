@@ -4,6 +4,4 @@ O Facile XML-e já está 100% integrado ao NFS-e Nacional, ambiente em que será
 
 A cada dia que passa mais prefeituras aderem a NFS-e Nacional, em pouco tempo teremos todas as prefeituras neste ambiente que já é integrado automaticamente ao Facile XML-e.
 
-Segue link com a relação de prefeituras que já aderiram a NFS-e Nacional: [Prefeituras Homologadas](https://www.gov.br/nfse/pt-br/municipios/municipios-aderentes/municipios-aderentes)
-
-São 1022 prefeituras aderidas neste momento (Março) e esse número vem aumentando a cada mês.
+Segue link com a relação de prefeituras que já aderiram a NFS-e Nacional: [Prefeituras Homologadas](https://app.powerbi.com/view?r=eyJrIjoiNGQ4YTcxNmMtMzdhNC00Mzc5LTllM2EtMjY1MTM3NWQyZDgyIiwidCI6IjZmNDlhYTQzLTgyMmEtNGMyMC05NjcwLWRiNzcwMGJmMWViMCJ9&pageName=608609c2e0a53d7a3c6e)
