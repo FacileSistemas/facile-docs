@@ -1,0 +1,10 @@
+.center-img {
+    display: flex;
+    justify-self: center;
+  }
+.format {
+    font-style: italic; 
+    font-size: 15px;
+    justify-self: center;
+    display: flex
+  }

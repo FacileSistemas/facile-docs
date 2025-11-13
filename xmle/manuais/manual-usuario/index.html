@@ -1,0 +1,2527 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../instalacao/configura-jobs/">
+      
+      
+        <link rel="next" href="../importacao-manual/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>03 - Manual do Usuário - Facile Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#manual-do-usuario" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../../.." title="Facile Docs" class="md-header__button md-logo" aria-label="Facile Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Facile Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              03 - Manual do Usuário
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para automático"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para automático" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartilhar" aria-label="Compartilhar" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Facile XML-e
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cifa/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  CIFA
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://www.facilesistemas.com.br/facin/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Facin Sales
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Facile Docs" class="md-nav__button md-logo" aria-label="Facile Docs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Facile Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facile XML-e
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Facile XML-e
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notas de Versão
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Notas de Versão
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prefeituras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prefeituras Homologadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download-patch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download do Patch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dicionario-dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dicionário de Dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalação
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Instalação
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacao/aplicar-patch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passo 01 - Aplicando o Patch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacao/compatibilizador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passo 02 - Compatibilizador
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacao/ponto-entrada-padrao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passo 03 - Pontos de Entrada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacao/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passo 04 - Criando os Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../instalacao/configura-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passo 05 - Configurar os Jobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manuais
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manuais
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Manual do Usuário
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Manual do Usuário
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introdução
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-ferramenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Ferramenta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#facile-central-xml-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FACILE Central XML-e
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FACILE Central XML-e">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cadastrar-fornecedor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cadastrar Fornecedor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imprimir-documento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imprimir Documento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerar-entrada-inicio-do-processo-diario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerar Entrada (Início do processo diário)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outras-acoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outras Ações
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestao-a-vista" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestão à vista
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-doc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Doc
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../importacao-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Importação de XML manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fracionar-itens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 - Processo de fracionar itens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pc-completo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Funcionalidades para o Pedido de Compra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml-sem-entrada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 - Filtro de XML sem nota de entrada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manifestacao-lote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Manifestação em lote
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../checkdoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 - CheckDoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../devol-venda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Devolução de Venda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../att-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Atualização de Certificado digital
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrada-lote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Entrada em Lote
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Configuração do Webservice Checkdoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prenota-checkdoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Gerar Pré-Nota de Entrada com o Checkdoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../xml-email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Importar XML por e-mail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regras-classi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Regras por Processo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../produtoxforn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Segunda Unidade de Medida da Amarração Produto x Fornecedor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peferramenta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - Lista de Pontos de Entrada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cancelar-cte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - Cancelar Conhecimento de Frete
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anexos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Anexos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../anexos/email-fornecedores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 - Modelo de e-mail para fornecedores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_2" id="__nav_2_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Videos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.youtube.com/watch?v=cJyqAefUalU&t=16s" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 - Apresentação Ferramenta FACILE XML-e
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.youtube.com/watch?v=LcOI3j66tRc" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 - Importação de XML no ERP Protheus. Conheço o novo FACILE XML-e
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.youtube.com/watch?v=TTBkagNY2KI" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Manual Central FACILE XML-e - 01 Ajustes e inclusão Vários Itens em Um
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.youtube.com/watch?v=mG0ZtHArLYo" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Importador XML no Totvs Protheus - Como funciona e Qual usar?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cifa/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CIFA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CIFA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cifa/download-patch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download do Patch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.facilesistemas.com.br/facin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facin Sales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introdução
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-ferramenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Ferramenta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#facile-central-xml-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FACILE Central XML-e
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FACILE Central XML-e">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cadastrar-fornecedor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cadastrar Fornecedor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imprimir-documento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imprimir Documento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gerar-entrada-inicio-do-processo-diario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gerar Entrada (Início do processo diário)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outras-acoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Outras Ações
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestao-a-vista" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestão à vista
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-doc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Doc
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<style>
+    p{
+        text-align: justify;
+    }
+    #green{
+        background-color: #16F529;
+        color: black;
+    }
+    #red{
+        background-color: red;
+        color: black;
+    }
+    #yellow{
+        background-color: yellow;
+        color: black;
+    }
+    table{
+        border: 0px !important;
+    }
+    td{
+        border-top: 0px !important;
+        padding: 0px !important;
+    }
+
+</style>
+
+<h1 id="manual-do-usuario">Manual do Usuário</h1>
+<h2 id="introducao">Introdução</h2>
+<p>O FACILE XML-e é uma ferramenta desenvolvida no ERP Protheus visando controle e agilidade nos processos de Entrada de Nota Fiscal Eletrônica e Conferência de Impostos.</p>
+<p>A ferramenta possui uma rotina que trabalha de maneira automática e transparente monitorando no SEFAZ os documentos fiscais emitidos pelos fornecedores e disponibilizando diversas funcionalidades como Manifestação do Destinatário, Importação do XML, Relatórios, Confronto de Impostos calculados pelo ERP Protheus versus Impostos do XML, entre outros.</p>
+<h2 id="a-ferramenta">A Ferramenta</h2>
+<p>Para acessá-la, entre no módulo SIGACOM, no meu principal, clique em <em>atualizações</em> e acesse a <em>Facile XML-e</em>, como descrito na Figura 1.</p>
+<p><img alt="Figura 1: Menu principal" class="center-img" src="../../../assets/manual_usuario/xmle_manual_menu.png" title="Menu principal" />
+<span class="format">Figura 1: Menu principal</span></p>
+<p>A <strong>Central XML-e</strong> auxilia no processo de geração de documentos de entrada.</p>
+<p>A <strong>Gestão à Vista</strong> auxilia no gerenciamento dos documentos.</p>
+<h2 id="facile-central-xml-e">FACILE Central XML-e</h2>
+<p>A Figura 2 mostra a tela principal que é a Central XML-e.</p>
+<p>Nela é possível realizar as seguintes ações: Cadastrar Fornecedor, Imprimir Danfe/Dacte, Gerar Entrada, acessar Outras Ações e pesquisar.</p>
+<p><img alt="Figura 2: Tela Central XML-e" class="center-img" src="../../../assets/manual_usuario/xmle_tela_principal.png" title="Tela principal" />
+<br><span class="format">Figura 2: Tela Central XML-e</span><br></p>
+<h3 id="cadastrar-fornecedor">Cadastrar Fornecedor</h3>
+<p>Ao cliente no botão <strong>+Cad. Fornecedor</strong>, da figura 3 abaixo:</p>
+<p><img alt="Figura 3: Botão Cad. Fornecedor" class="center-img" src="../../../assets/manual_usuario/xmle_cad_fornecedor.png" title="Botão do Cadastro de Fornecedor" />
+<br><span class="format">Figura 3: Botão Cad. Fornecedor</span><br></p>
+<p>Ao selecionar o XML desejado e clicar em +Cad. Fornecedor, poderá ter uma mensagem de Fornecedor já cadastrado, caso o mesmo já se encontre na base de dados do Protheus (SA2). Se isso ocorrer será apresentado a figura 4 abaixo:</p>
+<p><img alt="Figura 4: Fornecedor encontrado na SA2" class="center-img" src="../../../assets/manual_usuario/xmle_alreadycad.png" title="Fornecedor já existe na SA2" />
+<br><span class="format">Figura 4: Fornecedor encontrado na SA2</span><br></p>
+<p>Caso contrário, irá abrir o cadastro padrão de Fornecedor no ERP Protheus (SA2) conforme a figura 5 abaixo:</p>
+<p><img alt="Figura 5: Incluindo Fornecedor na SA2" class="center-img" src="../../../assets/manual_usuario/xmle_incluirforn.png" title="Incluindo fornecedor" />
+<br><span class="format">Figura 5: Incluindo Fornecedor na SA2</span><br></p>
+<h3 id="imprimir-documento">Imprimir Documento</h3>
+<p>Nessa opção, basta selecionar o XML desejado para imprimir a DANFE ou DACTE correspondente. </p>
+<ul>
+<li><strong>Imprimir DANFE/DACTE:</strong> ao selecionar um registro e clicar nessa opção, o sistema irá solicitar as configurações necessárias para imprimir a DANFE, assim como descrito na Figura 6.</li>
+</ul>
+<p><img alt="Figura 6: Configurações de Impressão" class="center-img" src="../../../assets/manual_usuario/xmle_print_config.png" title="Configurações de Impressão" />
+<br><span class="format">Figura 6: Configurações de Impressão</span><br></p>
+<h3 id="gerar-entrada-inicio-do-processo-diario">Gerar Entrada (Início do processo diário)</h3>
+<p>Para gerar uma entrada, selecione uma NF e clique no botão <em>Gerar Entrada</em>, como mostra a Figura 7 abaixo:</p>
+<p><img alt="Figura 7: Tela principal com foco no botão Gerar Entrada" class="center-img" src="../../../assets/manual_usuario/xmle_gerarentrada.png" title="Tela com Gerar Entrada" />
+<br><span class="format">Figura 7: Tela principal com foco no botão Gerar Entrada</span><br></p>
+<p>Se não houver um XML baixado para aquela NF, então o sistema se conectará com o SEFAZ e realizará o download.</p>
+<p><img alt="Figura 8: Conexão com o SEFAZ" class="center-img" src="../../../assets/manual_usuario/xmle_conexaosefaz.png" title="Conexão com o SEFAZ" />
+<br><span class="format">Figura 8: Conexão com o SEFAZ</span><br></p>
+<p>Após isso, o sistema irá apresentar uma tela para definição do Tipo de Nota que está sendo realizado a entrada, sendo o padrão “Normal”. Conforme a figura 9 abaixo:</p>
+<p><img alt="Figura 9: Tipos de Notas" class="center-img" src="../../../assets/manual_usuario/xmle_tiponota.png" title="Tipos de Notas" />
+<br><span class="format">Figura 9: Tipos de Notas</span><br></p>
+<p>Caso a Nota Fiscal tenha alguma <strong>Carta de Correção</strong> atrelada, será apresentado logo na abertura.</p>
+<p><img alt="Figura 9.1: Carta de Correção" class="center-img" src="../../../assets/manual_usuario/xmle_cartacorrecao.png" title="Carta de Correção" />
+<br><span class="format">Figura 9.1: Carta de Correção</span><br></p>
+<p>Após isso, o sistema irá redirecionar para a tela “GERAR ENTRADA”, como exemplificado na Figura 10. A tela é dividida em três sub menus, são eles: cabeçalho, itens e Pré-Nota.</p>
+<p><img alt="Figura 10: Tela de Gerar Entrada" class="center-img" src="../../../assets/manual_usuario/xmle_geracaoentrada.png" title="Gerar Entrada" />
+<br><span class="format">Figura 10: Tela de Gerar Entrada</span><br></p>
+<p>A Figura 11 mostra os Itens, que são divididos em três grupos, sendo eles: itens NF-e (XML), Produto X Fornecedor e Pedidos de Compra.</p>
+<p><img alt="Figura 11: Sub menu Itens" class="center-img" src="../../../assets/manual_usuario/xmle_submenu.png" title="Sub menu Itens" />
+<br><span class="format">Figura 11: Sub menu Itens</span><br></p>
+<p>No grupo Itens NF-e (XML), é listado todos os produtos relacionados àquela NF. Deve-se selecionar cada item com um duplo click para que o sistema mostre a amarração ProdutoxFornecedor.</p>
+<p><img alt="Figura 12: Tela Itens NF-e (XML)" class="center-img" src="../../../assets/manual_usuario/xmle_telaitensnfe.png" title="Tela Itens NF-e" />
+<br><span class="format">Figura 12: Tela Itens NF-e (XML)</span><br></p>
+<p>Ao selecionar um produto, no grupo Produto x Fornecedor será mostrado o produto equivalente ao que foi selecionado (Figura 13). </p>
+<p><img alt="Figura 13: Relação Produto x Fornecedor" class="center-img" src="../../../assets/manual_usuario/xmle_relprodxfor.png" title="Produto x Fornecedor" />
+<br><span class="format">Figura 13: Relação Produto x Fornecedor</span><br></p>
+<p>Se não houver um produto equivalente, será necessário inserir clicando no ícone <strong>+ Inclui</strong>, ao lado do nome <em>Produto X Fornecedor</em> (Figura 14).</p>
+<p><img alt="Figura 14: Botão de relacionar itens" class="center-img" src="../../../assets/manual_usuario/xmle_botaorelitens.png" title="Botão de relacionar itens" />
+<br><span class="format">Figura 14: Botão de relacionar itens</span><br></p>
+<p>Será aberta uma janela de busca onde mostrará os produtos disponíveis, assim como na Figura 15 abaixo:</p>
+<p><img alt="Figura 15: Produtos Disponíveis" class="center-img" src="../../../assets/manual_usuario/xmle_produtosdisponiveis.png" title="Produtos Disponíveis" />
+<br><span class="format">Figura 15: Produtos Disponíveis</span><br></p>
+<p>Obs. Também pode ser filtrado pelo próprio NCM do produto no XML (Figura 16: Botão NCN do XML),</p>
+<p><img alt="Figura 16: Botão NCN do XML" class="center-img" src="../../../assets/manual_usuario/xmle_ncnxml.png" title="Botão NCN" />
+<br><span class="format">Figura 16: Botão NCN do XML</span><br></p>
+<p>Caso exista um Pedido de Compras, basta marcar o Checkbox “Buscar Somente com Pedido de Compras (Figura 17).</p>
+<p><img alt="Figura 17: Buscar Somente com Pedido de Compras" class="center-img" src="../../../assets/manual_usuario/xmle_buscapc.png" title="Buscar somente com PC" />
+<br><span class="format">Figura 17: Buscar Somente com Pedido de Compras</span><br></p>
+<p>No grupo Pedidos de Compra, serão listados os pedidos relacionados aqueles produtos, se houver (Figura 18).</p>
+<p><img alt="Figura 18: Tela de Pedidos de Compra" class="center-img" src="../../../assets/manual_usuario/xmle_telapc.png" title="Tela de PC" />
+<br><span class="format">Figura 18: Tela de Pedidos de Compra</span><br></p>
+<p>A Figura 19, mostra uma Pré-Nota com os produtos selecionados no subgrupo Itens. Se o produto tiver sido selecionado, então ele estará com o status <em>Liberado</em>, representado pela legenda <span id="green">verde</span>. Se não tiver sido selecionado, ele estará com status <em>Pendente</em>, representado pela legenda <span id="red">vermelha</span>.</p>
+<p><img alt="Figura 19: Pré-Nota com um produto Pendente e outro Liberado" class="center-img" src="../../../assets/manual_usuario/xmle_prenotapend.png" title="Pré-Nota" />
+<br><span class="format">Figura 19: Pré-Nota com um produto Pendente e outro Liberado</span><br></p>
+<p><strong>Atenção:</strong> É necessário que todos os itens estejam liberados (Status <span id="green">Verde</span>) para prosseguir, conforme figura 20 abaixo:</p>
+<p><img alt="Figura 20: Pré-Nota com todos itens Liberados" class="center-img" src="../../../assets/manual_usuario/xmle_prenotalib.png" title="Pré-Nota com todos os itens liberados" />
+<br><span class="format">Figura 20: Pré-Nota com todos itens Liberados</span><br></p>
+<p>Após essas configurações, clique no botão <strong><em>Confirmar</em></strong> e a Pré-Nota estará realizada.</p>
+<p><img alt="Figura 21: Confirmar criação da Pré-Nota" class="center-img" src="../../../assets/manual_usuario/xmle_confirmaprenota.png" title="Confirmar criação da Pré-Nota" />
+<br><span class="format">Figura 21: Confirmar criação da Pré-Nota</span><br></p>
+<p>Depois de terminar de processar as informações, o sistema irá redirecionar para a tela do Documento de Entrada PADRÃO (Gerar Entrada), como mostra a Figura 22.</p>
+<p><img alt="Figura 22: Tela para gerar entrada" class="center-img" src="../../../assets/manual_usuario/xmle_telageraentrada.png" title="Geração de entrada" />
+<br><span class="format">Figura 22: Tela para gerar entrada</span><br></p>
+<p>Nessa tela, é necessário escolher o Tipo de Entrada para cada produto, além de preencher as informações sobre <em>condições de pagamento</em>, <em>descrição</em> e <em>natureza</em> dos produtos, na aba <em>Duplicatas</em>, como mostra a Figura 23.</p>
+<p><img alt="Figura 23: Aba duplicata" class="center-img" src="../../../assets/manual_usuario/xmle_abadupli.png" title="Aba da duplicata" />
+<br><span class="format">Figura 23: Aba duplicata</span><br></p>
+<p>Em seguida, clique no botão <em>salvar</em> e aguarde a tela de confirmação.</p>
+<p>Caso o sistema detecte divergências entre a <strong>TES</strong> informada e o <strong>XML</strong> importado, apresentará a seguinte tela da Figura 24: Onde demonstra nas colunas 1 e 3 de acordo com o que está parametrizado na TES e nas colunas 2 e 4 como veio no XML.</p>
+<p><img alt="Figura 24: Confronto XML x TES" class="center-img" src="../../../assets/manual_usuario/xmle_xmlxtes.png" title="Confronto XML x TES" />
+<br><span class="format">Figura 24: Confronto XML x TES</span><br></p>
+<p>Obs. Pode ser feita a correção manual e continuar o processo normalmente.</p>
+<p>Caso não tenha verificado nenhuma divergência entre o TES x XML ou as mesmas tenham sidos sanadas/ignoradas, o sistema dará a opção de transmitir a manifestação de confirmação para o SEFAZ, como mostra a Figura 25.</p>
+<p><img alt="Figura 25: Opção de transmissão para o SEFAZ" class="center-img" src="../../../assets/manual_usuario/xmle_transsefaz.png" title="Transmissão SEFAZ" />
+<br><span class="format">Figura 25: Opção de transmissão para o SEFAZ</span><br></p>
+<p>Ao selecionar a opção <em>sim</em>, o sistema mostrará a tela de Manifestação (Figura 26).</p>
+<p><img alt="Figura 26: Tela de Manifestação" class="center-img" src="../../../assets/manual_usuario/xmle_telamanifestacao.png" title="Tela de Manifestação" />
+<br><span class="format">Figura 26: Tela de Manifestação</span><br></p>
+<p>Caso seja selecionado <em>NÃO</em> (na Figura 25) ou após a manifestação, o sistema redirecionará para a tela Central XML-e com a legenda da nota criada alterada para o status “NF-e possui classificação”, representada pela cor <span id="red">vermelha</span>, assim como mostra a Figura 27. </p>
+<p><img alt="Figura 27: Central XML-e com nota classificada" class="center-img" src="../../../assets/manual_usuario/xmle_centralxmlenotaclas.png" title="Central XML-e com nota classificada" />
+<br><span class="format">Figura 27: Central XML-e com nota classificada</span><br></p>
+<p><strong>Dessa maneira, o processo de Documento de Entrada e Manifestação está finalizado.</strong></p>
+<h3 id="outras-acoes">Outras Ações</h3>
+<p>Ao selecionar Outras Ações, um menu aparecerá contendo todas as opções listadas abaixo:</p>
+<p><img alt="Figura 28: Menu de Outras Ações" class="center-img" src="../../../assets/manual_usuario/xmle_menuoa.png" title="Menu de Outras Ações" />
+<br><span class="format">Figura 28: Menu de Outras Ações</span><br></p>
+<ul>
+<li><strong>Pesquisar:</strong> essa funcionalidade disponibiliza uma maneira mais rápida de procurar por um registro, que pode ser feito por meio da chave NF e outros filtros padrão, como mostra a Figura 29. A Figura 30, mostra a tela de pesquisa após clicar no botão <em>parâmetros</em>, permitindo a entrada das outras informações para filtragem de acordo com o filtro selecionado.</li>
+</ul>
+<p><img alt="Figura 29: Filtros possíveis" class="center-img" src="../../../assets/manual_usuario/xmle_filtros.png" title="Filtros" />
+<br><span class="format">Figura 29: Filtros possíveis</span><br></p>
+<p><img alt="Figura 30: Tela de pesquisa mostrando os parâmetros" class="center-img" src="../../../assets/manual_usuario/xmle_telapespar.png" title="Tela de pesquisa mostrando os parâmetros" />
+<br><span class="format">Figura 30: Tela de pesquisa mostrando os parâmetros</span><br></p>
+<ul>
+<li>
+<p><strong>Documento de Entrada:</strong> essa funcionalidade disponibiliza de uma maneira rápida as opções de Entrada de NF a fim de agilizar o dia a dia do usuário. A Figura 31, mostra as opções disponíveis.</p>
+<p><img alt="Figura 31: Opções de Documento de Entrada" class="center-img" src="../../../assets/manual_usuario/xmle_opcoesde.png" title="Opções de Documento de Entrada" />
+<br><span class="format">Figura 31: Opções de Documento de Entrada</span><br></p>
+<ul>
+<li><strong>Pré-Nota - Classificar:</strong> essa opção só estará disponível se houver uma Pré-Nota lançada e o XML constar no ERP, assim como mostra a Figura 32. É possível identificar um registro que possui Pré-Nota lançada se essa estiver com legenda amarela (Figura 33).</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Figura 32: Aviso sobre restrição para classificar nota" class="center-img" src="../../../assets/manual_usuario/xmle_avisonota.png" title="Aviso sobre restrição" />
+<br><span class="format">Figura 32: Aviso sobre restrição para classificar nota</span><br></p>
+<p><img alt="Figura 33: Registro com legenda amarela representando que existe uma Pré-Nota lançada" class="center-img" src="../../../assets/manual_usuario/xmle_registrolegenamarela.png" title="Registro com legenda amarela representando que existe uma Pré-Nota lançada" />
+<br><span class="format">Figura 33: Registro com legenda amarela representando que existe uma Pré-Nota lançada</span><br></p>
+<ul>
+<li>
+<p><strong>NF-e:</strong> Engloba várias funções da NF-e no mesmo submenu a fim de agilizar o dia a dia do usuário. A Figura 34, mostra as opções disponíveis.</p>
+<p><img alt="Figura 34: Opções de NF-e" class="center-img" src="../../../assets/manual_usuario/xmle_opcoesnfe.png" title="Opções de NF-e" />
+<br><span class="format">Figura 34: Opções de NF-e</span><br></p>
+<ul>
+<li>
+<p><strong>Classificar NF-e:</strong> essa opção só estará disponível se houver uma Pré-Nota lançada e o XML constar no ERP, assim como mostra a Figura 32. É possível identificar um registro que possui Pré-Nota lançada se essa estiver com legenda amarela (Figura 33).</p>
+</li>
+<li>
+<p><strong>Buscar Chave Avulsa:</strong> ao invés de sincronizar todos os documentos, o sistema permite buscar uma chave específica. A Figura 35 mostra a tela de busca.</p>
+</li>
+</ul>
+<p><img alt="Figura 35: Tela de busca de chave avulsa" class="center-img" src="../../../assets/manual_usuario/xmle_telabuscaca.png" title="Tela de busca de chave avulsa" />
+<br><span class="format">Figura 35: Tela de busca de chave avulsa</span><br></p>
+<ul>
+<li><strong>Manifestar:</strong> a tela de manifestação contém as seguintes partes: <em>Manifesto</em>, <em>Emitente</em> e <em>Nota Fiscal</em>, como mostra a Figura 36.</li>
+</ul>
+<p>No <em>Manifesto</em>, deverá ser inserido o tipo de manifestação que está sendo realizada, a qual está dividida em quatro opções: </p>
+<ol>
+<li><strong>Confirmação da Operação:</strong> o emitente reconhece a operação e a confirma.</li>
+<li><strong>Ciência da Operação:</strong> o emitente reconhece a operação, porém ainda não está confirmada.</li>
+<li><strong>Desconhecimento da Operação:</strong> o emitente não reconhece a operação.</li>
+<li><strong>Operação não Realizada:</strong> o emitente gerou a nota, porém houve algum cancelamento e a operação não foi efetivamente realizada.</li>
+</ol>
+<p>No <em>Emitente</em>, contém as informações de quem está emitindo, assim como na <em>Nota Fiscal</em> contém as informações da nota fiscal que será manifestada.</p>
+<p><img alt="Figura 36: Tela de Manifestação" class="center-img" src="../../../assets/manual_usuario/xmle_telamanifesdest.png" title="Tela de Manifestação" />
+<br><span class="format">Figura 36: Tela de Manifestação</span><br></p>
+<ul>
+<li><strong>Monitorar:</strong> essa opção serve para acompanhar a nota após a manifestação. A Figura 37 mostra um exemplo de informações necessárias para realizar o monitoramento.</li>
+</ul>
+<p><img alt="Figura 37: Tela de monitoramento" class="center-img" src="../../../assets/manual_usuario/xmle_telamonitoramento.png" title="Tela de monitoramento" />
+<br><span class="format">Figura 37: Tela de monitoramento</span><br></p>
+<ul>
+<li><strong>Manifestar em Lote:</strong> Através dessa opção é possível realizar a manifestação de um LOTE de XML de uma única vez. A Figura 38 mostra a tela de parâmetros necessária para filtrar quais notas serão manifestadas.,</li>
+</ul>
+<p><img alt="Figura 38: Parâmetros para manifestar em lote" class="center-img" src="../../../assets/manual_usuario/xmle_parametrosparalote.png" title="Parâmetros para manifestar em lote" />
+<br><span class="format">Figura 38: Parâmetros para manifestar em lote</span><br></p>
+</li>
+</ul>
+<p>Será apresentada a tela da figura 39 abaixo. Nela deve-se marcar (duplo click) quais XML irão ser manifestados, depois clicar em <strong>Manifestar</strong>.</p>
+<p><img alt="Figura 39: Manifestação em lote." class="center-img" src="../../../assets/manual_usuario/xmle_manifesemlote.png" title="Manifestação em lote" />
+<br><span class="format">Figura 39: Manifestação em lote.</span><br></p>
+<ul>
+<li><strong>NFS-e Beta:</strong> Rotina de importação de PDF´s de Notas Fiscais de Serviço, conforme mostra a Figura 40 abaixo:</li>
+</ul>
+<p><img alt="Figura 40: Importar PDF de NFS-e" class="center-img" src="../../../assets/manual_usuario/xmle_importarpdf.png" title="Importar PDF de NFS-e" />
+<br><span class="format">Figura 40: Importar PDF de NFS-e</span><br></p>
+<p><strong>Obs.</strong> Será necessário ter o arquivo no formato PDF em uma pasta no computador.</p>
+<p><img alt="Figura 41: Pasta com PDF de NFS-e" class="center-img" src="../../../assets/manual_usuario/xmle_pastacompdf.png" title="Pasta com PDF de NFS-e" />
+<br><span class="format">Figura 41: Pasta com PDF de NFS-e</span><br></p>
+<p>Ao selecionar a pasta onde se encontram os PDF´s, irá abrir a tela para selecionar quais serão importados. </p>
+<p><img alt="Figura 42: Importação de NFS-e por PDF" class="center-img" src="../../../assets/manual_usuario/xmle_importacaodenfs.png" title="Importação de NFS-e por PDF" />
+<br><span class="format">Figura 42: Importação de NFS-e por PDF</span><br></p>
+<ol>
+<li>Clicar no Botão <strong>Importar PDF</strong> para a ferramenta analisar e importar os PDF da pasta;</li>
+<li>Após os PDF terem sido importados, caso deseje, pode-se gerar a entrada de todas as NFS-e nesta mesma tela através da opção <strong>Gerar Doc. Entrada</strong>.</li>
+</ol>
+<p><strong>Atenção:</strong> Caso alguma NFS-e no formado PDF não seja importada, apresentando a mensagem “Modelo não encontrado”, ficará com status <span style="color: red">vermelho</span> conforme imagem 43. Deve-se abrir um ticket no portal da FACILE, anexando o PDF da NFS-e em questão, solicitando homologação de município.</p>
+<p><img alt="Figura 43: Município não Homologado" class="center-img" src="../../../assets/manual_usuario/xmle_muninaohomolog.png" title="Município não Homologado" />
+<br><span class="format">Figura 43: Município não Homologado</span><br></p>
+<ul>
+<li>
+<p><strong>CT-e:</strong> Neste menu estão agrupadas as funções destinadas ao CT-e, conforme mostra a Figura 44 abaixo:</p>
+<p><img alt="Figura 44: Menu de CT-e" class="center-img" src="../../../assets/manual_usuario/xmle_menudecte.png" title="Menu de CT-e" />
+<br><span class="format">Figura 44: Menu de CT-e</span><br></p>
+<ul>
+<li><strong>Buscar SEFAZ:</strong> esta opção tem por objetivo buscar no SEFAZ nos últimos 90 dias, documentos que ainda não foram baixados automaticamente. </li>
+</ul>
+<p><img alt="Figura 45: Busca SEFAZ de CT-e" class="center-img" src="../../../assets/manual_usuario/xmle_buscasefaz.png" title="Busca SEFAZ de CT-e" />
+<br><span class="format">Figura 45: Busca SEFAZ de CT-e</span><br></p>
+<ul>
+<li><strong>Consulta Status:</strong> esta opção tem por objetivo buscar o status do CTE selecionado junto ao SEFAZ, conforme figura 46.</li>
+</ul>
+<p><img alt="Figura 46: Consulta Status do CT-e no SEFAZ" class="center-img" src="../../../assets/manual_usuario/xmle_consultastatus.png" title="Consulta Status do CT-e no SEFAZ" />
+<br><span class="format">Figura 46: Consulta Status do CT-e no SEFAZ</span><br></p>
+<ul>
+<li><strong>Manif. Desacordo:</strong> esta opção tem por objetivo transmitir a manifestação de desacordo no SEFAZ do CTE selecionado, conforme figura 47.
+<strong>Obs.</strong> É necessário preencher uma observação com no mínimo 15 e no máximo 255 caracteres.</li>
+</ul>
+<p><img alt="Figura 47: Manifestação de Desacordo do CT-e no SEFAZ" class="center-img" src="../../../assets/manual_usuario/xmle_manifestacaodedesacordo.png" title="Manifestação de Desacordo do CT-e no SEFAZ" />
+<br><span class="format">Figura 47: Manifestação de Desacordo do CT-e no SEFAZ</span><br></p>
+<ul>
+<li><strong>Monitorar:</strong> essa opção serve para acompanhar o CT-e após a manifestação.</li>
+</ul>
+</li>
+<li>
+<p><strong>Manutenção TI:</strong> Menu destinado aos administradores do ERP Protheus de sua empresa, acesso apenas com permissão de Admin.</p>
+<p><img alt="Figura 48: Opções de Manutenção TI" class="center-img" src="../../../assets/manual_usuario/xmle_opcoesdemanutencao.png" title="Opções de Manutenção TI" />
+<br><span class="format">Figura 48: Opções de Manutenção TI</span><br></p>
+<ul>
+<li><strong>Buscar Avançada SEFAZ (Somente Admin):</strong> esta opção tem por objetivo sincronizar com a SEFAZ os documentos que ainda não sofreram manifestações do destinatário. A Figura 49 mostra a tela do sistema para essa opção.</li>
+</ul>
+<p><img alt="Figura 49: Tela para sincronizar documentos" class="center-img" src="../../../assets/manual_usuario/xmle_telaparasincronizar.png" title="Tela para sincronizar documentos" />
+<br><span class="format">Figura 49: Tela para sincronizar documentos</span><br></p>
+</li>
+</ul>
+<p><strong>Obs.</strong> O sistema é parametrizado para realizar essa busca automaticamente, assim o Botão <strong>“Buscar Avançada SEFAZ”</strong> serve para forçar essa busca a qualquer momento caso os serviços automáticos não estejam funcionando ou desativados.</p>
+<ul>
+<li><strong>Relatórios:</strong> Nesse menu poderá extrair diretamente alguns relatórios, sem necessitar usar a rotina Gestão a Vista. São eles: XML´s não Importados e Manifestação de Destinatário.</li>
+</ul>
+<p><img alt="Figura 50: Relatórios" class="center-img" src="../../../assets/manual_usuario/xmle_relatorios.png" title="Relatórios" />
+<br><span class="format">Figura 50: Relatórios</span><br></p>
+<ul>
+<li><strong>Buscar XML e-mail: (Necessário configuração prévia)</strong> O sistema pode ser configurado para ter mais de uma opção de baixa de XML, além da automática. Para tal, é necessário solicitar seu TI que configure (em caso de dúvidas solicitar apoio a equipe FACILE) um email para receber XML. Ao clicar no Botão Buscar XML e-mail será feito uma busca e importação dos XML da conta de email configurada para dentro da Central XML-e.</li>
+</ul>
+<p><img alt="Figura 51: Buscar XML por e-mail" class="center-img" src="../../../assets/manual_usuario/xmle_buscarxml.png" title="Buscar XML por e-mail" />
+<br><span class="format">Figura 51: Buscar XML por e-mail</span><br></p>
+<ul>
+<li><strong>Exportar XML:</strong> essa opção permite exportar o XML, mas apenas dos que já estão baixados. A Figura 52 mostra a tela de exportação.</li>
+</ul>
+<p><img alt="Figura 52: Tela de Exportação XML" class="center-img" src="../../../assets/manual_usuario/xmle_telaexportacaoxml.png" title="Tela de Exportação XML" />
+<br><span class="format">Figura 52: Tela de Exportação XML</span><br></p>
+<ul>
+<li><strong>Importar XML Computador:</strong> Assim como a função buscar XML e-mail, outra forma de importar um arquivo XML para a Central XML-e sem ser automaticamente é a Busca direta de um diretório do computador. Ao clicar em “Importar XML Computador” será apresentado uma tela de Browser, figura 54.</li>
+</ul>
+<p><img alt="Figura 53: Menu Importação de XML manual" class="center-img" src="../../../assets/manual_usuario/xmle_menuimportxml.png" title="Menu Importação de XML manual" />
+<br><span class="format">Figura 53: Menu Importação de XML manual</span><br></p>
+<p><img alt="Figura 54: Importação de XML manual" class="center-img" src="../../../assets/manual_usuario/xmle_importxmlmanual.png" title="Importação de XML manual" />
+<br><span class="format">Figura 54: Importação de XML manual</span><br></p>
+<ul>
+<li><strong>Entrada em Lote:</strong> Função criada para possibilitar a entrada em Lote de uma ou várias pré-notas, deve-se filtrar os parâmetro da figura 55, então serão apresentadas os XML disponíveis para a entrada de Pré-Nota em Lote (Figura 56).</li>
+</ul>
+<p><img alt="Figura 55: Parâmetros para a entrada de Pré-notas em lote." class="center-img" src="../../../assets/manual_usuario/xmle_fig55.png" title="Parâmetros para a entrada de Pré-notas em lote." />
+<br><span class="format">Figura 55: Parâmetros para a entrada de Pré-notas em lote.</span><br></p>
+<p>Após preencher os parâmetros, clique em OK e irá apresentar as notas disponíveis para seleção.</p>
+<p><img alt="Figura 56: Tela de Pré-notas em lote." class="center-img" src="../../../assets/manual_usuario/xmle_paramparaentrada.png" title="Tela de Pré-notas em lote" />
+<br><span class="format">Figura 56: Tela de Pré-notas em lote.</span><br></p>
+<p>Após selecionar as notas desejadas, clicar em Gerar Pré-Nota ou Gerar Doc. Entrada (caso queira já ir para a classificação em lote).</p>
+<ul>
+<li><strong>Legenda:</strong> cada registro possui uma legenda(cor) que identifica o seu status. As legendas possíveis estão descritas na Figura 57.</li>
+</ul>
+<p><img alt="Figura 57: Significado das legendas" class="center-img" src="../../../assets/manual_usuario/xmle_significadolegend.png" title="Significado das legendas" />
+<br><span class="format">Figura 57: Significado das legendas</span><br></p>
+<ul>
+<li><strong>Imprimir Browse:</strong> essa opção permite imprimir ou exportar para diversos formatos, toda listagem que aparece na tela Central XML-e. A Figura 58 mostra a tela de impressão/exportação.</li>
+</ul>
+<p><img alt="Figura 58: Tela de Impressão/Exportação" class="center-img" src="../../../assets/manual_usuario/xmle_telaimpexport.png" title="Tela de Impressão/Exportação" />
+<br><span class="format">Figura 58: Tela de Impressão/Exportação</span><br></p>
+<h2 id="gestao-a-vista">Gestão à vista</h2>
+<p>Ao selecionar <em>Gestão à vista</em> no menu inicial, o sistema mostrará uma tela de filtro (Figura 59) para selecionar de que data até que data o usuário deseja que sejam realizadas as análises dos documentos.</p>
+<p><img alt="Figura 59: Tela de filtro Gestão à vista" class="center-img" src="../../../assets/manual_usuario/xmle_telafiltro.png" title="Tela de filtro Gestão à vista" />
+<br><span class="format">Figura 59: Tela de filtro Gestão à vista</span><br></p>
+<p>Após isso, o sistema mostra a tela principal Gestão à vista (Figura 60). Nela, é possível obter as seguintes informações sobre: </p>
+<p>• <strong>Controle de Entradas:</strong> o sistema mostra a quantidade de XML disponíveis e a quantidade sem NF de entrada, além de um gráfico para acompanhamento visual.</p>
+<p>• <strong>Compras Mensais:</strong> por meio de um gráfico de barras, é possível acompanhar de forma sintética os gastos mensais com compras.</p>
+<p>• <strong>NF-e Cancelados:</strong> o sistema mostra a quantidade de XML cancelados e a quantidade que foi lançada no ERP, além de um gráfico para acompanhamento visual.</p>
+<p>• <strong>Gestão de Fornecedores:</strong> o sistema mostra a quantidade de fornecedores que tem XML emitido contra sua empresa e ainda não estão cadastrados no sistema.</p>
+<p>• <strong>NF-e Faltando XML:</strong> o sistema mostra quantidade de Documentos de Entrada que foram incluídos no sistema sem anexar o seu XML.</p>
+<p>• <strong>Central XML-e:</strong> Licença do cliente.</p>
+<p><img alt="Figura 60: Tela de Gestão à vista" class="center-img" src="../../../assets/manual_usuario/xmle_telagestao.png" title="Tela de Gestão à vista" />
+<br><span class="format">Figura 60: Tela de Gestão à vista</span><br></p>
+<p>Caso necessite realizar outro filtro, basta clicar no botão <strong><em>Config</em></strong> <img alt="Botão de Configuração" class="center-img" src="../../../assets/manual_usuario/config-button.png" title="Botão de Configuração" /> ou pressionar a tecla F12 que a tela de filtro aparecerá novamente.</p>
+<p>Desse modo, é possível realizar o gerenciamento dos documentos em um só local.</p>
+<h2 id="check-doc">Check Doc</h2>
+<p>É possível utilizar a ferramenta tanto de forma automática (necessário parametrização prévia) ou manual. Aqui iremos demonstrar a forma manual.</p>
+<p>Na Central XML-e, vá em “Outras Ações/CheckDoc”.</p>
+<p><img alt="Figura 61: Menu CheckDoc" class="center-img" src="../../../assets/manual_usuario/xmle_menucheckdoc.png" title="Menu CheckDoc" />
+<br><span class="format">Figura 61: Menu CheckDoc</span><br></p>
+<p><img alt="Figura 62: CheckDoc Manual" class="center-img" src="../../../assets/manual_usuario/xmle_checkdocmanual.png" title="CheckDoc Manual" />
+<br><span class="format">Figura 62: CheckDoc Manual</span><br></p>
+<p>Clicar em Realizar nova análise.</p>
+<p><img alt="Figura 63: Confirmação CheckDoc" class="center-img" src="../../../assets/manual_usuario/xmle_confirmcheckdoc.png" title="Confirmação CheckDoc" />
+<br><span class="format">Figura 63: Confirmação CheckDoc</span><br></p>
+<p>Escolha, Sim. Selecione uma pasta para salvar o relatório.</p>
+<p><img alt="Figura 64: Diretório onde será saldo o arquivo de análise do CheckDoc" class="center-img" src="../../../assets/manual_usuario/xmle_diretoriosaida.png" title="Diretório onde será saldo o arquivo de análise do CheckDoc" />
+<br><span class="format">Figura 64: Diretório onde será saldo o arquivo de análise do CheckDoc</span><br></p>
+<p>Irá apresentar o relatório comparando na linha de cima o que está no XML e na de baixo no ERP Protheus.</p>
+<p><img alt="Figura 65: Relatório CheckDoc" class="center-img" src="../../../assets/manual_usuario/xmle_relcheckdoc.png" title="Relatório CheckDoc" />
+<br><span class="format">Figura 65: Relatório CheckDoc</span><br></p>
+<div style="text-align: center; font-weight: bold;">-FIM-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2010 - 2023 Facile Sistemas
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.facebook.com/facilesistemass" target="_blank" rel="noopener" title="Facile no Facebook" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.instagram.com/facilesistemas/" target="_blank" rel="noopener" title="Siga nosso instagram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M224.3 141a115 115 0 1 0-.6 230 115 115 0 1 0 .6-230m-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1-.6-149.2m93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1-53.6 0m129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/company/facile-solu-es-em-sistemas/" target="_blank" rel="noopener" title="LinkedIN" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tracking", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "toc.follow"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

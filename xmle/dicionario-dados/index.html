@@ -1,0 +1,3093 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../download-patch/">
+      
+      
+        <link rel="next" href="../instalacao/aplicar-patch/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Dicionário de Dados - Facile Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dicionario-de-dados" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Facile Docs" class="md-header__button md-logo" aria-label="Facile Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Facile Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dicionário de Dados
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para automático"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Mudar para automático" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Compartilhar" aria-label="Compartilhar" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Abas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Facile XML-e
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cifa/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  CIFA
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://www.facilesistemas.com.br/facin/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Facin Sales
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Facile Docs" class="md-nav__button md-logo" aria-label="Facile Docs" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Facile Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facile XML-e
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Facile XML-e
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notas de Versão
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Notas de Versão
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prefeituras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prefeituras Homologadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download-patch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download do Patch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dicionário de Dados
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dicionário de Dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-zzw-produto-x-fornecedor-xml-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela ZZW - Produto x Fornecedor XML-e
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabela ZZW - Produto x Fornecedor XML-e">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-zzz-documentos-gerenciados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela ZZZ - Documentos Gerenciados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabela ZZZ - Documentos Gerenciados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indices_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-sd1-itens-documento-de-entrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela SD1 - Itens Documento de Entrada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabela SD1 - Itens Documento de Entrada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campos_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-sx6-parametros-do-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela SX6 - Parâmetros do Sistema
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalação
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Instalação
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacao/aplicar-patch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passo 01 - Aplicando o Patch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacao/compatibilizador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passo 02 - Compatibilizador
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacao/ponto-entrada-padrao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passo 03 - Pontos de Entrada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacao/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passo 04 - Criando os Menus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacao/configura-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passo 05 - Configurar os Jobs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manuais
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manuais
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/manual-usuario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Manual do Usuário
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/importacao-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Importação de XML manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/fracionar-itens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05 - Processo de fracionar itens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/pc-completo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06 - Funcionalidades para o Pedido de Compra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/xml-sem-entrada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 - Filtro de XML sem nota de entrada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/manifestacao-lote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    08 - Manifestação em lote
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/checkdoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    09 - CheckDoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/devol-venda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10 - Devolução de Venda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/att-cd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12 - Atualização de Certificado digital
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/entrada-lote/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13 - Entrada em Lote
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/webservice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14 - Configuração do Webservice Checkdoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/prenota-checkdoc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15 - Gerar Pré-Nota de Entrada com o Checkdoc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/xml-email/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16 - Importar XML por e-mail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/regras-classi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17 - Regras por Processo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/produtoxforn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18 - Segunda Unidade de Medida da Amarração Produto x Fornecedor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/peferramenta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19 - Lista de Pontos de Entrada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manuais/cancelar-cte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20 - Cancelar Conhecimento de Frete
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anexos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Anexos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anexos/email-fornecedores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 - Modelo de e-mail para fornecedores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_2" id="__nav_2_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Videos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Videos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.youtube.com/watch?v=cJyqAefUalU&t=16s" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 - Apresentação Ferramenta FACILE XML-e
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.youtube.com/watch?v=LcOI3j66tRc" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 - Importação de XML no ERP Protheus. Conheço o novo FACILE XML-e
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.youtube.com/watch?v=TTBkagNY2KI" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03 - Manual Central FACILE XML-e - 01 Ajustes e inclusão Vários Itens em Um
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.youtube.com/watch?v=mG0ZtHArLYo" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04 - Importador XML no Totvs Protheus - Como funciona e Qual usar?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cifa/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CIFA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CIFA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cifa/download-patch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download do Patch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.facilesistemas.com.br/facin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facin Sales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-zzw-produto-x-fornecedor-xml-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela ZZW - Produto x Fornecedor XML-e
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabela ZZW - Produto x Fornecedor XML-e">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-zzz-documentos-gerenciados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela ZZZ - Documentos Gerenciados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabela ZZZ - Documentos Gerenciados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indices_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-sd1-itens-documento-de-entrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela SD1 - Itens Documento de Entrada
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tabela SD1 - Itens Documento de Entrada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campos_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-sx6-parametros-do-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabela SX6 - Parâmetros do Sistema
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dicionario-de-dados">📅Dicionário de Dados</h1>
+<p>Segue documentação do dicionário de dados criado pela ferramenta.</p>
+<h2 id="tabela-zzw-produto-x-fornecedor-xml-e">Tabela ZZW - Produto x Fornecedor XML-e</h2>
+<h3 id="campos">Campos</h3>
+<style>
+</style>
+
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Tam.</th>
+<th>Dec.</th>
+<th>Descrição</th>
+<th>Completa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ZZW_FILIAL</td>
+<td>C</td>
+<td>2</td>
+<td>0</td>
+<td>Filial</td>
+<td>Filial do<br> Sistema</td>
+</tr>
+<tr>
+<td>ZZW_FORNEC</td>
+<td>C</td>
+<td>6</td>
+<td>0</td>
+<td>Fornecedor</td>
+<td>Codigo do<br> Fornecedor</td>
+</tr>
+<tr>
+<td>ZZW_LOJA</td>
+<td>C</td>
+<td>2</td>
+<td>0</td>
+<td>Loja</td>
+<td>Loja do<br> Fornecedor</td>
+</tr>
+<tr>
+<td>ZZW_NOMFOR</td>
+<td>C</td>
+<td>40</td>
+<td>0</td>
+<td>Nome Fornec.</td>
+<td>Nome do<br> Fornecedor</td>
+</tr>
+<tr>
+<td>ZZW_CODPRF</td>
+<td>C</td>
+<td>30</td>
+<td>0</td>
+<td>Cod.Prod.For</td>
+<td>Codigo do<br> Produto no Forn</td>
+</tr>
+<tr>
+<td>ZZW_PRODUT</td>
+<td>C</td>
+<td>15</td>
+<td>0</td>
+<td>Produto</td>
+<td>Codigo do<br> Produto</td>
+</tr>
+<tr>
+<td>ZZW_NOMPRO</td>
+<td>C</td>
+<td>40</td>
+<td>0</td>
+<td>Descricao</td>
+<td>Nome do Produto</td>
+</tr>
+<tr>
+<td>ZZW_SEGUM</td>
+<td>C</td>
+<td>2</td>
+<td>0</td>
+<td>Seg.Uni.Med.</td>
+<td>Segunda Unidade<br> de Medida</td>
+</tr>
+<tr>
+<td>ZZW_CONV</td>
+<td>N</td>
+<td>5</td>
+<td>2</td>
+<td>Fator Conv.</td>
+<td>Fator Conversao</td>
+</tr>
+<tr>
+<td>ZZW_TIPCON</td>
+<td>C</td>
+<td>1</td>
+<td>0</td>
+<td>Tipo de Conv</td>
+<td>Tipo de<br> Conversao</td>
+</tr>
+<tr>
+<td>ZZW_DPRODF</td>
+<td>C</td>
+<td>90</td>
+<td>0</td>
+<td>Desc.Prd.For</td>
+<td>Descricao Prod<br> Fornecedor</td>
+</tr>
+<tr>
+<td>ZZW_CLIFOR</td>
+<td>C</td>
+<td>1</td>
+<td>0</td>
+<td>Cliente/Forn</td>
+<td>Cliente ou<br> Fornecedor</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indices">Índices</h3>
+<style>
+</style>
+
+<table>
+<thead>
+<tr>
+<th><strong>Ordem</strong></th>
+<th><strong>Chave</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ZZW_FILIAL + ZZW_FORNEC + ZZW_LOJA + ZZW_CODPRF + ZZW_PRODUT</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ZZW_FILIAL + ZZW_FORNEC + ZZW_LOJA + ZZW_PRODUT</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ZZW_FILIAL + ZZW_CLIFOR + ZZW_FORNEC + ZZW_LOJA + ZZW_CODPRF + ZZW_PRODUT</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1"></h3>
+<h2 id="tabela-zzz-documentos-gerenciados">Tabela ZZZ - Documentos Gerenciados</h2>
+<h3 id="campos_1">Campos</h3>
+<style>
+</style>
+
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Tam.</th>
+<th>Dec.</th>
+<th>Descrição</th>
+<th>Completa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ZZZ_FILIAL</td>
+<td>C</td>
+<td>2</td>
+<td>0</td>
+<td>Filial</td>
+<td>Filial do<br> Sistema</td>
+</tr>
+<tr>
+<td>ZZZ_SITDOC</td>
+<td>C</td>
+<td>1</td>
+<td>0</td>
+<td>Sit. NF-e</td>
+<td>Situacao da Nota Fiscal</td>
+</tr>
+<tr>
+<td>ZZZ_TIPO</td>
+<td>C</td>
+<td>1</td>
+<td>0</td>
+<td>Tipo XML</td>
+<td>Tipo de XML</td>
+</tr>
+<tr>
+<td>ZZZ_STATUS</td>
+<td>C</td>
+<td>1</td>
+<td>0</td>
+<td>Manif. Atual</td>
+<td>Status da Manifestacao</td>
+</tr>
+<tr>
+<td>ZZZ_DOC</td>
+<td>C</td>
+<td>9</td>
+<td>0</td>
+<td>Nota Fiscal</td>
+<td>Numero da Nota Fiscal</td>
+</tr>
+<tr>
+<td>ZZZ_SERIE</td>
+<td>C</td>
+<td>3</td>
+<td>0</td>
+<td>Serie</td>
+<td>Serie da Nota Fiscal</td>
+</tr>
+<tr>
+<td>ZZZ_EMISNF</td>
+<td>D</td>
+<td>8</td>
+<td>0</td>
+<td>Emissao NF</td>
+<td>Data Emissao da NF</td>
+</tr>
+<tr>
+<td>ZZZ_CNPJ</td>
+<td>C</td>
+<td>14</td>
+<td>0</td>
+<td>CNPJ Fornece</td>
+<td>CNPJ Fornecedor</td>
+</tr>
+<tr>
+<td>ZZZ_NOEMIT</td>
+<td>C</td>
+<td>60</td>
+<td>0</td>
+<td>Nome/Razao</td>
+<td>Nome/Razao</td>
+</tr>
+<tr>
+<td>ZZZ_CHAVE</td>
+<td>C</td>
+<td>60</td>
+<td>0</td>
+<td>Chave NF</td>
+<td>Chave da Nota Fiscal</td>
+</tr>
+<tr>
+<td>ZZZ_CODEVE</td>
+<td>C</td>
+<td>3</td>
+<td>0</td>
+<td>Cod.Evento</td>
+<td>Status do Evento</td>
+</tr>
+<tr>
+<td>ZZZ_XML</td>
+<td>M</td>
+<td>10</td>
+<td>0</td>
+<td>XML</td>
+<td>XML</td>
+</tr>
+<tr>
+<td>ZZZ_DTRECB</td>
+<td>D</td>
+<td>8</td>
+<td>0</td>
+<td>Data Recebto</td>
+<td>Data de Recebimento</td>
+</tr>
+<tr>
+<td>ZZZ_ORIGEM</td>
+<td>C</td>
+<td>1</td>
+<td>0</td>
+<td>Origem XML</td>
+<td>Origem XML</td>
+</tr>
+<tr>
+<td>ZZZ_OK</td>
+<td>C</td>
+<td>4</td>
+<td>0</td>
+<td>OK</td>
+<td>OK</td>
+</tr>
+<tr>
+<td>ZZZ_VLDOC</td>
+<td>N</td>
+<td>13</td>
+<td>2</td>
+<td>Valor NF-e</td>
+<td>Valor NF-e</td>
+</tr>
+<tr>
+<td>ZZZ_ANONFE</td>
+<td>C</td>
+<td>4</td>
+<td>0</td>
+<td>Ano Emissao</td>
+<td>Ano Emissao NFe</td>
+</tr>
+<tr>
+<td>ZZZ_MESNFE</td>
+<td>C</td>
+<td>2</td>
+<td>0</td>
+<td>Mes Emissao</td>
+<td>Mes Emissao da NFE</td>
+</tr>
+<tr>
+<td>ZZZ_IEEMIT</td>
+<td>C</td>
+<td>18</td>
+<td>0</td>
+<td>Inscr. Est.</td>
+<td>Inscricao Estadual emitente</td>
+</tr>
+<tr>
+<td>ZZZ_DESRES</td>
+<td>C</td>
+<td>150</td>
+<td>0</td>
+<td>Desc.Proces.</td>
+<td>Descricao do Processamento</td>
+</tr>
+<tr>
+<td>ZZZ_CODRET</td>
+<td>C</td>
+<td>3</td>
+<td>0</td>
+<td>Cod.Process.</td>
+<td>Status da Resposta</td>
+</tr>
+<tr>
+<td>ZZZ_DTREC</td>
+<td>D</td>
+<td>8</td>
+<td>0</td>
+<td>Data Aut.</td>
+<td>Data recebimento</td>
+</tr>
+<tr>
+<td>ZZZ_UF</td>
+<td>C</td>
+<td>2</td>
+<td>0</td>
+<td>Estado</td>
+<td>Estado de Origem</td>
+</tr>
+<tr>
+<td>ZZZ_ENVMAI</td>
+<td>C</td>
+<td>1</td>
+<td>0</td>
+<td>Mail Enviado</td>
+<td>E-Mail Enviado</td>
+</tr>
+<tr>
+<td>ZZZ_NSU</td>
+<td>C</td>
+<td>40</td>
+<td>0</td>
+<td>NSU</td>
+<td>NSU</td>
+</tr>
+<tr>
+<td>ZZZ_PEDCHK</td>
+<td>C</td>
+<td>1</td>
+<td>0</td>
+<td>Ped. Checado</td>
+<td>Pedido Compra verificado</td>
+</tr>
+<tr>
+<td>ZZZ_PEDOBS</td>
+<td>M</td>
+<td>10</td>
+<td>0</td>
+<td>Obs Ped Comp</td>
+<td>Observacao<br> Pedido Compra</td>
+</tr>
+<tr>
+<td>ZZZ_YHORA</td>
+<td>C</td>
+<td>5</td>
+<td>0</td>
+<td>Hora</td>
+<td>Hora do download XML</td>
+</tr>
+<tr>
+<td>ZZZ_ECKDOC</td>
+<td>C</td>
+<td>1</td>
+<td>0</td>
+<td>Email CkDoc</td>
+<td>Email Enviado pelo CKDoc</td>
+</tr>
+<tr>
+<td>ZZZ_PDF</td>
+<td>M</td>
+<td>10</td>
+<td>0</td>
+<td>Doc. PDF</td>
+<td>Documento PDF</td>
+</tr>
+<tr>
+<td>ZZZ_PROVID</td>
+<td>C</td>
+<td>50</td>
+<td>0</td>
+<td>Provider</td>
+<td>Provedor de XML</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2"></h3>
+<h3 id="indices_1">Índices</h3>
+<style>
+</style>
+
+<table>
+<thead>
+<tr>
+<th><strong>Ordem</strong></th>
+<th><strong>Chave</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ZZZ_FILIAL + ZZZ_CHAVE</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ZZZ_FILIAL + ZZZ_CNPJ + ZZZ_DOC + ZZZ_SERIE</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ZZZ_FILIAL + ZZZ_DOC + ZZZ_SERIE + ZZZ_CNPJ</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ZZZ_FILIAL + ZZZ_EMISNF + ZZZ_CNPJ</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3"></h3>
+<h2 id="tabela-sd1-itens-documento-de-entrada">Tabela SD1 - Itens Documento de Entrada</h2>
+<h3 id="campos_2">Campos</h3>
+<style>
+</style>
+
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo</th>
+<th>Tam.</th>
+<th>Dec.</th>
+<th>Descrição</th>
+<th>Completa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1_ZPEDIDO</td>
+<td>C</td>
+<td>6</td>
+<td>0</td>
+<td>Pedido Temp</td>
+<td>Pedido<br> Temporario</td>
+</tr>
+<tr>
+<td>D1_ZITEMPD</td>
+<td>C</td>
+<td>4</td>
+<td>0</td>
+<td>Item Temp</td>
+<td>Item Temporario</td>
+</tr>
+<tr>
+<td>D1_ZITEMOR</td>
+<td>C</td>
+<td>4</td>
+<td>0</td>
+<td>Item Orig</td>
+<td>Item Original</td>
+</tr>
+<tr>
+<td>D1_ZNFIMP</td>
+<td>C</td>
+<td>1</td>
+<td>0</td>
+<td>NF Importada</td>
+<td>NF Importada</td>
+</tr>
+<tr>
+<td>D1_ZITEXML</td>
+<td>C</td>
+<td>5</td>
+<td>0</td>
+<td>Item no XML</td>
+<td>Item no XML</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tabela-sx6-parametros-do-sistema">Tabela SX6 - Parâmetros do Sistema</h2>
+<style>
+</style>
+
+<table>
+<thead>
+<tr>
+<th><strong>Parâmetros</strong></th>
+<th><strong>Tipo</strong></th>
+<th><strong>Descrição</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ZZ_ARMZPED</td>
+<td>L</td>
+<td>Informa se busca o Armazem do Produto no Pedido de Compras<br> (C7_LOCAL)</td>
+</tr>
+<tr>
+<td>ZZ_AUTHLOG</td>
+<td>C</td>
+<td>Nome de usuário fornecido pela Facile</td>
+</tr>
+<tr>
+<td>ZZ_AUTHPSW</td>
+<td>C</td>
+<td>Senha fornecida pela Facile</td>
+</tr>
+<tr>
+<td>ZZ_CERTCA</td>
+<td>C</td>
+<td>Caminho do arquivo CA.PEM</td>
+</tr>
+<tr>
+<td>ZZ_CERTKEY</td>
+<td>C</td>
+<td>Caminho do arquivo KEY.PEM</td>
+</tr>
+<tr>
+<td>ZZ_CERTPRI</td>
+<td>C</td>
+<td>Caminho do arquivo CERT.PEM</td>
+</tr>
+<tr>
+<td>ZZ_CIENAUT</td>
+<td>L</td>
+<td>Manifesta ciência da operação automaticamente?</td>
+</tr>
+<tr>
+<td>ZZ_CLASSIF</td>
+<td>L</td>
+<td>Ativa a abertura da classificação do documento automaticamente ao gerar pré-nota?</td>
+</tr>
+<tr>
+<td>ZZ_CODEAUT</td>
+<td>L</td>
+<td>Ativa autenticação na Facile</td>
+</tr>
+<tr>
+<td>ZZ_CONFAUT</td>
+<td>C</td>
+<td>Tipo de tratativa para transmissao da confirmacao da operacao</td>
+</tr>
+<tr>
+<td>ZZ_CONFFIS</td>
+<td>L</td>
+<td>Ativa integração com o módulo ACD Protheus para conferência Cega pelo FACILE XML-e. Necessário também ativar o MV_CONFFIS.</td>
+</tr>
+<tr>
+<td>ZZ_CTECAUT</td>
+<td>L</td>
+<td>Ativa a importação automática do CTE de Compra</td>
+</tr>
+<tr>
+<td>ZZ_CTECSPE</td>
+<td>L</td>
+<td>Especie do CTE de compra na entrada. Caso não exista, é definido como CTE.</td>
+</tr>
+<tr>
+<td>ZZ_CTEVAUT</td>
+<td>L</td>
+<td>Ativa a importação automática do CTE de Venda</td>
+</tr>
+<tr>
+<td>ZZ_CTEVSPE</td>
+<td>L</td>
+<td>Especie do CTE de venda na entrada. Caso não exista, é definido como CTE.</td>
+</tr>
+<tr>
+<td>ZZ_DADOSB1</td>
+<td>L</td>
+<td>Busca dados contábeis no cadastro do produto.</td>
+</tr>
+<tr>
+<td>ZZ_DCTECP</td>
+<td>N</td>
+<td>Até quantos dias para trás deve buscar os CT-e de Compra</td>
+</tr>
+<tr>
+<td>ZZ_DCTEVD</td>
+<td>N</td>
+<td>Até quantos dias para trás deve buscar os CT-e de Venda</td>
+</tr>
+<tr>
+<td>ZZ_DEBUG</td>
+<td>L</td>
+<td>Ativa o modo Debug no console do appserver</td>
+</tr>
+<tr>
+<td>ZZ_DELMAIL</td>
+<td>L</td>
+<td>Deleta o e-mail da caixa de correio apos o download do XML?</td>
+</tr>
+<tr>
+<td>ZZ_DESTFIS</td>
+<td>C</td>
+<td>Destinatarios para workflow de  mudanças de status das NFe</td>
+</tr>
+<tr>
+<td>ZZ_FILATIV</td>
+<td>L</td>
+<td>Desabilita a baixa de determinada Filial no FACILE XML-e. Preencher como .F. para desativar a filial.</td>
+</tr>
+<tr>
+<td>ZZ_GRPBLOQ</td>
+<td>C</td>
+<td>Id dos Grupos de Usuários autorizados a bloquear/desbloquear documentos, separados por barra. Ex.: 000001/000010/000025</td>
+</tr>
+<tr>
+<td>ZZ_IEZZZ</td>
+<td>L</td>
+<td>Faz a leitura do campo ZZZ_IEEMIT ao invés da leitura dinâmica do XML para realizar a validação na entrada das notas.</td>
+</tr>
+<tr>
+<td>ZZ_MAILXML</td>
+<td>L</td>
+<td>Ativa busca de XML no e-mail</td>
+</tr>
+<tr>
+<td>ZZ_MUDASE3</td>
+<td>L</td>
+<td>Possibilita o usuário de alterar a série da NFS-e no momento do lançamento</td>
+</tr>
+<tr>
+<td>ZZ_NFSEAUT</td>
+<td>L</td>
+<td>Ativa a importação automática da NFS-e</td>
+</tr>
+<tr>
+<td>ZZ_NFSESER</td>
+<td>C</td>
+<td>Altera a série padrão das NFS-e. <strong>Importante:</strong> Só utilizará a série personalizada caso não exista série no XML da NFS-e.</td>
+</tr>
+<tr>
+<td>ZZ_NFSESPE</td>
+<td>C</td>
+<td>Altera a espécie padrão das NFS-e</td>
+</tr>
+<tr>
+<td>ZZ_OPERNFS</td>
+<td>C</td>
+<td>Tipo de operação para busca de TES Inteligente na NFSe</td>
+</tr>
+<tr>
+<td>ZZ_OPERCOM</td>
+<td>C</td>
+<td>Tipo de operação para entrada normal</td>
+</tr>
+<tr>
+<td>ZZ_OPECTEC</td>
+<td>C</td>
+<td>Tipo de operação para busca de TES Inteligente no CTE</td>
+</tr>
+<tr>
+<td>ZZ_OPECTEV</td>
+<td>C</td>
+<td>Tipo de operação para busca de TES Inteligente no CTE</td>
+</tr>
+<tr>
+<td>ZZ_OPERTRA</td>
+<td>C</td>
+<td>Tipo de operação para transferências</td>
+</tr>
+<tr>
+<td>ZZ_PCCTE</td>
+<td>L</td>
+<td>Ativa a solicitação de pedido de compras na entrada de CTE de Venda</td>
+</tr>
+<tr>
+<td>ZZ_PCOBRIG</td>
+<td>L</td>
+<td>Obrigatório vincular pedido de compra em todos os itens</td>
+</tr>
+<tr>
+<td>ZZ_POPCNT</td>
+<td>C</td>
+<td>Conta de e-mail para conexão POP</td>
+</tr>
+<tr>
+<td>ZZ_POPEND</td>
+<td>C</td>
+<td>Endereco do servidor POP de e-mail</td>
+</tr>
+<tr>
+<td>ZZ_POPPSW</td>
+<td>C</td>
+<td>Senha da Conta de e-mail para conexão POP</td>
+</tr>
+<tr>
+<td>ZZ_POPSSL</td>
+<td>L</td>
+<td>Utiliza conexao segura para acesso POP ao e-mail</td>
+</tr>
+<tr>
+<td>ZZ_PRODCTE</td>
+<td>C</td>
+<td>Produto padrão para entrada de CT-e</td>
+</tr>
+<tr>
+<td>ZZ_PSWENTR</td>
+<td>C</td>
+<td>Senha que autoriza entrada com divergência de impostos</td>
+</tr>
+<tr>
+<td>ZZ_TESCTE</td>
+<td>C</td>
+<td>TES padrão para entrada de CT-e</td>
+</tr>
+<tr>
+<td>ZZ_TESCTEC</td>
+<td>C</td>
+<td>TES padrão para entrada de CT-e de Compra</td>
+</tr>
+<tr>
+<td>ZZ_TIMEUPD</td>
+<td>N</td>
+<td>Tempo de refresh da tela de gestão à vista (minutos)</td>
+</tr>
+<tr>
+<td>ZZ_ULTNSU</td>
+<td>C</td>
+<td>Ultimo NSU de busca para NFe</td>
+</tr>
+<tr>
+<td>ZZ_UPDEAN</td>
+<td>L</td>
+<td>Atualiza o EAN no campo B1_CODBAR de acordo com o XML</td>
+</tr>
+<tr>
+<td>ZZ_VERSAOM</td>
+<td>C</td>
+<td>Versão do webservice Sefaz</td>
+</tr>
+<tr>
+<td>ZZ_VLDCEST</td>
+<td>L</td>
+<td>Ativa a validacao do CEST</td>
+</tr>
+<tr>
+<td>ZZ_VLDCOFI</td>
+<td>L</td>
+<td>Ativa validação de COFINS na classificação</td>
+</tr>
+<tr>
+<td>ZZ_VLDICMS</td>
+<td>L</td>
+<td>Ativa validação de ICMS na classificação</td>
+</tr>
+<tr>
+<td>ZZ_VLDIPI</td>
+<td>L</td>
+<td>Ativa validação de IPI na classificação</td>
+</tr>
+<tr>
+<td>ZZ_VLDNCM</td>
+<td>C</td>
+<td>Regra de validação de NCM na classificação</td>
+</tr>
+<tr>
+<td>ZZ_VLDNFE</td>
+<td>L</td>
+<td>Desativa (.T.) a tela de confronto de dados entre XML e ERP</td>
+</tr>
+<tr>
+<td>ZZ_VLDPIS</td>
+<td>L</td>
+<td>Ativa validação de PIS na classificação</td>
+</tr>
+<tr>
+<td>ZZ_VLDST</td>
+<td>L</td>
+<td>Ativa validação de ICMS ST na classificação</td>
+</tr>
+<tr>
+<td>ZZ_XMLAUTO</td>
+<td>L</td>
+<td>Informa se irá baixar o XML automaticamente via JOB</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2010 - 2023 Facile Sistemas
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.facebook.com/facilesistemass" target="_blank" rel="noopener" title="Facile no Facebook" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256c0 120 82.7 220.8 194.2 248.5V334.2h-52.8V256h52.8v-33.7c0-87.1 39.4-127.5 125-127.5 16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287v175.9C413.8 494.8 512 386.9 512 256"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.instagram.com/facilesistemas/" target="_blank" rel="noopener" title="Siga nosso instagram" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M224.3 141a115 115 0 1 0-.6 230 115 115 0 1 0 .6-230m-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1-.6-149.2m93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1-53.6 0m129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/company/facile-solu-es-em-sistemas/" target="_blank" rel="noopener" title="LinkedIN" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tracking", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "search.highlight", "search.share", "toc.follow"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
