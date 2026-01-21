@@ -2,6 +2,18 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.6000
+
+07/01/2026
+
+- MELHORIA: Entrada de NFS-e Nacional alimentando a chave no campo padrão do Protheus F1_CODNFE
+- MELHORIA: Criado parâmetro ZZ_MESBSC para alterar quantidade meses em que o sistema retrocederá em busca para atualizar a legenda
+- MELHORIA: Adicionando campo C7_ITEM do pedido de compra na consulta avançanda XML-e
+- MELHORIA: Carregar os dados da nota selecionada no Browse automaticamente na tela de monitoramento
+- BUG: Exporta a DANFE/DACTE em lote estava gerando o erro array out of bounds [9] of [8] em alguns CTes
+- BUG: Correção de error.log na função FORMATADINHEIRO na impressão da NFS-e
+- BUG: Correção na data de emissão da NFS-e modelo Nacional
+
 ### Versão 4.33.5077
 
 27/10/2025
