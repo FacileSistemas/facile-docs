@@ -151,6 +151,7 @@ Segue documentação do dicionário de dados criado pela ferramenta.
 | ZZ_IEZZZ       | L        | Faz a leitura do campo ZZZ_IEEMIT ao invés da leitura dinâmica do XML para realizar a validação na entrada das notas. |
 | ZZ_MAILXML     | L        | Ativa busca de XML no e-mail                                                      |
 | ZZ_MUDASE3     | L        | Possibilita o usuário de alterar a série da NFS-e no momento do lançamento        |
+| ZZ_NFSEATV     | L        | Ativa o download da NFSE em ambiente nacional                                     |
 | ZZ_NFSEAUT     | L        | Ativa a importação automática da NFS-e                                            |
 | ZZ_NFSESER     | C        | Altera a série padrão das NFS-e. **Importante:** Só utilizará a série personalizada caso não exista série no XML da NFS-e. |
 | ZZ_NFSESPE     | C        | Altera a espécie padrão das NFS-e                                                 |
