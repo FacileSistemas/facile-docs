@@ -2,6 +2,38 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.6003
+
+19/05/2026
+
+- MELHORIA: Adicionado filtro de tipo de data na exportacao xml
+- MELHORIA: Inclusão de impressão de DANFSE em lote
+- MELHORIA: Criado novo ponto de entrada antes de finalizar a analise do documento fiscal no checkdoc: CHKDOCF
+- MELHORIA: Baixa de NFS-e para filiais usando o certificado digital da matriz
+- BUG: Adaptação para a nova regra do Protheus quanto a variável cEmpAnt
+- BUG: Correção de informações da impressão de DANFSE
+- BUG: Correção na atualização das legendas da NFS-e Nacional
+
+
+### Versão 4.33.6002
+
+30/03/2026
+
+- MELHORIA: Melhoria no consumo de memória do JOB PTXJ001
+- MELHORIA: Implementação do PE BSCEMPFL nas NFS-e
+- MELHORIA: Criado parâmetro ZZ_NFSEATV que permite desativar o download de NFS-e Nacional
+- MELHORIA: Ajuste para salvar as informacoes da pesquisa no A VISTA
+- BUG: Correção na atualização das legendas para NFS-e
+- BUG: Tratativa para a série vazia da ZZZ localizar o registro correspondente da SF1
+- BUG: Corrigido alto consumo de memória dos jobs
+
+### Versão 4.33.6001
+
+04/02/2026
+
+- MELHORIA: Criado ponto de entrada VLDOCSAID para validar Itens do Documento de saída
+- BUG: Desativado importação de NFS-e via webservice de prefeituras devido a estar tudo na NFS-e Nacional
+
 ### Versão 4.33.6000
 
 07/01/2026
