@@ -7,11 +7,11 @@ Detalhes das atualizações liberadas da ferramenta.
 11/07/2026
 
 - MELHORIA: Adiciona filtro de filial de/ate na exportação de XML
-- MELHORIA: ticket-4723 Insere etapa de cancelamento de classificação após pontos de entrada
+- MELHORIA: Insere etapa de cancelamento de classificação após pontos de entrada
 - MELHORIA: Criado job PTXJ009 exclusivo para baixar XML do e-mail
-- MELHORIA: ticket-4442 Adiciona opção de exportar XML de NFSe
-- BUG: ticket-4787 Adiciona nome fixo ao relatório para evitar bug de layout
-- BUG: ticket-4792 corrige bug de legenda NFS e realiza validação de série
+- MELHORIA: Adiciona opção de exportar XML de NFSe
+- BUG: Adiciona nome fixo ao relatório para evitar bug de layout
+- BUG: corrige bug de legenda NFS e realiza validação de série
 
 ### Versão 4.33.6003
 
