@@ -85,7 +85,8 @@ nav:
   - CIFA:
     - Introdução: 'cifa/index.md'
     - Download do Patch: 'cifa/download-patch.md'
-    - CIFA Approvals: 'cifa/cifa-approvals.md'
+    - CIFA Approvals: 
+      - Guia de instalação: 'cifa/cifa-approvals.md'
   - Facin Sales: https://www.facilesistemas.com.br/facin/
 
 plugins:
