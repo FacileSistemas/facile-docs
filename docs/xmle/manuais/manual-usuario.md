@@ -341,45 +341,89 @@ Ao selecionar a pasta onde se encontram os PDF´s, irá abrir a tela para seleci
 ![Figura 52: Tela de Exportação XML](../../assets/manual_usuario/xmle_telaexportacaoxml.png "Tela de Exportação XML"){: .center-img }
 <br><span class="format">Figura 52: Tela de Exportação XML</span><br>
 
+* **Exportação de DANFE/DACTE em lote:**
+
+É possivel exportar DANFE/DACTE em lote.
+Para isso, entre na central Xml e aperte **Outras ações**
+Selecione a opção de **Exportar DANFE/DACTE em Lote**
+
+![Figura 53: Outras Ações](../../assets/manual_usuario/outras-acoes.png "Botão Outras Ações"){: .center-img }
+<br><span class="format">Figura 53: Outras Ações</span><br>
+
+O sistema informará que só considerará os documentos com Xml baixados!
+
+![Figura 54: Somente xml baixado](../../assets/manual_usuario/xml-baixados.png "Somente xml baixado"){: .center-img }
+<br><span class="format">Figura 54: Aviso de Xml baixado</span><br>
+
+Após isso, irá entrar na tela de filtro, onde serão preenchidos os campos para buscar os arquivos de acordo com os filtros informados. <br><br>
+Caso queira buscar todos os arquivos, como por exemplo nos campos CNPJ inicial e final, basta preencher como vazio o primeiro campo e preencher o outro com "ZZZ" até preencher o campo, que trará arquivos de todos os CNPJ disponiveis.
+
+![Figura 55: Filtro Exportações](../../assets/manual_usuario/filtro-de-exportacao.png "Filtro exportações"){: .center-img }
+<br><span class="format">Figura 55: Filtro de Exportação em Lote</span><br>
+
+Continuando a tela de filtro, logo abaixo tem a opção **Salvar em**, onde você irá selecionar a pasta de destino onde deverá ficar salvo os arquivos exportados.<br>
+Ao deixar marcado "CNPJ Separado por pasta", a ferramenta vai criar uma pasta para cada CNPJ encontrado nos arquivos e vai salvar cada um na pasta em seu respectivo CNPJ.<br>
+Em "Tipo Documento", você selecionará qual documento você deseja exportar a DANFE/DACTE.<br>
+Em "Status Documento", você selecionará qual tipo de Status atual de documento você deseja exportar.<br>
+
+![Figura 56: Continua Filtro](../../assets/manual_usuario/continua-filtro.png "Continuação do Filtro"){: .center-img }
+<br><span class="format">Figura 56: Continuação do Filtro de Exportação em Lote</span><br>
+
+Aperte em **Ok** após preencher os filtros e aparecerá uma tela informado quantos arquivos foram encontrados dentro do alcance dos filtros informados, e perguntará se deseja prosseguir.<br>
+
+![Figura 57: Continuar Operação](../../assets/manual_usuario/continuar-operacao.png "Tela de confirmação da operação"){: .center-img }
+<br><span class="format">Figura 57: Tela de confirmação da operação</span><br>
+
+Ao clicar em **Sim**, o sistema começará a exportar os arquivos na pasta selecionada<br>
+
+![Figura 58: Exportando em lote](../../assets/manual_usuario/exportando-em-lote.png "Exportando em lote"){: .center-img }
+<br><span class="format">Figura 58: Exportando em Lote</span><br>
+
+Após o processo ter sido concluido, o sistema apresenta a mensagem de processamento finalizado! <br>
+
+![Figura 59: Processo Finalizado](../../assets/manual_usuario/operacao-concluida-lote.png "Processo finalizado"){: .center-img }
+<br><span class="format">Figura 59: processo Finalizado!</span><br>
+
+
 * **Importar XML Computador:** Assim como a função buscar XML e-mail, outra forma de importar um arquivo XML para a Central XML-e sem ser automaticamente é a Busca direta de um diretório do computador. Ao clicar em “Importar XML Computador” será apresentado uma tela de Browser, figura 54.
 
-![Figura 53: Menu Importação de XML manual](../../assets/manual_usuario/xmle_menuimportxml.png "Menu Importação de XML manual"){: .center-img }
-<br><span class="format">Figura 53: Menu Importação de XML manual</span><br>
+![Figura 60: Menu Importação de XML manual](../../assets/manual_usuario/xmle_menuimportxml.png "Menu Importação de XML manual"){: .center-img }
+<br><span class="format">Figura 60: Menu Importação de XML manual</span><br>
 
-![Figura 54: Importação de XML manual](../../assets/manual_usuario/xmle_importxmlmanual.png "Importação de XML manual"){: .center-img }
-<br><span class="format">Figura 54: Importação de XML manual</span><br>
+![Figura 61: Importação de XML manual](../../assets/manual_usuario/xmle_importxmlmanual.png "Importação de XML manual"){: .center-img }
+<br><span class="format">Figura 61: Importação de XML manual</span><br>
 
-* **Entrada em Lote:** Função criada para possibilitar a entrada em Lote de uma ou várias pré-notas, deve-se filtrar os parâmetro da figura 55, então serão apresentadas os XML disponíveis para a entrada de Pré-Nota em Lote (Figura 56).
+* **Entrada em Lote:** Função criada para possibilitar a entrada em Lote de uma ou várias pré-notas, deve-se filtrar os parâmetro da figura 62, então serão apresentadas os XML disponíveis para a entrada de Pré-Nota em Lote (Figura 63).
 
-![Figura 55: Parâmetros para a entrada de Pré-notas em lote.](../../assets/manual_usuario/xmle_fig55.png "Parâmetros para a entrada de Pré-notas em lote."){: .center-img }
-<br><span class="format">Figura 55: Parâmetros para a entrada de Pré-notas em lote.</span><br>
+![Figura 62: Parâmetros para a entrada de Pré-notas em lote.](../../assets/manual_usuario/xmle_fig55.png "Parâmetros para a entrada de Pré-notas em lote."){: .center-img }
+<br><span class="format">Figura 62: Parâmetros para a entrada de Pré-notas em lote.</span><br>
 
 Após preencher os parâmetros, clique em OK e irá apresentar as notas disponíveis para seleção.
 
-![Figura 56: Tela de Pré-notas em lote.](../../assets/manual_usuario/xmle_paramparaentrada.png "Tela de Pré-notas em lote"){: .center-img }
-<br><span class="format">Figura 56: Tela de Pré-notas em lote.</span><br>
+![Figura 63: Tela de Pré-notas em lote.](../../assets/manual_usuario/xmle_paramparaentrada.png "Tela de Pré-notas em lote"){: .center-img }
+<br><span class="format">Figura 63: Tela de Pré-notas em lote.</span><br>
 
 Após selecionar as notas desejadas, clicar em Gerar Pré-Nota ou Gerar Doc. Entrada (caso queira já ir para a classificação em lote).
 
-* **Legenda:** cada registro possui uma legenda(cor) que identifica o seu status. As legendas possíveis estão descritas na Figura 57.
+* **Legenda:** cada registro possui uma legenda(cor) que identifica o seu status. As legendas possíveis estão descritas na Figura 64.
 
-![Figura 57: Significado das legendas](../../assets/manual_usuario/xmle_significadolegend.png "Significado das legendas"){: .center-img }
-<br><span class="format">Figura 57: Significado das legendas</span><br>
+![Figura 64: Significado das legendas](../../assets/manual_usuario/xmle_significadolegend.png "Significado das legendas"){: .center-img }
+<br><span class="format">Figura 64: Significado das legendas</span><br>
 
-* **Imprimir Browse:** essa opção permite imprimir ou exportar para diversos formatos, toda listagem que aparece na tela Central XML-e. A Figura 58 mostra a tela de impressão/exportação.
+* **Imprimir Browse:** essa opção permite imprimir ou exportar para diversos formatos, toda listagem que aparece na tela Central XML-e. A Figura 65 mostra a tela de impressão/exportação.
 
-![Figura 58: Tela de Impressão/Exportação](../../assets/manual_usuario/xmle_telaimpexport.png "Tela de Impressão/Exportação"){: .center-img }
-<br><span class="format">Figura 58: Tela de Impressão/Exportação</span><br>
+![Figura 65: Tela de Impressão/Exportação](../../assets/manual_usuario/xmle_telaimpexport.png "Tela de Impressão/Exportação"){: .center-img }
+<br><span class="format">Figura 65: Tela de Impressão/Exportação</span><br>
 
 
 ## Gestão à vista
 
-Ao selecionar *Gestão à vista* no menu inicial, o sistema mostrará uma tela de filtro (Figura 59) para selecionar de que data até que data o usuário deseja que sejam realizadas as análises dos documentos.
+Ao selecionar *Gestão à vista* no menu inicial, o sistema mostrará uma tela de filtro (Figura 66) para selecionar de que data até que data o usuário deseja que sejam realizadas as análises dos documentos.
 
-![Figura 59: Tela de filtro Gestão à vista](../../assets/manual_usuario/xmle_telafiltro.png "Tela de filtro Gestão à vista"){: .center-img }
-<br><span class="format">Figura 59: Tela de filtro Gestão à vista</span><br>
+![Figura 66: Tela de filtro Gestão à vista](../../assets/manual_usuario/xmle_telafiltro.png "Tela de filtro Gestão à vista"){: .center-img }
+<br><span class="format">Figura 66: Tela de filtro Gestão à vista</span><br>
 
-Após isso, o sistema mostra a tela principal Gestão à vista (Figura 60). Nela, é possível obter as seguintes informações sobre: 
+Após isso, o sistema mostra a tela principal Gestão à vista (Figura 67). Nela, é possível obter as seguintes informações sobre: 
 
 • **Controle de Entradas:** o sistema mostra a quantidade de XML disponíveis e a quantidade sem NF de entrada, além de um gráfico para acompanhamento visual.
 
@@ -393,8 +437,8 @@ Após isso, o sistema mostra a tela principal Gestão à vista (Figura 60). Nela
 
 • **Central XML-e:** Licença do cliente.
 
-![Figura 60: Tela de Gestão à vista](../../assets/manual_usuario/xmle_telagestao.png "Tela de Gestão à vista"){: .center-img }
-<br><span class="format">Figura 60: Tela de Gestão à vista</span><br>
+![Figura 67: Tela de Gestão à vista](../../assets/manual_usuario/xmle_telagestao.png "Tela de Gestão à vista"){: .center-img }
+<br><span class="format">Figura 67: Tela de Gestão à vista</span><br>
 
 Caso necessite realizar outro filtro, basta clicar no botão ***Config*** ![Botão de Configuração](../../assets/manual_usuario/config-button.png "Botão de Configuração"){: .center-img } ou pressionar a tecla F12 que a tela de filtro aparecerá novamente.
 
@@ -407,25 +451,26 @@ Desse modo, é possível realizar o gerenciamento dos documentos em um só local
 
 Na Central XML-e, vá em “Outras Ações/CheckDoc”.
 
-![Figura 61: Menu CheckDoc](../../assets/manual_usuario/xmle_menucheckdoc.png "Menu CheckDoc"){: .center-img }
-<br><span class="format">Figura 61: Menu CheckDoc</span><br>
+![Figura 68: Menu CheckDoc](../../assets/manual_usuario/xmle_menucheckdoc.png "Menu CheckDoc"){: .center-img }
+<br><span class="format">Figura 68: Menu CheckDoc</span><br>
 
-![Figura 62: CheckDoc Manual](../../assets/manual_usuario/xmle_checkdocmanual.png "CheckDoc Manual"){: .center-img }
-<br><span class="format">Figura 62: CheckDoc Manual</span><br>
+![Figura 69: CheckDoc Manual](../../assets/manual_usuario/xmle_checkdocmanual.png "CheckDoc Manual"){: .center-img }
+<br><span class="format">Figura 69: CheckDoc Manual</span><br>
 
 Clicar em Realizar nova análise.
 
-![Figura 63: Confirmação CheckDoc](../../assets/manual_usuario/xmle_confirmcheckdoc.png "Confirmação CheckDoc"){: .center-img }
-<br><span class="format">Figura 63: Confirmação CheckDoc</span><br>
+![Figura 70: Confirmação CheckDoc](../../assets/manual_usuario/xmle_confirmcheckdoc.png "Confirmação CheckDoc"){: .center-img }
+<br><span class="format">Figura 70: Confirmação CheckDoc</span><br>
 
 Escolha, Sim. Selecione uma pasta para salvar o relatório.
 
-![Figura 64: Diretório onde será saldo o arquivo de análise do CheckDoc](../../assets/manual_usuario/xmle_diretoriosaida.png "Diretório onde será saldo o arquivo de análise do CheckDoc"){: .center-img }
-<br><span class="format">Figura 64: Diretório onde será saldo o arquivo de análise do CheckDoc</span><br>
+![Figura 71: Diretório onde será saldo o arquivo de análise do CheckDoc](../../assets/manual_usuario/xmle_diretoriosaida.png "Diretório onde será saldo o arquivo de análise do CheckDoc"){: .center-img }
+<br><span class="format">Figura 71: Diretório onde será saldo o arquivo de análise do CheckDoc</span><br>
 
 Irá apresentar o relatório comparando na linha de cima o que está no XML e na de baixo no ERP Protheus.
 
-![Figura 65: Relatório CheckDoc](../../assets/manual_usuario/xmle_relcheckdoc.png "Relatório CheckDoc"){: .center-img }
-<br><span class="format">Figura 65: Relatório CheckDoc</span><br>
+![Figura 72: Relatório CheckDoc](../../assets/manual_usuario/xmle_relcheckdoc.png "Relatório CheckDoc"){: .center-img }
+<br><span class="format">Figura 72: Relatório CheckDoc</span><br>
+
 
 <div style="text-align: center; font-weight: bold;">-FIM-</div>
