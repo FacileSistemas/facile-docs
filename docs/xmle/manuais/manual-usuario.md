@@ -221,11 +221,27 @@ Ao selecionar Outras Ações, um menu aparecerá contendo todas as opções list
 
     * **Pré-Nota - Classificar:** essa opção só estará disponível se houver uma Pré-Nota lançada e o XML constar no ERP, assim como mostra a Figura 32. É possível identificar um registro que possui Pré-Nota lançada se essa estiver com legenda amarela (Figura 33).
 
-![Figura 32: Aviso sobre restrição para classificar nota](../../assets/manual_usuario/xmle_avisonota.png "Aviso sobre restrição"){: .center-img }
-<br><span class="format">Figura 32: Aviso sobre restrição para classificar nota</span><br>
+    ![Figura 32: Aviso sobre restrição para classificar nota](../../assets/manual_usuario/xmle_avisonota.png "Aviso sobre restrição"){: .center-img }
+    <br><span class="format">Figura 32: Aviso sobre restrição para classificar nota</span><br>
 
-![Figura 33: Registro com legenda amarela representando que existe uma Pré-Nota lançada](../../assets/manual_usuario/xmle_registrolegenamarela.png "Registro com legenda amarela representando que existe uma Pré-Nota lançada"){: .center-img }
-<br><span class="format">Figura 33: Registro com legenda amarela representando que existe uma Pré-Nota lançada</span><br>
+    ![Figura 33: Registro com legenda amarela representando que existe uma Pré-Nota lançada](../../assets/manual_usuario/xmle_registrolegenamarela.png "Registro com legenda amarela representando que existe uma Pré-Nota lançada"){: .center-img }
+    <br><span class="format">Figura 33: Registro com legenda amarela representando que existe uma Pré-Nota lançada</span><br>
+
+    * **Pré-Nota - Visualizar:** essa opção estará disponivel quando o arquivo de pre-nota já estiver sido criado. Para visualizá-lo basta selecionar a opção.<br>
+
+    * **Pré-Nota - Alterar:** essa opção estará disponivel quando a legenda da nota estiver como pré-nota. Ao clicar, abrirá uma tela para poder fazer a modificação em que se deseja na pré-nota.<br>
+
+    * **Pré-Nota - Estornar Classificação:** essa opção estará disponivel quando a nota já estiver sido classificada. Ao selecionar essa opção a legenda da nota retornará de classificada para pré-nota<br>
+
+    * **Pré-Nota - Excluir:** essa opção estará disponivel quando o arquivo de pre-nota já estiver sido criado. Ao clicar no botão retornará na tela de pré-nota, clique em continuar e a pré-nota será excluida.<br>
+
+    * **Doc.Entrada - Visualizar:** essa opção estará disponivel quando a legenda da nota estiver como classificado. Para visualizá-lo basta selecionar a opção.<br>
+
+    * **Doc.Entrada - Excluir:** essa opção estará disponivel quando a legenda da nota estiver como classificado. Para excluir basta selecionar essa opção, logo abrirá a tela do documento de entrada, em seguida clique em continuar e o documento será exccluido.<br>
+
+    * **Nt Conhecimento Frete Padrão:** essa opção está disponivel no [manual 20](https://docs.appfacile.com.br/xmle/manuais/cancelar-cte/).<br>
+
+
 
 * **NF-e:** Engloba várias funções da NF-e no mesmo submenu a fim de agilizar o dia a dia do usuário. A Figura 34, mostra as opções disponíveis.
 
@@ -233,6 +249,8 @@ Ao selecionar Outras Ações, um menu aparecerá contendo todas as opções list
     <br><span class="format">Figura 34: Opções de NF-e</span><br>
 
     * **Classificar NF-e:** essa opção só estará disponível se houver uma Pré-Nota lançada e o XML constar no ERP, assim como mostra a Figura 32. É possível identificar um registro que possui Pré-Nota lançada se essa estiver com legenda amarela (Figura 33).
+
+    * **Visualizar Carta de Correção:** essa opção só estará disponível se a nota em questão tiver uma carta de correção, caso contrário, o sistema informará que a nota não possui carta de correção. Ao clicar nessa opção, o sistema mostrará a carta de correção em sua tela.
 
     * **Buscar Chave Avulsa:** ao invés de sincronizar todos os documentos, o sistema permite buscar uma chave específica. A Figura 35 mostra a tela de busca.
 
@@ -263,10 +281,12 @@ Ao selecionar Outras Ações, um menu aparecerá contendo todas as opções list
     ![Figura 38: Parâmetros para manifestar em lote](../../assets/manual_usuario/xmle_parametrosparalote.png "Parâmetros para manifestar em lote"){: .center-img }
     <br><span class="format">Figura 38: Parâmetros para manifestar em lote</span><br>
 
-Será apresentada a tela da figura 39 abaixo. Nela deve-se marcar (duplo click) quais XML irão ser manifestados, depois clicar em **Manifestar**.
+    Será apresentada a tela da figura 39 abaixo. Nela deve-se marcar (duplo click) quais XML irão ser manifestados, depois clicar em **Manifestar**.
 
-![Figura 39: Manifestação em lote.](../../assets/manual_usuario/xmle_manifesemlote.png "Manifestação em lote"){: .center-img }
-<br><span class="format">Figura 39: Manifestação em lote.</span><br>
+    ![Figura 39: Manifestação em lote.](../../assets/manual_usuario/xmle_manifesemlote.png "Manifestação em lote"){: .center-img }
+    <br><span class="format">Figura 39: Manifestação em lote.</span><br>
+
+    * **Manifestar em Lote:** essa opção está disponivel no [manual 10](https://docs.appfacile.com.br/xmle/manuais/devol-venda/).<br>
 
 * **NFS-e Beta:** Rotina de importação de PDF´s de Notas Fiscais de Serviço, conforme mostra a Figura 40 abaixo:
 
@@ -301,7 +321,7 @@ Ao selecionar a pasta onde se encontram os PDF´s, irá abrir a tela para seleci
     ![Figura 45: Busca SEFAZ de CT-e](../../assets/manual_usuario/xmle_buscasefaz.png "Busca SEFAZ de CT-e"){: .center-img }
     <br><span class="format">Figura 45: Busca SEFAZ de CT-e</span><br>
 
-    * **Consulta Status:** esta opção tem por objetivo buscar o status do CTE selecionado junto ao SEFAZ, conforme figura 46.
+    * **Validar CT-e SEFAZ:** esta opção tem por objetivo buscar o status do CTE selecionado junto ao SEFAZ, conforme figura 46.
 
     ![Figura 46: Consulta Status do CT-e no SEFAZ](../../assets/manual_usuario/xmle_consultastatus.png "Consulta Status do CT-e no SEFAZ"){: .center-img }
     <br><span class="format">Figura 46: Consulta Status do CT-e no SEFAZ</span><br>
@@ -314,17 +334,26 @@ Ao selecionar a pasta onde se encontram os PDF´s, irá abrir a tela para seleci
 
     * **Monitorar:** essa opção serve para acompanhar o CT-e após a manifestação.
 
+    * **Rel. Gestão CTE Venda:** essa opção serve para emitir um relatório de CT-e de venda. O sistema pedirá para preencher alguns filtros e logo em seguida o formato do arquivo e onde deseja salvar.
+
 * **Manutenção TI:** Menu destinado aos administradores do ERP Protheus de sua empresa, acesso apenas com permissão de Admin.
 
     ![Figura 48: Opções de Manutenção TI](../../assets/manual_usuario/xmle_opcoesdemanutencao.png "Opções de Manutenção TI"){: .center-img }
     <br><span class="format">Figura 48: Opções de Manutenção TI</span><br>
+
+    * **Wiz. Config:** esta opção tem por objetivo abrir a tela de configuração da ferramenta.
 
     * **Buscar Avançada SEFAZ (Somente Admin):** esta opção tem por objetivo sincronizar com a SEFAZ os documentos que ainda não sofreram manifestações do destinatário. A Figura 49 mostra a tela do sistema para essa opção.
 
     ![Figura 49: Tela para sincronizar documentos](../../assets/manual_usuario/xmle_telaparasincronizar.png "Tela para sincronizar documentos"){: .center-img }
     <br><span class="format">Figura 49: Tela para sincronizar documentos</span><br>
 
-**Obs.** O sistema é parametrizado para realizar essa busca automaticamente, assim o Botão **“Buscar Avançada SEFAZ”** serve para forçar essa busca a qualquer momento caso os serviços automáticos não estejam funcionando ou desativados.
+    **Obs.** O sistema é parametrizado para realizar essa busca automaticamente, assim o Botão **“Buscar Avançada SEFAZ”** serve para forçar essa busca a qualquer momento caso os serviços automáticos não estejam funcionando ou desativados.
+
+    * **Importar SA5:** esta opção tem por objetivo trazer as novas amarrações de produto e fornecedor para a ferramenta.
+
+    * **Blq./Desbloqueia Documento:** esta opção tem por objetivo bloquear ou desbloquear o documento no Protheus e no XML-e.
+        
 
 * **Relatórios:** Nesse menu poderá extrair diretamente alguns relatórios, sem necessitar usar a rotina Gestão a Vista. São eles: XML´s não Importados e Manifestação de Destinatário.
 
