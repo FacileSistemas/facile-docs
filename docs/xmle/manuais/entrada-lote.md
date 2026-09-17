@@ -79,10 +79,10 @@ Acesse a rotina padrão “Pre Nota Entrada”, e verifique que a nota processad
 
 Ao apertar o botão "Gerar Doc. Entrada", aparecerá a tela abaixo.
 
-![Figura 8: Informar TES e Condição de Pagamento](../../assets/entrada-lote/08-ptx0035b-dados2.png "Informar TES e Condição de Pagamento"){: .center-img }
-<span class="format">Figura 8: Informar TES, condição de Pagamento, Centro de Custo e o Tipo de Frete.*</span><br>
+![Figura 8: Informar TES e Condição de Pagamento](../../assets/entrada-lote/08-ptx0035b-dados.png "Informar TES e Condição de Pagamento"){: .center-img }
+<span class="format">Figura 8: Informar TES e Condição de Pagamento*</span><br>
 
-Informar TES, condição de Pagamento, Centro de Custo e o Tipo de Frete.
+Informar TES e condição de Pagamento.
 
 ***<span style="color: red">OBS.: Esta rotina dará entrada em notas, sem considerar obrigatoriedade de pedidos de compra.</span>***<br>
 ***<span style="color: red">OBS.2: Só recomendada para entradas de notas com a mesma TES e condição de pagamento.</span>***<br>
