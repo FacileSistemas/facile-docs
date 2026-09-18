@@ -85,6 +85,8 @@ nav:
   - CIFA:
     - Introdução: 'cifa/index.md'
     - Download do Patch: 'cifa/download-patch.md'
+    - Manuais: 
+      - 01 - Manual do Usuário: 'cifa/manuais/manual-usuario-cifa.md'
     - CIFA Approvals: 
       - Guia de instalação: 'cifa/cifa-approvals/guia-instalação.md'
   - Facin Sales: https://www.facilesistemas.com.br/facin/
