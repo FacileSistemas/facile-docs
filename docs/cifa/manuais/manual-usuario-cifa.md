@@ -1,7 +1,7 @@
 # Manual do Usuário — CIFA
 
 
-# Apresentação
+## Apresentação
 
 A **CIFA** oferece integração bancária por API com os módulos financeiros do ERP Protheus.
 
@@ -9,7 +9,7 @@ A **CIFA** oferece integração bancária por API com os módulos financeiros do
 
 ---
 
-# Segurança
+## Segurança
 
 A apresentação destaca os seguintes recursos de segurança:
 
@@ -20,7 +20,7 @@ A apresentação destaca os seguintes recursos de segurança:
 
 ---
 
-# Recebimento via Boleto
+## Recebimento via Boleto
 
 A CIFA permite disponibilizar boletos para clientes em diferentes plataformas e realizar a baixa do título no Protheus após o pagamento.
 
@@ -42,7 +42,7 @@ Essa configuração é opcional e varia conforme cada empresa.
 
 ---
 
-# Gestor de Boletos
+## Gestor de Boletos
 
 O Gestor de Boletos disponibiliza diversas funções para gerenciamento dos títulos.
 
@@ -146,7 +146,7 @@ Imprime os registros que estão filtrados na tela do Browser.
 
 ---
 
-# Cobranças PIX
+## Cobranças PIX
 
 O Gestor de Cobranças PIX permite gerar novas cobranças e processar retornos bancários.
 
@@ -189,7 +189,7 @@ Esse processo também pode ser executado automaticamente via **job**, conforme a
 
 ---
 
-# Módulo de Pagamentos
+## Módulo de Pagamentos
 
 O módulo de pagamentos possui recursos de integração com fornecedores, DDA e pagamentos.
 
@@ -209,7 +209,7 @@ A busca de DDA pode ocorrer automaticamente quando o **job** estiver configurado
 
 ---
 
-# Gestor de DDA
+## Gestor de DDA
 
 O Gestor de DDA permite consultar e conciliar registros de DDA com os títulos do Contas a Pagar.
 
@@ -269,7 +269,7 @@ Quando existir um DDA no período selecionado:
 
 ---
 
-# Gestor de Pagamentos
+## Gestor de Pagamentos
 
 O Gestor de Pagamentos permite selecionar títulos e preparar ordens de pagamento.
 
@@ -291,8 +291,8 @@ Após definir os títulos, deverá ser escolhida a **conta banco** que será uti
 
 ## Legendas
 
-![Tela de Legendas](../../assets/cifaimg/manual-usuario/legenda.png)
-<br><span class="format">Tela de Legendas</span><br>
+![Figura 12: Tela de Legendas](../../assets/cifaimg/manual-usuario/legenda.png)
+<br><span class="format">Figura 12:Tela de Legendas</span><br>
 
 ## Operações disponíveis
 
@@ -307,28 +307,28 @@ O operador poderá:
 
 ## Alterar dados do pagamento
 
-![Figura 12: Alterar Dados de Pagamento](../../assets/cifaimg/manual-usuario/alterar-dados-pagamento.png)
-<br><span class="format">Figura 12: Alterar Dados de Pagamento</span><br>
+![Figura 13: Alterar Dados de Pagamento](../../assets/cifaimg/manual-usuario/alterar-dados-pagamento.png)
+<br><span class="format">Figura 13: Alterar Dados de Pagamento</span><br>
 
 Caso o título tenha DDA, a **linha digitável** e o **código de barras** serão preenchidos automaticamente.
 
-![Figura 13: Titulo DDA](../../assets/cifaimg/manual-usuario/titulo-dda.png)
-<br><span class="format">Figura 13: Titulo DDA</span><br>
+![Figura 14: Titulo DDA](../../assets/cifaimg/manual-usuario/titulo-dda.png)
+<br><span class="format">Figura 14: Titulo DDA</span><br>
 
 Caso não exista DDA, mas exista um boleto, os dados poderão ser inseridos manualmente.
 
-![Figura 14: Busca DDA Cifa](../../assets/cifaimg/manual-usuario/busca-dda-cifa.png)
-<br><span class="format">Figura 14: Busca DDA Cifa</span><br>
+![Figura 15: Busca DDA Cifa](../../assets/cifaimg/manual-usuario/busca-dda-cifa.png)
+<br><span class="format">Figura 15: Busca DDA Cifa</span><br>
 
 Também é possível procurar DDA específico para o fornecedor através da opção:
 
 **Buscar nos DDA's**
 
-![Figura 15: Boleto Finalizado](../../assets/cifaimg/manual-usuario/boleto-finalizado.png)
-<br><span class="format">Figura 15: Boleto Finalizado</span><br>
+![Figura 16: Boleto Finalizado](../../assets/cifaimg/manual-usuario/boleto-finalizado.png)
+<br><span class="format">Figura 16: Boleto Finalizado</span><br>
 ---
 
-# Transferências PIX
+## Transferências PIX
 
 A CIFA permite realizar pagamentos via PIX diretamente pelo ERP.
 
@@ -367,17 +367,17 @@ Depois, defina a forma de pagamento padrão do fornecedor.
 
 Os títulos com pagamento via PIX serão identificados por um ícone específico.
 
-![Figura 16: Titulo Pix](../../assets/cifaimg/manual-usuario/titulo-pix.png)
-<br><span class="format">Figura 16: Titulo Pix</span><br>
+![Figura 17: Titulo Pix](../../assets/cifaimg/manual-usuario/titulo-pix.png)
+<br><span class="format">Figura 17: Titulo Pix</span><br>
 
 Títulos sem forma de pagamento previamente definida também apresentarão uma identificação própria e, ao serem acessados, solicitarão os dados necessários.
 
-![Figura 17: Sem Forma de Pagamento](../../assets/cifaimg/manual-usuario/sem-forma-pagamento.png)
-<br><span class="format">Figura 17: Sem Forma de Pagamento</span><br>
+![Figura 18: Sem Forma de Pagamento](../../assets/cifaimg/manual-usuario/sem-forma-pagamento.png)
+<br><span class="format">Figura 18: Sem Forma de Pagamento</span><br>
 
 ---
 
-# Impostos
+## Impostos
 
 O módulo permite trabalhar com pagamentos de impostos e guias que possuem código de barras.
 
@@ -392,12 +392,12 @@ Também é possível realizar a autorização do pagamento diretamente pelo ERP.
 
 Os impostos com código de barras serão identificados por um ícone característico.
 
-![Figura 18: Impostos Codigo de Barra](../../assets/cifaimg/manual-usuario/impostos-codigo-barra.png)
-<br><span class="format">Figura 18: Impostos Codigo de Barra</span><br>
+![Figura 19: Impostos Codigo de Barra](../../assets/cifaimg/manual-usuario/impostos-codigo-barra.png)
+<br><span class="format">Figura 19: Impostos Codigo de Barra</span><br>
 
 ---
 
-# Aprovação de Pagamentos
+## Aprovação de Pagamentos
 
 O processo de aprovação envolve a seleção dos títulos, envio da ordem de pagamento, aprovação pelo usuário responsável e sincronização com a CIFA.
 
@@ -419,13 +419,13 @@ Após conferir os dados, utilize:
 
 Se o título ficar com a **legenda azul**, será necessário que o aprovador finalize o processo.
 
-![Figura 19: Legenda Azul](../../assets/cifaimg/manual-usuario/legenda-azul.png)
-<br><span class="format">Figura 19: Legenda Azul</span><br>
+![Figura 20: Legenda Azul](../../assets/cifaimg/manual-usuario/legenda-azul.png)
+<br><span class="format">Figura 20: Legenda Azul</span><br>
 
 O usuário previamente cadastrado deverá realizar a aprovação para liberar o pagamento junto ao banco.
 
-![Figura 20: Aprovar Pagamento](../../assets/cifaimg/manual-usuario/aprovar-pagamento.png)
-<br><span class="format">Figura 20: Aprovar Pagamento</span><br>
+![Figura 21: Aprovar Pagamento](../../assets/cifaimg/manual-usuario/aprovar-pagamento.png)
+<br><span class="format">Figura 21: Aprovar Pagamento</span><br>
 
 ## 5. Após a aprovação
 
@@ -433,8 +433,8 @@ Depois da transmissão da aprovação, os títulos aprovados ficarão com a **le
 
 > Ordem de Pagamento enviada. Aguardando Liquidação.
 
-![Figura 21: Aprovamento concluído](../../assets/cifaimg/manual-usuario/aprovamento.png)
-<br><span class="format">Figura 21: Aprovamento concluído</span><br>
+![Figura 22: Aprovamento concluído](../../assets/cifaimg/manual-usuario/aprovamento.png)
+<br><span class="format">Figura 22: Aprovamento concluído</span><br>
 
 ## 6. Sincronize com a CIFA
 
@@ -464,8 +464,8 @@ Para consultar:
 3. Marque o título desejado.
 4. Clique em **Imprimir Comprovante**.
 
-![Figura 22: Pós-Sincronização](../../assets/cifaimg/manual-usuario/pos-sincronização.png)
-<br><span class="format">Figura 22: Pós-Sincronização</span><br>
+![Figura 23: Pós-Sincronização](../../assets/cifaimg/manual-usuario/pos-sincronização.png)
+<br><span class="format">Figura 23: Pós-Sincronização</span><br>
 
 ## 8. Título reaberto após pagamento
 
@@ -473,8 +473,8 @@ Caso um título tenha sido reaberto ou sua baixa tenha sido cancelada após o pa
 
 Mesmo nesse caso, o comprovante poderá continuar sendo impresso.
 
-![Figura 23: Titulo Reaberto](../../assets/cifaimg/manual-usuario/titulo-reaberto.png)
-<br><span class="format">Figura 23: Titulo Reaberto</span><br>
+![Figura 24: Titulo Reaberto](../../assets/cifaimg/manual-usuario/titulo-reaberto.png)
+<br><span class="format">Figura 24: Titulo Reaberto</span><br>
 
 ## 9. Consultar LOG
 
@@ -482,22 +482,22 @@ Caso seja necessário acompanhar o LOG de um título ou enviar informações par
 
 **Outras Ações → Manutenção**
 
-![Figura 24: Manutenção](../../assets/cifaimg/manual-usuario/manutenção.png)
-<br><span class="format">Figura 24: Manutenção</span><br>
+![Figura 25: Manutenção](../../assets/cifaimg/manual-usuario/manutenção.png)
+<br><span class="format">Figura 25: Manutenção</span><br>
 
 ---
 
-# Gestor de Saldos e Extratos
+## Gestor de Saldos e Extratos
 
 O Gestor de Saldos e Extratos realiza a integração de informações bancárias através de API.
 
-![Figura 25: Gestor de Extratos](../../assets/cifaimg/manual-usuario/gestor-extratos.png)
-<br><span class="format">Figura 25: Gestor de Extratos</span><br>
+![Figura 26: Gestor de Extratos](../../assets/cifaimg/manual-usuario/gestor-extratos.png)
+<br><span class="format">Figura 26: Gestor de Extratos</span><br>
 
 ## Importação do extrato
 
-![Figura 26: Filtro Extrato](../../assets/cifaimg/manual-usuario/filtro-extrato.png)
-<br><span class="format">Figura 26: Filtro Extrato</span><br>
+![Figura 27: Filtro Extrato](../../assets/cifaimg/manual-usuario/filtro-extrato.png)
+<br><span class="format">Figura 27: Filtro Extrato</span><br>
 
 No menu inicial, selecione o período que será importado do banco.
 
@@ -508,8 +508,8 @@ Após a importação, o sistema apresenta:
 - Extrato importado do banco via API;
 - Movimento bancário no ERP Protheus correspondente ao mesmo período.
 
-![Figura 27: Tela Info Extrato](../../assets/cifaimg/manual-usuario/info-extrato.png)
-<br><span class="format">Figura 27: Tela Info Extrato</span><br>
+![Figura 28: Tela Info Extrato](../../assets/cifaimg/manual-usuario/info-extrato.png)
+<br><span class="format">Figura 28: Tela Info Extrato</span><br>
 
 ## Situações dos movimentos
 
@@ -532,28 +532,28 @@ Nesse caso, é possível:
 - Criar um movimento bancário único; ou
 - Utilizar **Replica Extrato** para replicar um ou mais movimentos.
 
-![Figura 28: Movimento Bancário](../../assets/cifaimg/manual-usuario/movimento-bancario.png)
-<br><span class="format">Figura 28: Movimento Bancário</span><br>
+![Figura 29: Movimento Bancário](../../assets/cifaimg/manual-usuario/movimento-bancario.png)
+<br><span class="format">Figura 29: Movimento Bancário</span><br>
 
 ---
 
-# Regras de Conciliação
+## Regras de Conciliação
 
 A CIFA permite criar regras para movimentos pré-definidos.
 
 Essas regras podem fazer com que determinados movimentos sejam replicados automaticamente para o Protheus quando ocorrerem no banco.
 
-![Figura 29: Regras de Movimentos](../../assets/cifaimg/manual-usuario/regra-movimentos.png)
-<br><span class="format">Figura 29: Regras de Movimentos</span><br>
+![Figura 30: Regras de Movimentos](../../assets/cifaimg/manual-usuario/regra-movimentos.png)
+<br><span class="format">Figura 30: Regras de Movimentos</span><br>
 
 Um exemplo apresentado é a criação de um movimento automático para **tarifa**.
 
-![Figura 30: Criação Movimento automático](../../assets/cifaimg/manual-usuario/movimento-automatico.png)
-<br><span class="format">Figura 30: Criação Movimento automático</span><br>
+![Figura 31: Criação Movimento automático](../../assets/cifaimg/manual-usuario/movimento-automatico.png)
+<br><span class="format">Figura 31: Criação Movimento automático</span><br>
 
 ---
 
-# Suporte
+## Suporte
 
 Caso tenha dificuldades para localizar um menu, executar uma operação ou interpretar uma situação apresentada pelo sistema, consulte o responsável pelo suporte de TI/Protheus da sua empresa.
 
