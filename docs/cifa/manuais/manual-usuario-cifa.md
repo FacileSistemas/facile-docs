@@ -3,20 +3,27 @@
 
 ## Apresentação
 
-A **CIFA** oferece integração bancária por API com os módulos financeiros do ERP Protheus.
+O **CIFA** oferece integração bancária por API com os módulos financeiros do ERP Protheus.
 
 > **Importante:** a localização dos menus da CIFA pode variar de empresa para empresa. Caso não encontre algum menu apresentado neste manual, consulte o suporte de TI/Protheus da sua empresa.
 
+
+![Figura 1: Gestor de boletos](../../assets/cifaimg/manual-usuario/fluxo-cifa.png)
+<br><span class="format">Figura 1: Gestor de Boletos</span><br>
+
 ---
 
-## Segurança
+### Segurança
 
-A apresentação destaca os seguintes recursos de segurança:
+O CIFA se destaca os seguintes recursos de segurança:
 
 - Criptografia de ponta a ponta;
 - Certificado digital;
 - Dupla autenticação;
 - Firewall de borda.
+
+![Figura 1: Gestor de boletos](../../assets/cifaimg/manual-usuario/segurança-cifa.png)
+<br><span class="format">Figura 1: Gestor de Boletos</span><br>
 
 ---
 
@@ -31,6 +38,10 @@ O boleto pode ser:
 
 O tipo depende do banco e do contrato estabelecido entre a empresa e a instituição bancária.
 
+
+![Figura 1: Fluxo de Cobrança Bancária](../../assets/cifaimg/manual-usuario/fluxo-cobrança.png)
+<br><span class="format">Figura 1: Fluxo de Cobrança Bancária</span><br>
+
 ## Geração do boleto
 
 A geração do boleto pode ocorrer:
@@ -42,7 +53,7 @@ Essa configuração é opcional e varia conforme cada empresa.
 
 ---
 
-## Gestor de Boletos
+## Tela do Gestor de Boletos
 
 O Gestor de Boletos disponibiliza diversas funções para gerenciamento dos títulos.
 
@@ -53,7 +64,7 @@ O Gestor de Boletos disponibiliza diversas funções para gerenciamento dos tít
 <br><span class="format">Figura 2: Tela Outras Ações</span><br>
 
 
-## Principais funções
+### Principais funções
 
 - **Emitir Boleto**
 - **Sincronizar com CIFA**
@@ -70,11 +81,15 @@ O Gestor de Boletos disponibiliza diversas funções para gerenciamento dos tít
 - **Relatórios**
 - **Imprimir Browse**
 
-## Emitir Boleto
+### Emitir Boleto
 
 A opção **+Emitir Boleto** permite gerar um ou mais boletos no banco através da CIFA.
 
 Essa função deve ser utilizada quando a emissão automática não estiver ativa.
+
+
+![Figura 1: Gestor de boletos](../../assets/cifaimg/manual-usuario/funcoes-gestor-boletos.png)
+<br><span class="format">Figura 1: Gestor de Boletos</span><br>
 
 ### Seleção dos títulos
 
@@ -82,7 +97,7 @@ Para emissão, selecione títulos que apresentem a legenda <span id="green">verd
 
 > **Atenção:** também é possível encontrar títulos com uma bolinha escura. Esses títulos são de Borderô e podem estar em CNAB. Tenha cuidado antes de realizar a operação.
 
-## Sincronizar com CIFA
+### Sincronizar com CIFA
 
 A função **Sincronizar com CIFA** realiza a sincronização entre o ERP Protheus e a instituição bancária através da CIFA.
 
@@ -92,68 +107,72 @@ Títulos que tiveram alteração de vencimento ou valor podem exigir sincroniza�
 
 A sincronização também pode ser configurada para execução automática via **job**, conforme a configuração da empresa.
 
-## Outras ações
 
-### Status CIFA
+![Figura 1: Gestor de boletos](../../assets/cifaimg/manual-usuario/sincronizar-cifa.png)
+<br><span class="format">Figura 1: Gestor de Boletos</span><br>
+
+### Outras ações
+
+#### Status CIFA
 
 Consulta no banco o status do boleto.
 
-### Reimprimir Boleto
+#### Reimprimir Boleto
 
 Reimprime o **mesmo boleto** que foi gerado anteriormente.
 
-### Emitir Segunda Via
+#### Emitir Segunda Via
 
 Atualiza o boleto mais recente no banco, incluindo informações como juros.
 
-### Enviar Abatimento
+#### Enviar Abatimento
 
 Sincroniza abatimentos com o banco.
 
-### Enviar Prorrogação
+#### Enviar Prorrogação
 
 Sincroniza prorrogações.
 
-### Remover Boleto da CIFA
+#### Remover Boleto da CIFA
 
 Realiza a remoção/baixa do boleto no banco conforme o processo da CIFA.
 
-### Processar Liquidações
+#### Processar Liquidações
 
 Processa liquidações (baixas) de uma data específica.
 
 Após o processamento, consulte o relatório **Gestão de Títulos**.
 
-### Vincular DANFE / XML
+#### Vincular DANFE / XML
 
 Utilizado quando a empresa utiliza o **CIFA Web (Boleto Facile)**.
 
-### Enviar Boletos p/ e-mail
+#### Enviar Boletos p/ e-mail
 
 Envia o boleto para o endereço de e-mail cadastrado no cadastro do cliente.
 
-### Manutenção
+#### Manutenção
 
 Utilizada para extrair **logs** e dados técnicos para o suporte CIFA.
 
-### Relatórios
+#### Relatórios
 
 Disponibiliza o relatório **Gestão de Títulos**.
 
-### Imprimir Browse
+#### Imprimir Browse
 
 Imprime os registros que estão filtrados na tela do Browser.
 
 ---
 
-## Cobranças PIX
+## Gestor De Cobranças PIX
 
 O Gestor de Cobranças PIX permite gerar novas cobranças e processar retornos bancários.
 
 ![Figura 3: Gestor pix](../../assets/cifaimg/manual-usuario/tela-gestor-pix.png)
 <br><span class="format">Figura 3: Gestor Pix</span><br>
 
-## Gerar Novo PIX
+### Gerar Novo PIX
 
 1. Acesse o Gestor de Cobranças PIX.
 2. Clique em **+Gerar Novo Pix**.
@@ -178,7 +197,7 @@ Também é possível:
 - Imprimir o PDF do QR Code;
 - Enviar o QR Code ao cliente pelo WhatsApp Web.
 
-## Processar Retorno PIX
+### Processar Retorno PIX
 
 A função **Processar Retorno PIX** realiza a sincronização com o banco para verificar se os PIX foram pagos.
 
@@ -199,7 +218,7 @@ Entre as funcionalidades apresentadas estão:
 - Busca de DDA diretamente na instituição bancária;
 - Tela no ERP para conciliação manual.
 
-## Regra de conciliação automática
+### Regra de conciliação automática
 
 A regra apresentada para conciliação automática é:
 
@@ -209,7 +228,7 @@ A busca de DDA pode ocorrer automaticamente quando o **job** estiver configurado
 
 ---
 
-## Gestor de DDA
+### Gestor de DDA
 
 O Gestor de DDA permite consultar e conciliar registros de DDA com os títulos do Contas a Pagar.
 
