@@ -26,59 +26,77 @@
     }
 </style>
 
-# CIFA - Central Inteligência Financeira Automática
+# Central de Inteligência Financeira Automática
 
-![Logo Facile](../../assets/cifaimg/logo.png "Logo Facile")
+![Logo Facile](../../assets/cifaimg/cifa/cifa.jpg "Logo Facile")
 
-![API CIFA](../../assets/cifaimg/cifa.jpg "API CIFA")
+![APIs](../../assets/cifaimg/cifa/apis.jpg "APIs")
 
-![Página Principal](../../assets/cifaimg/tela1.png "Página Principal")
+# Extratos bancários em tempo real para o Protheus
 
-<br><br>
+A API de Extrato conecta o ERP Protheus diretamente aos bancos,
+permitindo consultas em tempo real, conciliações automáticas e gestão financeira centralizada.
 
-![Pix](../../assets/cifaimg/tela2.png "Pix")
+- Consultas instantâneas
+- Atualização online
+- Informações centralizadas
+- Sem dependência de arquivos CNAB
 
-## Como funciona o sistema CIFA...
+![Integração](../../assets/cifaimg/cifa/integracao.jpg "Integração")
+
+# Como funciona o fluxo do sistema CIFA
+
+![Fluxo Cobrança Bancária](../../assets/cifaimg/cifa/fluxo-cobranca.jpg "Fluxo Cobrança Bancária")
+
+**Conciliação Inteligente**
+
+- Baixa automática
+- Conciliação automática
+- Regras configuráveis
+- Redução de erros operacionais
+
+**Aplicações Automáticas**
+
+- Valor Aplicado
+- Valor Resgatado
+- Rendimentos
+- Saldo Líquido
+- Visibilidade completa sobre aplicações financeiras sem sair do ERP.
 
 <div class="images-container">
-    <img src="../../assets/cifaimg/img3.png" />
     <div class="image-container">
-        <img src="../../assets/cifaimg/img4-1.jpg" alt="Detalhes CIFA" />
-        <img src="../../assets/cifaimg/img4-2.jpg" alt="Detalhes CIFA" />
+        <img src="../../assets/cifaimg/cifa/img4-1.jpg" alt="Detalhes CIFA" />
+        <img src="../../assets/cifaimg/cifa/img4-2.jpg" alt="Detalhes CIFA" />
     </div>
     <div class="image-container">
-        <img src="../../assets/cifaimg/img5-1.jpg" alt="Detalhes CIFA" />
-        <img src="../../assets/cifaimg/img5-2.jpg" alt="Detalhes CIFA" />
+        <img src="../../assets/cifaimg/cifa/img5-1.jpg" alt="Detalhes CIFA" />
+        <img src="../../assets/cifaimg/cifa/img5-2.jpg" alt="Detalhes CIFA" />
     </div>
     <div class="image-container">
-        <img src="../../assets/cifaimg/img6-1.jpg" alt="Detalhes CIFA" />
-        <img src="../../assets/cifaimg/img6-2.jpg" alt="Detalhes CIFA" />
+        <img src="../../assets/cifaimg/cifa/img6-1.jpg" alt="Detalhes CIFA" />
+        <img src="../../assets/cifaimg/cifa/img6-2.jpg" alt="Detalhes CIFA" />
     </div>
     <div class="image-container">
-        <img src="../../assets/cifaimg/img7-1.jpg" alt="Detalhes CIFA" />
-        <img src="../../assets/cifaimg/img7-2.jpg" alt="Detalhes CIFA" />
+        <img src="../../assets/cifaimg/cifa/img7-1.jpg" alt="Detalhes CIFA" />
+        <img src="../../assets/cifaimg/cifa/img7-2.jpg" alt="Detalhes CIFA" />
     </div>
 </div>
 
-<!-- Código antigo, não era escalável e quebrou quando o HTML5 deixou de usar a tag <center> -->
-<!-- ![Fluxo CIFA](../../assets/cifaimg/img3.png "Fluxo CIFA"){: .center-img }
-![Detalhes CIFA](../../assets/cifaimg/img4-1.jpg "Detalhes CIFA"){: .center-img }
-![Detalhes CIFA](../../assets/cifaimg/img4-2.jpg "Detalhes CIFA"){: .center-img }
-![Detalhes CIFA](../../assets/cifaimg/img5-1.jpg "Detalhes CIFA"){: .center-img }
-![Detalhes CIFA](../../assets/cifaimg/img5-2.jpg "Detalhes CIFA"){: .center-img }
-![Detalhes CIFA](../../assets/cifaimg/img6-1.jpg "Detalhes CIFA"){: .center-img }
-![Detalhes CIFA](../../assets/cifaimg/img6-2.jpg "Detalhes CIFA"){: .center-img }
-![Detalhes CIFA](../../assets/cifaimg/img7-1.jpg "Detalhes CIFA"){: .center-img }
-![Detalhes CIFA](../../assets/cifaimg/img7-2.jpg "Detalhes CIFA"){: .center-img } -->
+<br></br>
 
-**Reduza em até 99% o trabalho de  conciliação da cobrança Bancária**
+# Gestor de Boletos
 
-* Emita seus boletos automaticamente
-* Disponibilize para seus clientes em todas as plataformas
-* Cliente pagou? Ótimo, deixa que nós conciliamos para você
-* Acelera os processos financeiros
-* Evita erros humanos e prejuízos com retrabalho
-* Gera liberdade para que seu negócio possa crescer
+![Gestor de Boletos](../../assets/cifaimg/cifa/gestor-de-boletos.jpg "Gestor de Boletos")
+![Boleto Híbrido](../../assets/cifaimg/cifa/pix.jpg "Boleto Híbrido")
+
+**Reduza em até 99% o trabalho de conciliação da cobrança Bancária**
+
+- Emita seus boletos automaticamente
+- Disponibilize para seus clientes em todas as plataformas
+- Cliente pagou? Ótimo, deixa que nós conciliamos para você
+- Acelera os processos financeiros
+- Evita erros humanos e prejuízos com retrabalho
+- Gera liberdade para que seu negócio possa crescer
 
 <a id="button" href="mailto:ar@facilesistemas.com.br?subject=Gostaria%20de%20ver%20uma%20apresenta%C3%A7%C3%A3o%20do%20CIFA&body=Ol%C3%A1%2C%20recebi%20um%20email%20sobre%20o%20CIFA%20e%20gostaria%20de%20ver%20funcionando%20na%20pr%C3%A1tica." class="btn btn-primary">Gostaria de ver funcionando na prática!</a>
 
@@ -93,3 +111,5 @@
 <div style='display: flex; justify-content: center;'>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y5GYCR1nFz4?si=0sG7hwoHKeIP3n2_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
+
+![Empresas por Estado](../../assets/cifaimg/cifa/empresas-por-estado.jpg "Empresas por Estado")
