@@ -1,4 +1,4 @@
-# 🔵Pontos de Entrada da Central XML
+# 🔵Pontos de Entrada do Facile XML-e
 
 Assim como o Protheus, o Facile XML-e tem seus próprios Pontos de Entrada que disponibilizamos para personalizações. Segue abaixo cada um e seus exemplos de utilização.
 
@@ -16,7 +16,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function CHKDOCOK()
 
 	Local lRet	  := .T.
@@ -41,7 +41,7 @@ Utilizamos esse ponto de entrada para realizar a validação dos impostos no mom
 
 Sugerimos incluir o código abaixo no final do fonte, logo antes do RETURN (caso tenha o P.E. já aplicado no ERP).
 
-```C
+```AdvPL
 If lValido .And. AllTrim( FunName() ) $ "MATA103/PTX0007/PTX0018/PTX0008/PTX0001"
     lValido := U_PTX0010()
 EndIf
@@ -49,7 +49,7 @@ EndIf
 
 Segue exemplo do ponto de entrada completo que poderá ser utilizado (caso **NÃO ** tenha o P.E. já aplicado ERP).
 
-```c
+```AdvPL
 User Function MT100TOK()
 
     Local aArea   := GetArea()
@@ -76,7 +76,7 @@ Utilizamos esse ponto de entrada para realizar a checagem da TES e do pedido de 
 
 Sugerimos incluir o código abaixo no final do fonte, logo antes do RETURN (caso tenha o P.E. já aplicado no ERP).
 
-```c
+```AdvPL
 If FwIsInCallStack("U_PTX0001")
     FWMsgRun(, {|| U_PTX0015(.T.) }, "Processando!", "Calculando impostos, aguarde...")			
 EndIf
@@ -84,7 +84,7 @@ EndIf
 
 Segue exemplo do ponto de entrada completo que poderá ser utilizado (caso **NÃO ** tenha o P.E. já aplicado no ERP).
 
-```c
+```AdvPL
 User Function MT103PN()
 	
 	If FwIsInCallStack("U_PTX0001")
@@ -133,7 +133,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P007CTE()
 
   Local oObj           := ParamIxb[1]
@@ -316,7 +316,7 @@ Ponto de entrada chamado ao clicar no botão "Gerar Entrada" para tratamentos di
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P07GERAENT()
 
   If ZZZ->ZZZ_TIPO == "1" //|NFE |
@@ -344,7 +344,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P09ALTPN()
 
   Local lClassifica := .F.
@@ -385,7 +385,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P011ITEM()
 
 	Local _aItensCols   := ParamIxb[1] as Array
@@ -606,7 +606,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P018COLS()
 
 	Local _aItensCols  := ParamIxb[1] as Array
@@ -877,7 +877,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P018CPO()
 
   Local aCpos       := {}
@@ -914,7 +914,7 @@ Ponto de entrada para manutenções diversas ao final da geração do document
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P018FIM()
 
   MsgInfo("Nota Fiscal gerada: " + AllTrim(SF1->F1_DOC) + " / " + AllTrim(SF1->F1_SERIE))
@@ -940,7 +940,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P018ITEM()
 
 	Local aItemCols		:= ParamIxb[1]
@@ -991,7 +991,7 @@ Parâmetros:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P018PROD()
 
   Local nCont       := 0
@@ -1065,7 +1065,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P018PROPRIO()
 
 	Local cFormProprio 	:= ParamIxb[1]
@@ -1152,7 +1152,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P018SF1()
 
 	// Local _aItensCols := ParamIxb[1] as Array
@@ -1209,7 +1209,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function _P018TIPO()
 
 	Local cEstilo1	:= ""
@@ -1340,7 +1340,7 @@ O retorno é efetuado nas variáveis privadas abaixo.
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P018UM()
 
   // Local cUmXml    := ParamIxb[1]
@@ -1390,7 +1390,7 @@ Ponto de entrada para manutenções após inclusão da ZZW. Nesse momento já es
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function P018ZZW()
 
   Local aArea := GetArea()
@@ -1440,7 +1440,7 @@ Ponto de Entrada para realizar ações após a importação do CTE.
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 user function PT006XML()
 
 	Local aArea		:= GetArea()
@@ -1919,7 +1919,7 @@ Parâmetros:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function PT015ITE()
 
 	Local aDados	:= ParamIxb[1]
@@ -1961,7 +1961,7 @@ Ponto de Entrada para realizar ações após a importação do CTE.
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 user function PT024CTE()
 
 	Private lJob	:= IsBlind()
@@ -2503,7 +2503,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function PTCLIFOR()
 
   Local aCliFor		:= ParamIxb[1]
@@ -2604,7 +2604,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function PTCTEDAD()
 
   Local oObj            := ParamIxb[1]
@@ -2840,7 +2840,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function PTX01FIL()
 
   Local cFiltro    as Character
@@ -2867,7 +2867,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function PTX0001MNU()
 
 	Local aRet    := {}
@@ -2906,7 +2906,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function PTXF1DOC()
 
   Local cNumeroDoc  := ParamIxb[1]  //|Numero do documento fiscal processado |
@@ -2941,7 +2941,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function PTXF1SER()
 
   Local cSerieDoc   := ParamIxb[1]  //|Serie do documento fiscal processado |
@@ -2985,7 +2985,7 @@ Parâmetros:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function PX011CTE()
 	
 	Local cSeekSF1	:= ParamIxb[1]
@@ -3015,7 +3015,7 @@ Retorno:
 
 Segue exemplo de utilização.
 
-```C
+```AdvPL
 User Function PX041VLD()
 
     Local cChave   := Paramixb[1]
@@ -3033,133 +3033,4 @@ User Function PX041VLD()
     Endif
 
 Return lValido
-```
-
-_______
-
-## SAVEZZZ
-
-Ponto de entrada para manipular a ZZZ após gravação. Nesse momento a ZZZ já está gravada e após o MsUnLock.
-
-Parâmetros:
-
-* **ParamIxb[1]:** Variável lógica para identificar se o documento é novo (.F.) e está sendo salvo pela primeira vez ou se é uma alteração de status no documento já gravado (.T.).
-
-Segue exemplo de utilização.
-
-```C
-User Function SAVEZZZ()
-
-	Local cTipoDocumento := ""
-	Local cError         := ""
-	Local cTipoCTE			 := ""
-	Local oError         := Nil
-  Local bError         := ErrorBlock({|oError| cError := oError:Description})
-
-	Begin Sequence
-
-	If !Empty(ZZZ->ZZZ_XML)	//|Em alguns casos (NF-e resumida) o XML chega depois |
-
-		If AllTrim(ZZZ->ZZZ_TIPO) == "2" .And. ZZZ->ZZZ_SITDOC == "1"	//|CT-E autorizado |
-
-			cTipoDocumento := U_PTXTipoDocumento()
-
-			cTipoCTE	:= SuperGetMV("MC_YTPCTE", .F., "CTEV/CTEC")
-
-			If cTipoDocumento $ cTipoCTE	//|CTEV = CTE de Venda / CTEC = CTE de compra |
-
-				//|Grava o XML em arquivo |
-				Exporta_XML_Disco(cTipoDocumento)
-
-			EndIf
-
-		EndIf
-	
-	EndIf
-
-	End Sequence
-
-  ErrorBlock(bError)
-
-  If !Empty(cError)
-    ConOut( "### ERRO PONTO DE ENTRADA SAVEZZZ " + CRLF + CRLF + cError )
-  EndIf
-
-Return
-
-
-
-Static Function Exporta_XML_Disco(cTipoDocumento)
-
-	Local cDiretorio   as Character
-	Local cNomeArquivo as Character
-
-	cDiretorio	:= SuperGetMV( "MC_YXMLDIR", .F., "\facile\cte\" )
-
-	If !Empty( cDiretorio )
-
-		If Right(cDiretorio,1) != "\"
-			cDiretorio += "\"
-		EndIf
-
-		If !ExistDir(cDiretorio)
-			FWMakeDir( cDiretorio )
-		EndIf
-
-		cNomeArquivo	:= AllTrim(ZZZ->ZZZ_CHAVE) + "-" + "prot" + cTipoDocumento + ".xml"
-
-		If File( cDiretorio + cNomeArquivo )
-			fErase(cDiretorio + cNomeArquivo)
-		EndIf
-		
-		nHandle  := FCreate( cDiretorio + cNomeArquivo )
-		
-		If nHandle > 0
-
-			FWrite( nHandle, AllTrim(ZZZ->ZZZ_XML) )
-			FClose(nHandle)
-
-		EndIf
-
-	Else
-
-		ConOut( "FACILE - PE SAVEZZZ -> Parametro MC_YXMLDIR nao existe ou esta vazio, nao foi possivel salvar o XML no disco" )
-
-	EndIf
-
-Return
-```
-
-_______
-
-## XCarregDados
-
-Ponto de entrada para manipular valores antes de salvar a ZZZ.
-
-Retorno:
-
-* **oDados:** object, Objeto com os dados a serem salvos na ZZZ.
-
-Segue exemplo de utilização.
-
-```C
-User Function XCarregDados()
-
-  Local oDados   := ParamIxb[1] as Object
-  Local cFilNova := ""          as Character
-
-  If !Empty(oDados:cIEDestinatario) .And. oDados:cCodigoFilial == "AAPES001"  //|Só processa na filial 1 |
-
-    //|Código para identificar a filial onde vai salvar o XML |
-    // bla bla bla
-    // bla bla bla
-    // bla bla bla
-    
-    cFilNova := "AAPES002"
-
-    oDados:cCodigoFilial := cFilNova
-
-  EndIf
-
-Return oDados
 ```
