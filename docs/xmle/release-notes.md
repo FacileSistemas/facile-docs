@@ -12,7 +12,7 @@ Detalhes das atualizações liberadas da ferramenta.
 
 21/08/2026
 
-- MELHORIA: ticket-4864 - Adiciona coluna de status da manifestação nos relatorios de conferencia de CTE
+- MELHORIA: Adiciona coluna de status da manifestação nos relatorios de conferencia de CTE
 - MELHORIA: Melhoria nos logs da importação do NF-e demonstrando os eventos
 - MELHORIA: Desativado atualização de legendas das NFS-e antes do padrão Nacional
 - MELHORIA: Incluído monitoramento da manifestação no JOB
