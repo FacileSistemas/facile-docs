@@ -2,6 +2,19 @@
 
 Detalhes das atualizações liberadas da ferramenta.
 
+### Versão 4.33.6007
+
+27/11/2026
+
+- MELHORIA: Alterado para enviar os e-mails via configuração padrão do Protheus
+- MELHORIA: Importar XML do Computador habilitado para NFS-e
+- MELHORIA: Adiciona função de entrada de NFS-e Automatico no Regras por Processo
+- MELHORIA: Adiciona status B e C na validação de bloqueio na entrada de CT-e
+- MELHORIA: Ajuste no PE P07GERAENT para passar a ter retorno lógico.
+- BUG: Remove atribuições de variaveis na cEmpAnt nos documentos de CT-e
+- BUG: Inclusão de begin sequence no processamento de baixa por e-mail
+- BUG: Correção para impedir que CT-e's sejam baixados na empresa/filial errados
+
 ### Versão 4.33.6006
 
 20/10/2026
